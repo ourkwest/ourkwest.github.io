@@ -1,54 +1,63 @@
 <html><head><title>Hamlet</title><style>
-div.control {
+div#plus {
     position: fixed;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    background-color: black;
+    bottom: 10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    background-color: rgb(200,255,200);
     color: white;
+    text-align: center;
+    border-radius: 6px;
+    border: 4px solid rgb(50,200,50);
 }
-span.control {
-    font-size: 200%;
+div#control {
+    position: fixed;
+    bottom: 10%;
+    right: 10%;
+    top: 10%;
+    left: 10%;
+    visibility: hidden;
+    background-color: rgb(200,255,200);
+    //font-size: larger;
+    padding: 10px;
+    border: 6px solid rgb(50,200,50);
+    border-radius: 12px;
 }
 div.content {
-    height: 100%;
-    width: 100%;
-    overflow: scroll;
-    background-color: white;
-    color: black;
+//    height: 100%;
+//    width: 100%;
+//    overflow: scroll;
+//    background-color: white;
+//    color: black;
 }
 span {
     margin-left: 10px;
     padding-left: 10px;
     padding-right: 10px;
 }
-.act {
+div.wide {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+span.wide {
+    border-radius: 3px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+span.act {
     background-color: rgb(255,150,150);
-    border-radius: 3px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    display: inline-block;
 }
-.scene {
+span.scene {
     background-color: rgb(255,200,200);
-    border-radius: 3px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    display: inline-block;
 }
-.direction {
+span.direction {
     background-color: rgb(220,220,255);
-    border-radius: 3px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    display: inline-block;
 }
 .inline {
     background-color: rgb(220,220,255);
@@ -64,8 +73,26 @@ span {
     color: rgb(100,100,100);
     background-color: rgb(255,255,0);
 }
+
+#return {
+    background-color: rgb(255,255,0);
+    display: inline-block;
+    border-radius: 3px;
+}
 </style><script>
     window.onload = function() {
+
+        var control = document.getElementById('control');
+        toggleControl = function() {
+            if (control.style.visibility != 'visible') {
+                control.style.visibility = 'visible';
+            }
+            else {
+                control.style.visibility = 'hidden';
+            }
+        }
+
+
         var charSelect = document.getElementById('charselect');
         charSelect.onchange = function() {
             var texts = document.getElementsByClassName('text');
@@ -76,17 +103,24 @@ span {
             for (var i=0; i<texts.length; i++) {
                 texts[i].style.background = 'rgb(200,255,200)';
             }
+            toggleControl();
         }
+
         var sceneSelect = document.getElementById('sceneselect');
         sceneSelect.onchange = function() {
             document.getElementById(sceneSelect.value).scrollIntoView(true);;
+            toggleControl();
         }
+
+        var plusButton = document.getElementById('plus');
+        plusButton.onclick = toggleControl;
+
+        var returnButton = document.getElementById('return');
+        returnButton.onclick = toggleControl;
     };
-</script></head><body><div class="control"><span class="control">Quick Jump: <select id="sceneselect"><option value="2">ACT I - SCENE I. Elsinore. A platform before the castle.</option><option value="3">ACT I - SCENE II. A room of state in the castle.</option><option value="4">ACT I - SCENE III. A room in Polonius' house.</option><option value="5">ACT I - SCENE IV. The platform.</option><option value="6">ACT I - SCENE V. Another part of the platform.</option><option value="7">ACT II - SCENE I. A room in POLONIUS' house.</option><option value="8">ACT II - SCENE II. A room in the castle.</option><option value="9">ACT III - SCENE I. A room in the castle.</option><option value="10">ACT III - SCENE II. A hall in the castle.</option><option value="11">ACT III - SCENE III. A room in the castle.</option><option value="12">ACT III - SCENE IV. The Queen's closet.</option><option value="13">ACT IV - SCENE I. A room in the castle.</option><option value="14">ACT IV - SCENE V. Elsinore. A room in the castle.</option><option value="15">ACT IV - SCENE VI. Another room in the castle.</option><option value="16">ACT IV - SCENE VII. Another room in the castle.</option><option value="17">ACT V - SCENE I. A churchyard.</option><option value="18">ACT V - SCENE II. A hall in the castle.</option></select>
-Highlight: <select id="charselect"><option></option><option>BERNARDO</option><option>FRANCISCO</option><option>MARCELLUS</option><option>HORATIO</option><option>KING CLAUDIUS</option><option>LAERTES</option><option>LORD POLONIUS</option><option>HAMLET</option><option>QUEEN GERTRUDE</option><option>MARCELLUS BERNARDO</option><option>OPHELIA</option><option>GHOST</option><option>HORATIO MARCELLUS</option><option>Characters</option><option>GUILDENSTERN</option><option>ROSENCRANTZ</option><option>FIRST PLAYER</option><option>PLAYER KING</option><option>PLAYER QUEEN</option><option>LUCIANUS</option><option>All</option><option>FIRST SAILOR</option><option>MESSANGER</option><option>FIRST CLOWN</option><option>SECOND CLOWN</option><option>PRIEST</option><option>ALL</option><option>OSRIC</option></select>
-</span><div class="content"><hr id="1" /><div class="act"><span>ACT I</span></div><br />
-<hr id="2" /><div class="scene"><span>SCENE I. Elsinore. A platform before the castle.</span></div><br />
-<div class="direction"><span>FRANCISCO at his post. Enter to him BERNARDO</span></div><br />
+</script></head><body><div id="plus"></div><div id="control"><p>Quick Jump: <select id="sceneselect"><option value="2">ACT I - SCENE I. Elsinore. A platform before the castle.</option><option value="3">ACT I - SCENE II. A room of state in the castle.</option><option value="4">ACT I - SCENE III. A room in Polonius' house.</option><option value="5">ACT I - SCENE IV. The platform.</option><option value="6">ACT I - SCENE V. Another part of the platform.</option><option value="7">ACT II - SCENE I. A room in POLONIUS' house.</option><option value="8">ACT II - SCENE II. A room in the castle.</option><option value="9">ACT III - SCENE I. A room in the castle.</option><option value="10">ACT III - SCENE II. A hall in the castle.</option><option value="11">ACT III - SCENE III. A room in the castle.</option><option value="12">ACT III - SCENE IV. The Queen's closet.</option><option value="13">ACT IV - SCENE I. A room in the castle.</option><option value="14">ACT IV - SCENE V. Elsinore. A room in the castle.</option><option value="15">ACT IV - SCENE VI. Another room in the castle.</option><option value="16">ACT IV - SCENE VII. Another room in the castle.</option><option value="17">ACT V - SCENE I. A churchyard.</option><option value="18">ACT V - SCENE II. A hall in the castle.</option></select><br />Highlight: <select id="charselect"><option></option><option>ALL</option><option>All</option><option>BERNARDO</option><option>Characters</option><option>FIRST CLOWN</option><option>FIRST PLAYER</option><option>FIRST SAILOR</option><option>FRANCISCO</option><option>GHOST</option><option>GUILDENSTERN</option><option>HAMLET</option><option>HORATIO</option><option>HORATIO MARCELLUS</option><option>KING CLAUDIUS</option><option>LAERTES</option><option>LORD POLONIUS</option><option>LUCIANUS</option><option>MARCELLUS</option><option>MARCELLUS BERNARDO</option><option>MESSANGER</option><option>OPHELIA</option><option>OSRIC</option><option>PLAYER KING</option><option>PLAYER QUEEN</option><option>PRIEST</option><option>QUEEN GERTRUDE</option><option>ROSENCRANTZ</option><option>SECOND CLOWN</option></select><br /><div id="return">Close</div></p></div><div class="content"><hr id="1" /><div class="wide act"><span class="wide act">ACT I</span></div><br />
+<hr id="2" /><div class="wide scene"><span class="wide scene">SCENE I. Elsinore. A platform before the castle.</span></div><br />
+<div class="wide direction"><span class="wide direction">FRANCISCO at his post. Enter to him BERNARDO</span></div><br />
 <span class="charlabel">BERNARDO</span><br />
 <span class="text BERNARDO">Who's there?</span><br />
 <span class="charlabel">FRANCISCO</span><br />
@@ -99,9 +133,9 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text BERNARDO">Have you had quiet guard?</span><br />
 <span class="charlabel">FRANCISCO</span><br />
 <span class="text FRANCISCO">Not a mouse stirring.</span><br />
-<div class="direction"><span>Enter HORATIO and MARCELLUS</span></div><br />
+<div class="wide direction"><span class="wide direction">Enter HORATIO and MARCELLUS</span></div><br />
 <span class="text FRANCISCO">Give you good night.</span><br />
-<div class="direction"><span>Exit</span></div><br />
+<div class="wide direction"><span class="wide direction">Exit</span></div><br />
 <span class="charlabel">MARCELLUS</span><br />
 <span class="text MARCELLUS">Holla! Bernardo!</span><br />
 <span class="charlabel">BERNARDO</span><br />
@@ -121,7 +155,7 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="charlabel">BERNARDO</span><br />
 <span class="text BERNARDO">Last night of all, Marcellus and myself,</span><br />
 <span class="text BERNARDO">The bell then beating one,--</span><br />
-<div class="direction"><span>Enter Ghost</span></div><br />
+<div class="wide direction"><span class="wide direction">Enter Ghost</span></div><br />
 <span class="charlabel">MARCELLUS</span><br />
 <span class="text MARCELLUS">Peace, break thee off; look, where it comes again!</span><br />
 <span class="charlabel">BERNARDO</span><br />
@@ -147,7 +181,7 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text BERNARDO">See, it stalks away!</span><br />
 <span class="charlabel">HORATIO</span><br />
 <span class="text HORATIO">Stay! speak, speak! I charge thee, speak!</span><br />
-<div class="direction"><span>Exit Ghost</span></div><br />
+<div class="wide direction"><span class="wide direction">Exit Ghost</span></div><br />
 <span class="charlabel">MARCELLUS</span><br />
 <span class="text MARCELLUS">Tis gone, and will not answer.</span><br />
 <span class="charlabel">BERNARDO</span><br />
@@ -173,14 +207,14 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text HORATIO">But in the gross and scope of my opinion,</span><br />
 <span class="text HORATIO">This bodes some strange eruption to our state.</span><br />
 <span class="text HORATIO">But soft, behold! lo, where it comes again!</span><br />
-<div class="direction"><span>Re-enter Ghost</span></div><br />
+<div class="wide direction"><span class="wide direction">Re-enter Ghost</span></div><br />
 <span class="text HORATIO">I'll cross it, though it blast me. Stay, illusion!</span><br />
 <span class="text HORATIO">If thou hast any sound, or use of voice,</span><br />
 <span class="text HORATIO">Speak to me:</span><br />
 <span class="text HORATIO">If there be any good thing to be done,</span><br />
 <span class="text HORATIO">That may to thee do ease and grace to me,</span><br />
 <span class="text HORATIO">Speak to me:</span><br />
-<div class="direction"><span>Cock crows</span></div><br />
+<div class="wide direction"><span class="wide direction">Cock crows</span></div><br />
 <span class="text HORATIO">If thou art privy to thy country's fate,</span><br />
 <span class="text HORATIO">Which, happily, foreknowing may avoid, O, speak!</span><br />
 <span class="text HORATIO">Speak of it: stay, and speak! Stop it, Marcellus.</span><br />
@@ -194,7 +228,7 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text HORATIO">Tis here!</span><br />
 <span class="charlabel">MARCELLUS</span><br />
 <span class="text MARCELLUS">Tis gone!</span><br />
-<div class="direction"><span>Exit Ghost</span></div><br />
+<div class="wide direction"><span class="wide direction">Exit Ghost</span></div><br />
 <span class="text MARCELLUS">We do it wrong, being so majestical,</span><br />
 <span class="text MARCELLUS">To offer it the show of violence;</span><br />
 <span class="text MARCELLUS">For it is, as the air, invulnerable,</span><br />
@@ -210,9 +244,9 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="charlabel">MARCELLUS</span><br />
 <span class="text MARCELLUS">Let's do't, I pray; and I this morning know</span><br />
 <span class="text MARCELLUS">Where we shall find him most conveniently.</span><br />
-<div class="direction"><span>Exeunt</span></div><br />
-<hr id="3" /><div class="scene"><span>SCENE II. A room of state in the castle.</span></div><br />
-<div class="direction"><span>Enter KING CLAUDIUS, QUEEN GERTRUDE, HAMLET, POLONIUS, LAERTES, VOLTIMAND, CORNELIUS, Lords, and Attendants</span></div><br />
+<div class="wide direction"><span class="wide direction">Exeunt</span></div><br />
+<hr id="3" /><div class="wide scene"><span class="wide scene">SCENE II. A room of state in the castle.</span></div><br />
+<div class="wide direction"><span class="wide direction">Enter KING CLAUDIUS, QUEEN GERTRUDE, HAMLET, POLONIUS, LAERTES, VOLTIMAND, CORNELIUS, Lords, and Attendants</span></div><br />
 <span class="charlabel">KING CLAUDIUS</span><br />
 <span class="text KING CLAUDIUS">Though yet of Hamlet our dear brother's death</span><br />
 <span class="text KING CLAUDIUS">The memory be green, and that it us befitted</span><br />
@@ -246,7 +280,7 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text KING CLAUDIUS">And thy best graces spend it at thy will!</span><br />
 <span class="text KING CLAUDIUS">But now, my cousin Hamlet, and my son,--</span><br />
 <span class="charlabel">HAMLET</span><br />
-<div class="inline"><span>Aside</span></div><span class="text HAMLET">A little more than kin, and less than kind.</span><br />
+<div class="wide inline"><span class="wide inline">Aside</span></div><span class="text HAMLET">A little more than kin, and less than kind.</span><br />
 <span class="charlabel">KING CLAUDIUS</span><br />
 <span class="text KING CLAUDIUS">How is it that the clouds still hang on you?</span><br />
 <span class="charlabel">HAMLET</span><br />
@@ -305,7 +339,7 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text KING CLAUDIUS">Why, 'tis a loving and a fair reply:</span><br />
 <span class="text KING CLAUDIUS">This gentle and unforced accord of Hamlet</span><br />
 <span class="text KING CLAUDIUS">Sits smiling to my heart. Come away.</span><br />
-<div class="direction"><span>Exeunt all but HAMLET</span></div><br />
+<div class="wide direction"><span class="wide direction">Exeunt all but HAMLET</span></div><br />
 <span class="charlabel">HAMLET</span><br />
 <span class="text HAMLET">Fie on't! ah fie! 'tis an unweeded garden,</span><br />
 <span class="text HAMLET">That grows to seed; things rank and gross in nature</span><br />
@@ -322,7 +356,7 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text HAMLET">Than I to Hercules: within a month:</span><br />
 <span class="text HAMLET">It is not nor it cannot come to good:</span><br />
 <span class="text HAMLET">But break, my heart; for I must hold my tongue.</span><br />
-<div class="direction"><span>Enter HORATIO, MARCELLUS</span></div><br />
+<div class="wide direction"><span class="wide direction">Enter HORATIO, MARCELLUS</span></div><br />
 <span class="charlabel">HORATIO</span><br />
 <span class="text HORATIO">Hail to your lordship!</span><br />
 <span class="charlabel">HAMLET</span><br />
@@ -420,11 +454,11 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text HAMLET">I will watch to-night;</span><br />
 <span class="text HAMLET">Upon the platform, 'twixt eleven and twelve,</span><br />
 <span class="text HAMLET">I'll visit you.</span><br />
-<div class="direction"><span>Exeunt all but HAMLET</span></div><br />
+<div class="wide direction"><span class="wide direction">Exeunt all but HAMLET</span></div><br />
 <span class="text HAMLET">My father's spirit in arms! all is not well;</span><br />
-<div class="direction"><span>Exit</span></div><br />
-<hr id="4" /><div class="scene"><span>SCENE III. A room in Polonius' house.</span></div><br />
-<div class="direction"><span>Enter LAERTES and OPHELIA</span></div><br />
+<div class="wide direction"><span class="wide direction">Exit</span></div><br />
+<hr id="4" /><div class="wide scene"><span class="wide scene">SCENE III. A room in Polonius' house.</span></div><br />
+<div class="wide direction"><span class="wide direction">Enter LAERTES and OPHELIA</span></div><br />
 <span class="charlabel">LAERTES</span><br />
 <span class="text LAERTES">My necessaries are embark'd: farewell:</span><br />
 <span class="text LAERTES">For Hamlet and the trifling of his favour,</span><br />
@@ -433,7 +467,7 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text LAERTES">He may not, as unvalued persons do,</span><br />
 <span class="text LAERTES">Carve for himself; for on his choice depends</span><br />
 <span class="text LAERTES">The safety and health of this whole state;</span><br />
-<div class="direction"><span>Enter POLONIUS</span></div><br />
+<div class="wide direction"><span class="wide direction">Enter POLONIUS</span></div><br />
 <span class="charlabel">LORD POLONIUS</span><br />
 <span class="text LORD POLONIUS">Yet here, Laertes! aboard, aboard, for shame!</span><br />
 <span class="text LORD POLONIUS">The wind sits in the shoulder of your sail,</span><br />
@@ -451,7 +485,7 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text LAERTES">Most humbly do I take my leave, my lord.</span><br />
 <span class="text LAERTES">Farewell, Ophelia; and remember well</span><br />
 <span class="text LAERTES">What I have said to you.</span><br />
-<div class="direction"><span>Exit</span></div><br />
+<div class="wide direction"><span class="wide direction">Exit</span></div><br />
 <span class="charlabel">LORD POLONIUS</span><br />
 <span class="text LORD POLONIUS">What is't, Ophelia, be hath said to you?</span><br />
 <span class="charlabel">OPHELIA</span><br />
@@ -501,9 +535,9 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text LORD POLONIUS">As to give words or talk with the Lord Hamlet.</span><br />
 <span class="charlabel">OPHELIA</span><br />
 <span class="text OPHELIA">I shall obey, my lord.</span><br />
-<div class="direction"><span>Exeunt</span></div><br />
-<hr id="5" /><div class="scene"><span>SCENE IV. The platform.</span></div><br />
-<div class="direction"><span>Enter HAMLET, HORATIO, and MARCELLUS</span></div><br />
+<div class="wide direction"><span class="wide direction">Exeunt</span></div><br />
+<hr id="5" /><div class="wide scene"><span class="wide scene">SCENE IV. The platform.</span></div><br />
+<div class="wide direction"><span class="wide direction">Enter HAMLET, HORATIO, and MARCELLUS</span></div><br />
 <span class="charlabel">HAMLET</span><br />
 <span class="text HAMLET">The air bites shrewdly; it is very cold.</span><br />
 <span class="charlabel">HORATIO</span><br />
@@ -516,7 +550,7 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text HAMLET">No, it is struck.</span><br />
 <span class="charlabel">HORATIO</span><br />
 <span class="text HORATIO">Look, my lord, it comes!</span><br />
-<div class="direction"><span>Enter Ghost</span></div><br />
+<div class="wide direction"><span class="wide direction">Enter Ghost</span></div><br />
 <span class="charlabel">HAMLET</span><br />
 <span class="text HAMLET">Angels and ministers of grace defend us!</span><br />
 <span class="text HAMLET">King, father, royal Dane: O, answer me!</span><br />
@@ -525,7 +559,7 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text HAMLET">Have burst their cerements; why the sepulchre,</span><br />
 <span class="text HAMLET">Hath oped his ponderous and marble jaws,</span><br />
 <span class="text HAMLET">To cast thee up again. What may this mean,</span><br />
-<div class="direction"><span>Ghost beckons HAMLET</span></div><br />
+<div class="wide direction"><span class="wide direction">Ghost beckons HAMLET</span></div><br />
 <span class="charlabel">HORATIO</span><br />
 <span class="text HORATIO">It beckons you to go away with it,</span><br />
 <span class="charlabel">MARCELLUS</span><br />
@@ -555,7 +589,7 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text HAMLET">My fate cries out,</span><br />
 <span class="text HAMLET">Still am I call'd. Unhand me, gentlemen.</span><br />
 <span class="text HAMLET">By heaven, I'll make a ghost of him that lets me!</span><br />
-<div class="direction"><span>Exeunt Ghost and HAMLET</span></div><br />
+<div class="wide direction"><span class="wide direction">Exeunt Ghost and HAMLET</span></div><br />
 <span class="charlabel">MARCELLUS</span><br />
 <span class="text MARCELLUS">Let's follow; 'tis not fit thus to obey him.</span><br />
 <span class="charlabel">HORATIO</span><br />
@@ -566,9 +600,9 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text HORATIO">Heaven will direct it.</span><br />
 <span class="charlabel">MARCELLUS</span><br />
 <span class="text MARCELLUS">Nay, let's follow him.</span><br />
-<div class="direction"><span>Exeunt</span></div><br />
-<hr id="6" /><div class="scene"><span>SCENE V. Another part of the platform.</span></div><br />
-<div class="direction"><span>Enter GHOST and HAMLET</span></div><br />
+<div class="wide direction"><span class="wide direction">Exeunt</span></div><br />
+<hr id="6" /><div class="wide scene"><span class="wide scene">SCENE V. Another part of the platform.</span></div><br />
+<div class="wide direction"><span class="wide direction">Enter GHOST and HAMLET</span></div><br />
 <span class="charlabel">GHOST</span><br />
 <span class="text GHOST">My hour is almost come,</span><br />
 <span class="text GHOST">When I to sulphurous and tormenting flames</span><br />
@@ -638,7 +672,7 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text GHOST">And to those thorns that in her bosom lodge,</span><br />
 <span class="text GHOST">To prick and sting her. Fare thee well at once!</span><br />
 <span class="text GHOST">Adieu, adieu! Hamlet, remember me.</span><br />
-<div class="direction"><span>Exit</span></div><br />
+<div class="wide direction"><span class="wide direction">Exit</span></div><br />
 <span class="charlabel">HAMLET</span><br />
 <span class="text HAMLET">Ay, thou poor ghost, while memory holds a seat</span><br />
 <span class="text HAMLET">In this distracted globe. Remember thee!</span><br />
@@ -649,7 +683,7 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text HAMLET">O villain, villain, smiling, damned villain!</span><br />
 <span class="text HAMLET">My tables,--meet it is I set it down,</span><br />
 <span class="text HAMLET">That one may smile, and smile, and be a villain;</span><br />
-<div class="direction"><span>Enter HORATIO and MARCELLUS</span></div><br />
+<div class="wide direction"><span class="wide direction">Enter HORATIO and MARCELLUS</span></div><br />
 <span class="charlabel">MARCELLUS</span><br />
 <span class="text MARCELLUS">How is't, my noble lord?</span><br />
 <span class="charlabel">HAMLET</span><br />
@@ -711,11 +745,11 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text MARCELLUS">Nor I, my lord, in faith.</span><br />
 <span class="charlabel">HAMLET</span><br />
 <span class="text HAMLET">Nay, come, let's go together.</span><br />
-<div class="direction"><span>Exeunt</span></div><br />
-<hr id="6" /><div class="act"><span>ACT II</span></div><br />
-<hr id="7" /><div class="scene"><span>SCENE I. A room in POLONIUS' house.</span></div><br />
+<div class="wide direction"><span class="wide direction">Exeunt</span></div><br />
+<hr id="6" /><div class="wide act"><span class="wide act">ACT II</span></div><br />
+<hr id="7" /><div class="wide scene"><span class="wide scene">SCENE I. A room in POLONIUS' house.</span></div><br />
 <span class="charlabel">LORD POLONIUS</span><br />
-<div class="direction"><span>Enter OPHELIA</span></div><br />
+<div class="wide direction"><span class="wide direction">Enter OPHELIA</span></div><br />
 <span class="text LORD POLONIUS">How now, Ophelia! what's the matter?</span><br />
 <span class="charlabel">OPHELIA</span><br />
 <span class="text OPHELIA">O, my lord, my lord, I have been so affrighted!</span><br />
@@ -763,9 +797,9 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text LORD POLONIUS">I had not quoted him: I fear'd he did but trifle,</span><br />
 <span class="text LORD POLONIUS">And meant to wreck thee; but, beshrew my jealousy!</span><br />
 <span class="text LORD POLONIUS">Come, go we to the king:</span><br />
-<div class="direction"><span>Exeunt</span></div><br />
-<hr id="8" /><div class="scene"><span>SCENE II. A room in the castle.</span></div><br />
-<div class="direction"><span>Enter KING CLAUDIUS, QUEEN GERTRUDE, ROSENCRANTZ, GUILDENSTERN, and Attendants</span></div><br />
+<div class="wide direction"><span class="wide direction">Exeunt</span></div><br />
+<hr id="8" /><div class="wide scene"><span class="wide scene">SCENE II. A room in the castle.</span></div><br />
+<div class="wide direction"><span class="wide direction">Enter KING CLAUDIUS, QUEEN GERTRUDE, ROSENCRANTZ, GUILDENSTERN, and Attendants</span></div><br />
 <span class="charlabel">KING CLAUDIUS</span><br />
 <span class="text KING CLAUDIUS">Welcome, dear Rosencrantz and Guildenstern!</span><br />
 <span class="text KING CLAUDIUS">Moreover that we much did long to see you,</span><br />
@@ -796,8 +830,8 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text GUILDENSTERN">Pleasant and helpful to him!</span><br />
 <span class="charlabel">QUEEN GERTRUDE</span><br />
 <span class="text QUEEN GERTRUDE">Ay, amen!</span><br />
-<div class="direction"><span>Exeunt ROSENCRANTZ, GUILDENSTERN, and some Attendants</span></div><br />
-<div class="direction"><span>Enter POLONIUS</span></div><br />
+<div class="wide direction"><span class="wide direction">Exeunt ROSENCRANTZ, GUILDENSTERN, and some Attendants</span></div><br />
+<div class="wide direction"><span class="wide direction">Enter POLONIUS</span></div><br />
 <span class="charlabel">LORD POLONIUS</span><br />
 <span class="text LORD POLONIUS">I have found</span><br />
 <span class="text LORD POLONIUS">The very cause of Hamlet's lunacy.</span><br />
@@ -811,14 +845,14 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text LORD POLONIUS">I have a daughter--have while she is mine--</span><br />
 <span class="text LORD POLONIUS">Who, in her duty and obedience, mark,</span><br />
 <span class="text LORD POLONIUS">Hath given me this: now gather, and surmise.</span><br />
-<div class="direction"><span>Reads</span></div><br />
+<div class="wide direction"><span class="wide direction">Reads</span></div><br />
 <span class="text LORD POLONIUS">To the celestial and my soul's idol, the most</span><br />
 <span class="text LORD POLONIUS">beautified Ophelia,'--</span><br />
 <span class="text LORD POLONIUS">That's an ill phrase, a vile phrase; 'beautified' is</span><br />
 <span class="text LORD POLONIUS">a vile phrase: but you shall hear. Thus:</span><br />
-<div class="direction"><span>Reads</span></div><br />
+<div class="wide direction"><span class="wide direction">Reads</span></div><br />
 <span class="text LORD POLONIUS">In her excellent white bosom, these, ...and the rest!'</span><br />
-<div class="direction"><span>Clears throat, continues reading</span></div><br />
+<div class="wide direction"><span class="wide direction">Clears throat, continues reading</span></div><br />
 <span class="text LORD POLONIUS">Doubt thou the stars are fire;</span><br />
 <span class="text LORD POLONIUS">Doubt that the sun doth move;</span><br />
 <span class="text LORD POLONIUS">Doubt truth to be a liar;</span><br />
@@ -877,8 +911,8 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text QUEEN GERTRUDE">But, look, where sadly the poor wretch comes reading.</span><br />
 <span class="charlabel">LORD POLONIUS</span><br />
 <span class="text LORD POLONIUS">Away, I do beseech you, both away:</span><br />
-<div class="direction"><span>Exeunt KING CLAUDIUS, QUEEN GERTRUDE, and Attendants</span></div><br />
-<div class="direction"><span>Enter HAMLET, reading</span></div><br />
+<div class="wide direction"><span class="wide direction">Exeunt KING CLAUDIUS, QUEEN GERTRUDE, and Attendants</span></div><br />
+<div class="wide direction"><span class="wide direction">Enter HAMLET, reading</span></div><br />
 <span class="text LORD POLONIUS">How does my good Lord Hamlet?</span><br />
 <span class="charlabel">HAMLET</span><br />
 <span class="text HAMLET">Well, God-a-mercy.</span><br />
@@ -907,11 +941,11 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text HAMLET">blessing: but not as your daughter may conceive.</span><br />
 <span class="text HAMLET">Friend, look to 't.</span><br />
 <span class="charlabel">LORD POLONIUS</span><br />
-<div class="inline"><span>Aside</span></div><span class="text LORD POLONIUS">Still harping on my</span><br />
-<div class="inline"><span>Aside</span></div><span class="text LORD POLONIUS">daughter: yet he knew me not at first; he said I</span><br />
-<div class="inline"><span>Aside</span></div><span class="text LORD POLONIUS">was a fishmonger: he is far gone, far gone: and</span><br />
-<div class="inline"><span>Aside</span></div><span class="text LORD POLONIUS">truly in my youth I suffered much extremity for</span><br />
-<div class="inline"><span>Aside</span></div><span class="text LORD POLONIUS">love; very near this.</span><br />
+<div class="wide inline"><span class="wide inline">Aside</span></div><span class="text LORD POLONIUS">Still harping on my</span><br />
+<div class="wide inline"><span class="wide inline">Aside</span></div><span class="text LORD POLONIUS">daughter: yet he knew me not at first; he said I</span><br />
+<div class="wide inline"><span class="wide inline">Aside</span></div><span class="text LORD POLONIUS">was a fishmonger: he is far gone, far gone: and</span><br />
+<div class="wide inline"><span class="wide inline">Aside</span></div><span class="text LORD POLONIUS">truly in my youth I suffered much extremity for</span><br />
+<div class="wide inline"><span class="wide inline">Aside</span></div><span class="text LORD POLONIUS">love; very near this.</span><br />
 <span class="text LORD POLONIUS">What do you read, my lord?</span><br />
 <span class="charlabel">HAMLET</span><br />
 <span class="text HAMLET">Slanders, sir: for the satirical rogue says here</span><br />
@@ -921,16 +955,16 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text HAMLET">though I most powerfully and potently believe, yet</span><br />
 <span class="text HAMLET">I hold it not honesty to have it thus set down.</span><br />
 <span class="charlabel">LORD POLONIUS</span><br />
-<div class="inline"><span>Aside</span></div><span class="text LORD POLONIUS">How pregnant sometimes his replies are! I will</span><br />
-<div class="inline"><span>Aside</span></div><span class="text LORD POLONIUS">leave him, and suddenly contrive the means of</span><br />
-<div class="inline"><span>Aside</span></div><span class="text LORD POLONIUS">meeting between him and my daughter.--My honourable</span><br />
+<div class="wide inline"><span class="wide inline">Aside</span></div><span class="text LORD POLONIUS">How pregnant sometimes his replies are! I will</span><br />
+<div class="wide inline"><span class="wide inline">Aside</span></div><span class="text LORD POLONIUS">leave him, and suddenly contrive the means of</span><br />
+<div class="wide inline"><span class="wide inline">Aside</span></div><span class="text LORD POLONIUS">meeting between him and my daughter.--My honourable</span><br />
 <span class="text LORD POLONIUS">lord, I will most humbly take my leave of you.</span><br />
 <span class="charlabel">HAMLET</span><br />
 <span class="text HAMLET">You cannot, sir, take from me any thing that I will</span><br />
 <span class="text HAMLET">more willingly part withal: except my life, except</span><br />
 <span class="text HAMLET">my life, except my life.</span><br />
-<div class="direction"><span>Enter ROSENCRANTZ and GUILDENSTERN</span></div><br />
-<div class="direction"><span>Exit POLONIUS</span></div><br />
+<div class="wide direction"><span class="wide direction">Enter ROSENCRANTZ and GUILDENSTERN</span></div><br />
+<div class="wide direction"><span class="wide direction">Exit POLONIUS</span></div><br />
 <span class="charlabel">HAMLET</span><br />
 <span class="text HAMLET">My excellent good friends! How dost thou,</span><br />
 <span class="charlabel">GUILDENSTERN</span><br />
@@ -991,7 +1025,7 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text HAMLET">That you must teach me. Be even and direct with me,</span><br />
 <span class="text HAMLET">whether you were sent for, or no?</span><br />
 <span class="charlabel">ROSENCRANTZ</span><br />
-<div class="inline"><span>Aside to GUILDENSTERN</span></div><span class="text ROSENCRANTZ">What say you?</span><br />
+<div class="wide inline"><span class="wide inline">Aside to GUILDENSTERN</span></div><span class="text ROSENCRANTZ">What say you?</span><br />
 <span class="charlabel">GUILDENSTERN</span><br />
 <span class="text GUILDENSTERN">My lord, we were sent for.</span><br />
 <span class="charlabel">HAMLET</span><br />
@@ -1012,7 +1046,7 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text HAMLET">in apprehension how like a god! the beauty of the</span><br />
 <span class="text HAMLET">world! the paragon of animals! And yet, to me,</span><br />
 <span class="text HAMLET">what is this quintessence of dust? man delights not</span><br />
-<div class="inline"><span>Rosencrantz stifles a laugh</span></div><span class="text HAMLET">me: no, nor woman neither, though by your smiling</span><br />
+<div class="wide inline"><span class="wide inline">Rosencrantz stifles a laugh</span></div><span class="text HAMLET">me: no, nor woman neither, though by your smiling</span><br />
 <span class="text HAMLET">you seem to say so.</span><br />
 <span class="charlabel">ROSENCRANTZ</span><br />
 <span class="text ROSENCRANTZ">My lord, there was no such stuff in my thoughts.</span><br />
@@ -1031,9 +1065,9 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="notes">[Flourish of trumpets within]</span><br />
 <span class="charlabel">GUILDENSTERN</span><br />
 <span class="text GUILDENSTERN">There are the players.</span><br />
-<div class="direction"><span>Enter POLONIUS</span></div><br />
+<div class="wide direction"><span class="wide direction">Enter POLONIUS</span></div><br />
 <span class="charlabel">HAMLET</span><br />
-<div class="direction"><span>Enter some Players</span></div><br />
+<div class="wide direction"><span class="wide direction">Enter some Players</span></div><br />
 <span class="text HAMLET">You are welcome, masters; welcome, all.</span><br />
 <span class="text HAMLET">give us a taste</span><br />
 <span class="text HAMLET">of your quality; come, a passionate speech.</span><br />
@@ -1052,7 +1086,7 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text HAMLET">And thus o'er-sized with coagulate gore,</span><br />
 <span class="text HAMLET">With eyes like carbuncles, the hellish Pyrrhus</span><br />
 <span class="text HAMLET">Old grandsire Priam seeks.'</span><br />
-<div class="direction"><span>Gestures to First Player to continue</span></div><br />
+<div class="wide direction"><span class="wide direction">Gestures to First Player to continue</span></div><br />
 <span class="charlabel">FIRST PLAYER</span><br />
 <span class="text FIRST PLAYER">Anon he finds him</span><br />
 <span class="text FIRST PLAYER">Pyrrhus at Priam drives; in rage strikes down</span><br />
@@ -1071,7 +1105,7 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text HAMLET">after his desert, and who should 'scape whipping?</span><br />
 <span class="charlabel">LORD POLONIUS</span><br />
 <span class="text LORD POLONIUS">Come, sirs.</span><br />
-<div class="direction"><span>Exit Polonius, Rosencrantz & Guildenstern</span></div><br />
+<div class="wide direction"><span class="wide direction">Exit Polonius, Rosencrantz & Guildenstern</span></div><br />
 <span class="charlabel">HAMLET</span><br />
 <span class="text HAMLET">can you play the</span><br />
 <span class="text HAMLET">Murder of Gonzago?</span><br />
@@ -1086,7 +1120,7 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="charlabel">HAMLET</span><br />
 <span class="text HAMLET">Very well. Follow that lord; and look you mock him</span><br />
 <span class="text HAMLET">not.</span><br />
-<div class="direction"><span>Exit First Player</span></div><br />
+<div class="wide direction"><span class="wide direction">Exit First Player</span></div><br />
 <span class="text HAMLET">Is it not monstrous that this player here,</span><br />
 <span class="text HAMLET">But in a fiction, in a dream of passion,</span><br />
 <span class="text HAMLET">Could force his soul so to his own conceit</span><br />
@@ -1118,17 +1152,17 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text HAMLET">To assume a pleasing shape; I'll have grounds</span><br />
 <span class="text HAMLET">More relative than this: the play's the thing</span><br />
 <span class="text HAMLET">Wherein I'll catch the conscience of the king.</span><br />
-<div class="direction"><span>Exit</span></div><br />
-<hr id="8" /><div class="act"><span>ACT III</span></div><br />
-<hr id="9" /><div class="scene"><span>SCENE I. A room in the castle.</span></div><br />
+<div class="wide direction"><span class="wide direction">Exit</span></div><br />
+<hr id="8" /><div class="wide act"><span class="wide act">ACT III</span></div><br />
+<hr id="9" /><div class="wide scene"><span class="wide scene">SCENE I. A room in the castle.</span></div><br />
 <span class="charlabel">LORD POLONIUS</span><br />
 <span class="text LORD POLONIUS">Ophelia, walk you here.</span><br />
 <span class="text LORD POLONIUS">Read on this book;</span><br />
 <span class="text LORD POLONIUS">That show of such an exercise may colour</span><br />
 <span class="text LORD POLONIUS">Your loneliness.</span><br />
 <span class="text LORD POLONIUS">I hear him coming: let's withdraw, my lord.</span><br />
-<div class="direction"><span>Exeunt KING CLAUDIUS and POLONIUS</span></div><br />
-<div class="direction"><span>Enter HAMLET</span></div><br />
+<div class="wide direction"><span class="wide direction">Exeunt KING CLAUDIUS and POLONIUS</span></div><br />
+<div class="wide direction"><span class="wide direction">Enter HAMLET</span></div><br />
 <span class="charlabel">HAMLET</span><br />
 <span class="text HAMLET">To be, or not to be: that is the question:</span><br />
 <span class="text HAMLET">Whether 'tis nobler in the mind to suffer</span><br />
@@ -1222,7 +1256,7 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text HAMLET">nick-name God's creatures, and make your wantonness</span><br />
 <span class="text HAMLET">your ignorance. Go to, I'll no more on't; it hath</span><br />
 <span class="text HAMLET">made me mad.</span><br />
-<div class="direction"><span>Exit</span></div><br />
+<div class="wide direction"><span class="wide direction">Exit</span></div><br />
 <span class="charlabel">OPHELIA</span><br />
 <span class="text OPHELIA">O, what a noble mind is here o'erthrown!</span><br />
 <span class="text OPHELIA">And I, of ladies most deject and wretched,</span><br />
@@ -1231,7 +1265,7 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text OPHELIA">Like sweet bells jangled, out of tune and harsh;</span><br />
 <span class="text OPHELIA">O, woe is me,</span><br />
 <span class="text OPHELIA">To have seen what I have seen, see what I see!</span><br />
-<div class="direction"><span>Re-enter KING CLAUDIUS and POLONIUS</span></div><br />
+<div class="wide direction"><span class="wide direction">Re-enter KING CLAUDIUS and POLONIUS</span></div><br />
 <span class="charlabel">KING CLAUDIUS</span><br />
 <span class="text KING CLAUDIUS">Love! his affections do not that way tend;</span><br />
 <span class="text KING CLAUDIUS">Nor what he spake, though it lack'd form a little,</span><br />
@@ -1251,11 +1285,11 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="charlabel">KING CLAUDIUS</span><br />
 <span class="text KING CLAUDIUS">It shall be so:</span><br />
 <span class="text KING CLAUDIUS">Madness in great ones must not unwatch'd go.</span><br />
-<div class="direction"><span>Exeunt</span></div><br />
-<hr id="10" /><div class="scene"><span>SCENE II. A hall in the castle.</span></div><br />
+<div class="wide direction"><span class="wide direction">Exeunt</span></div><br />
+<hr id="10" /><div class="wide scene"><span class="wide scene">SCENE II. A hall in the castle.</span></div><br />
 <span class="charlabel">HAMLET</span><br />
 <span class="text HAMLET">What ho! Horatio!</span><br />
-<div class="direction"><span>Enter HORATIO</span></div><br />
+<div class="wide direction"><span class="wide direction">Enter HORATIO</span></div><br />
 <span class="charlabel">HORATIO</span><br />
 <span class="text HORATIO">Here, sweet lord, at your service.</span><br />
 <span class="charlabel">HAMLET</span><br />
@@ -1273,7 +1307,7 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="charlabel">HAMLET</span><br />
 <span class="text HAMLET">They are coming to the play; I must be idle:</span><br />
 <span class="text HAMLET">Get you a place.</span><br />
-<div class="direction"><span>Danish march. A flourish. Enter KING CLAUDIUS, QUEEN GERTRUDE, POLONIUS, OPHELIA, ROSENCRANTZ, GUILDENSTERN, and others</span></div><br />
+<div class="wide direction"><span class="wide direction">Danish march. A flourish. Enter KING CLAUDIUS, QUEEN GERTRUDE, POLONIUS, OPHELIA, ROSENCRANTZ, GUILDENSTERN, and others</span></div><br />
 <span class="charlabel">KING CLAUDIUS</span><br />
 <span class="text KING CLAUDIUS">How fares our cousin Hamlet?</span><br />
 <span class="charlabel">HAMLET</span><br />
@@ -1289,7 +1323,7 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="charlabel">HAMLET</span><br />
 <span class="text HAMLET">No, good mother, here's metal more attractive.</span><br />
 <span class="text HAMLET">Lady, shall I lie in your lap?</span><br />
-<div class="direction"><span>Lying down at OPHELIA's feet</span></div><br />
+<div class="wide direction"><span class="wide direction">Lying down at OPHELIA's feet</span></div><br />
 <span class="charlabel">OPHELIA</span><br />
 <span class="text OPHELIA">No, my lord.</span><br />
 <span class="charlabel">HAMLET</span><br />
@@ -1325,7 +1359,7 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text HAMLET">hope a great man's memory may outlive his life half</span><br />
 <span class="text HAMLET">a year: but, by'r lady, he must build churches,</span><br />
 <span class="text HAMLET">then; or else shall he suffer not thinking on.</span><br />
-<div class="direction"><span>Enter two Players, King and Queen</span></div><br />
+<div class="wide direction"><span class="wide direction">Enter two Players, King and Queen</span></div><br />
 <span class="charlabel">PLAYER KING</span><br />
 <span class="text PLAYER KING">Full thirty times hath Phoebus' cart gone round</span><br />
 <span class="text PLAYER KING">Neptune's salt wash and Tellus' orbed ground,</span><br />
@@ -1340,11 +1374,11 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text PLAYER KING">Sweet, leave me here awhile;</span><br />
 <span class="text PLAYER KING">My spirits grow dull, and fain I would beguile</span><br />
 <span class="text PLAYER KING">The tedious day with sleep.</span><br />
-<div class="direction"><span>Sleeps</span></div><br />
+<div class="wide direction"><span class="wide direction">Sleeps</span></div><br />
 <span class="charlabel">PLAYER QUEEN</span><br />
 <span class="text PLAYER QUEEN">Sleep rock thy brain,</span><br />
 <span class="text PLAYER QUEEN">And never come mischance between us twain!</span><br />
-<div class="direction"><span>Exit</span></div><br />
+<div class="wide direction"><span class="wide direction">Exit</span></div><br />
 <span class="charlabel">KING CLAUDIUS</span><br />
 <span class="text KING CLAUDIUS">What do you call the play?</span><br />
 <span class="charlabel">HAMLET</span><br />
@@ -1355,7 +1389,7 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text HAMLET">that? your majesty and we that have free souls, it</span><br />
 <span class="text HAMLET">touches us not: let the galled jade wince, our</span><br />
 <span class="text HAMLET">withers are unwrung.</span><br />
-<div class="direction"><span>Enter LUCIANUS</span></div><br />
+<div class="wide direction"><span class="wide direction">Enter LUCIANUS</span></div><br />
 <span class="text HAMLET">This is one Lucianus, nephew to the king.</span><br />
 <span class="charlabel">OPHELIA</span><br />
 <span class="text OPHELIA">You are as good as a chorus, my lord.</span><br />
@@ -1371,7 +1405,7 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text LUCIANUS">With Hecate's ban thrice blasted, thrice infected,</span><br />
 <span class="text LUCIANUS">Thy natural magic and dire property,</span><br />
 <span class="text LUCIANUS">On wholesome life usurp immediately.</span><br />
-<div class="direction"><span>Pours the poison into the sleeper's ears</span></div><br />
+<div class="wide direction"><span class="wide direction">Pours the poison into the sleeper's ears</span></div><br />
 <span class="charlabel">HAMLET</span><br />
 <span class="text HAMLET">He poisons him i' the garden for's estate. His</span><br />
 <span class="text HAMLET">name's Gonzago: the story is extant, and writ in</span><br />
@@ -1385,7 +1419,7 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text KING CLAUDIUS">Give me some light: away!</span><br />
 <span class="charlabel">All</span><br />
 <span class="text All">Lights, lights, lights!</span><br />
-<div class="direction"><span>Exeunt all but HAMLET and HORATIO</span></div><br />
+<div class="wide direction"><span class="wide direction">Exeunt all but HAMLET and HORATIO</span></div><br />
 <span class="charlabel">HAMLET</span><br />
 <span class="text HAMLET">Why, let the stricken deer go weep,</span><br />
 <span class="text HAMLET">O good Horatio, I'll take the ghost's word for a</span><br />
@@ -1401,7 +1435,7 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text HAMLET">For if the king like not the comedy,</span><br />
 <span class="text HAMLET">Why then, belike, he likes it not, perdy.</span><br />
 <span class="text HAMLET">Come, some music!</span><br />
-<div class="direction"><span>Re-enter ROSENCRANTZ and GUILDENSTERN</span></div><br />
+<div class="wide direction"><span class="wide direction">Re-enter ROSENCRANTZ and GUILDENSTERN</span></div><br />
 <span class="charlabel">GUILDENSTERN</span><br />
 <span class="text GUILDENSTERN">Good my lord, vouchsafe me a word with you.</span><br />
 <span class="charlabel">HAMLET</span><br />
@@ -1462,7 +1496,7 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text ROSENCRANTZ">Good my lord, what is your cause of distemper? you</span><br />
 <span class="text ROSENCRANTZ">do, surely, bar the door upon your own liberty, if</span><br />
 <span class="text ROSENCRANTZ">you deny your griefs to your friend.</span><br />
-<div class="direction"><span>Re-enter Players with recorders</span></div><br />
+<div class="wide direction"><span class="wide direction">Re-enter Players with recorders</span></div><br />
 <span class="charlabel">HAMLET</span><br />
 <span class="text HAMLET">Will you play upon</span><br />
 <span class="text HAMLET">this pipe?</span><br />
@@ -1482,7 +1516,7 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text HAMLET">mystery.</span><br />
 <span class="text HAMLET">Sblood, do you think I am</span><br />
 <span class="text HAMLET">easier to be played on than a pipe?</span><br />
-<div class="direction"><span>Enter POLONIUS</span></div><br />
+<div class="wide direction"><span class="wide direction">Enter POLONIUS</span></div><br />
 <span class="charlabel">LORD POLONIUS</span><br />
 <span class="text LORD POLONIUS">My lord, the queen would speak with you, and</span><br />
 <span class="text LORD POLONIUS">presently.</span><br />
@@ -1501,16 +1535,16 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="charlabel">HAMLET</span><br />
 <span class="text HAMLET">Then I will come to my mother by and by. They fool</span><br />
 <span class="text HAMLET">me to the top of my bent.</span><span class="notes">[[Aside]]</span><br />
-<div class="direction"><span>Exeunt all but HAMLET</span></div><br />
+<div class="wide direction"><span class="wide direction">Exeunt all but HAMLET</span></div><br />
 <span class="text HAMLET">Tis now the very witching time of night,</span><br />
 <span class="text HAMLET">When churchyards yawn and hell itself breathes out</span><br />
 <span class="text HAMLET">Contagion to this world: now could I drink hot blood,</span><br />
 <span class="text HAMLET">And do such bitter business as the day</span><br />
 <span class="text HAMLET">Would quake to look on. Soft! now to my mother.</span><br />
 <span class="text HAMLET">I will speak daggers to her, but use none;</span><br />
-<div class="direction"><span>Exit</span></div><br />
-<hr id="11" /><div class="scene"><span>SCENE III. A room in the castle.</span></div><br />
-<div class="direction"><span>Enter KING CLAUDIUS, ROSENCRANTZ, and GUILDENSTERN</span></div><br />
+<div class="wide direction"><span class="wide direction">Exit</span></div><br />
+<hr id="11" /><div class="wide scene"><span class="wide scene">SCENE III. A room in the castle.</span></div><br />
+<div class="wide direction"><span class="wide direction">Enter KING CLAUDIUS, ROSENCRANTZ, and GUILDENSTERN</span></div><br />
 <span class="charlabel">KING CLAUDIUS</span><br />
 <span class="text KING CLAUDIUS">I like him not, nor stands it safe with us</span><br />
 <span class="text KING CLAUDIUS">To let his madness range. Therefore prepare you;</span><br />
@@ -1521,8 +1555,8 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text KING CLAUDIUS">Out of his lunacies.</span><br />
 <span class="charlabel">ROSENCRANTZ</span><br />
 <span class="text ROSENCRANTZ">We will haste us.</span><br />
-<div class="direction"><span>Exeunt ROSENCRANTZ and GUILDENSTERN</span></div><br />
-<div class="direction"><span>Enter POLONIUS</span></div><br />
+<div class="wide direction"><span class="wide direction">Exeunt ROSENCRANTZ and GUILDENSTERN</span></div><br />
+<div class="wide direction"><span class="wide direction">Enter POLONIUS</span></div><br />
 <span class="charlabel">LORD POLONIUS</span><br />
 <span class="text LORD POLONIUS">My lord, he's going to his mother's closet:</span><br />
 <span class="text LORD POLONIUS">Behind the arras I'll convey myself,</span><br />
@@ -1531,7 +1565,7 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text LORD POLONIUS">And tell you what I know.</span><br />
 <span class="charlabel">KING CLAUDIUS</span><br />
 <span class="text KING CLAUDIUS">Thanks, dear my lord.</span><br />
-<div class="direction"><span>Exit POLONIUS</span></div><br />
+<div class="wide direction"><span class="wide direction">Exit POLONIUS</span></div><br />
 <span class="text KING CLAUDIUS">O, my offence is rank it smells to heaven;</span><br />
 <span class="text KING CLAUDIUS">It hath the primal eldest curse upon't,</span><br />
 <span class="text KING CLAUDIUS">A brother's murder. Pray can I not,</span><br />
@@ -1542,8 +1576,8 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="notes">[Although this is a great line!]</span><br />
 <span class="text KING CLAUDIUS">Try what repentance can: what can it not?</span><br />
 <span class="text KING CLAUDIUS">Yet what can it when one can not repent?</span><br />
-<div class="direction"><span>Retires and kneels</span></div><br />
-<div class="direction"><span>Enter HAMLET</span></div><br />
+<div class="wide direction"><span class="wide direction">Retires and kneels</span></div><br />
+<div class="wide direction"><span class="wide direction">Enter HAMLET</span></div><br />
 <span class="charlabel">HAMLET</span><br />
 <span class="text HAMLET">Now might I do it pat, now he is praying;</span><br />
 <span class="text HAMLET">And now I'll do't. And so he goes to heaven;</span><br />
@@ -1569,13 +1603,13 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text HAMLET">And that his soul may be as damn'd and black</span><br />
 <span class="text HAMLET">As hell, whereto it goes. My mother stays:</span><br />
 <span class="text HAMLET">This physic but prolongs thy sickly days.</span><br />
-<div class="direction"><span>Exit</span></div><br />
+<div class="wide direction"><span class="wide direction">Exit</span></div><br />
 <span class="charlabel">KING CLAUDIUS</span><br />
-<div class="inline"><span>[Rising]</span></div><span class="text KING CLAUDIUS">My words fly up, my thoughts remain below:</span><br />
+<div class="wide inline"><span class="wide inline">[Rising]</span></div><span class="text KING CLAUDIUS">My words fly up, my thoughts remain below:</span><br />
 <span class="text KING CLAUDIUS">Words without thoughts never to heaven go.</span><br />
-<div class="direction"><span>Exit</span></div><br />
-<hr id="12" /><div class="scene"><span>SCENE IV. The Queen's closet.</span></div><br />
-<div class="direction"><span>Enter QUEEN GERTRUDE and POLONIUS</span></div><br />
+<div class="wide direction"><span class="wide direction">Exit</span></div><br />
+<hr id="12" /><div class="wide scene"><span class="wide scene">SCENE IV. The Queen's closet.</span></div><br />
+<div class="wide direction"><span class="wide direction">Enter QUEEN GERTRUDE and POLONIUS</span></div><br />
 <span class="charlabel">LORD POLONIUS</span><br />
 <span class="text LORD POLONIUS">He will come straight. Look you lay home to him:</span><br />
 <span class="text LORD POLONIUS">Tell him his pranks have been too broad to bear with,</span><br />
@@ -1583,11 +1617,11 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text LORD POLONIUS">Much heat and him. I'll sconce me even here.</span><br />
 <span class="text LORD POLONIUS">Pray you, be round with him.</span><br />
 <span class="charlabel">HAMLET</span><br />
-<div class="inline"><span>[Within]</span></div><span class="text HAMLET">Mother, mother, mother!</span><br />
+<div class="wide inline"><span class="wide inline">[Within]</span></div><span class="text HAMLET">Mother, mother, mother!</span><br />
 <span class="charlabel">QUEEN GERTRUDE</span><br />
 <span class="text QUEEN GERTRUDE">Fear me not: withdraw, I hear him coming.</span><br />
-<div class="direction"><span>POLONIUS hides behind the arras</span></div><br />
-<div class="direction"><span>Enter HAMLET</span></div><br />
+<div class="wide direction"><span class="wide direction">POLONIUS hides behind the arras</span></div><br />
+<div class="wide direction"><span class="wide direction">Enter HAMLET</span></div><br />
 <span class="charlabel">HAMLET</span><br />
 <span class="text HAMLET">Now, mother, what's the matter?</span><br />
 <span class="charlabel">QUEEN GERTRUDE</span><br />
@@ -1618,13 +1652,13 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text QUEEN GERTRUDE">What wilt thou do? thou wilt not murder me?</span><br />
 <span class="text QUEEN GERTRUDE">Help, help, ho!</span><br />
 <span class="charlabel">LORD POLONIUS</span><br />
-<div class="inline"><span>[Behind]</span></div><span class="text LORD POLONIUS">What, ho! help, help, help!</span><br />
+<div class="wide inline"><span class="wide inline">[Behind]</span></div><span class="text LORD POLONIUS">What, ho! help, help, help!</span><br />
 <span class="charlabel">HAMLET</span><br />
-<div class="inline"><span>[Drawing]</span></div><span class="text HAMLET">How now! a rat? Dead, for a ducat, dead!</span><br />
-<div class="direction"><span>Makes a pass through the arras</span></div><br />
+<div class="wide inline"><span class="wide inline">[Drawing]</span></div><span class="text HAMLET">How now! a rat? Dead, for a ducat, dead!</span><br />
+<div class="wide direction"><span class="wide direction">Makes a pass through the arras</span></div><br />
 <span class="charlabel">LORD POLONIUS</span><br />
-<div class="inline"><span>[Behind]</span></div><span class="text LORD POLONIUS">O, I am slain!</span><br />
-<div class="direction"><span>Falls and dies</span></div><br />
+<div class="wide inline"><span class="wide inline">[Behind]</span></div><span class="text LORD POLONIUS">O, I am slain!</span><br />
+<div class="wide direction"><span class="wide direction">Falls and dies</span></div><br />
 <span class="charlabel">QUEEN GERTRUDE</span><br />
 <span class="text QUEEN GERTRUDE">O me, what hast thou done?</span><br />
 <span class="charlabel">HAMLET</span><br />
@@ -1639,7 +1673,7 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text QUEEN GERTRUDE">As kill a king!</span><br />
 <span class="charlabel">HAMLET</span><br />
 <span class="text HAMLET">Ay, lady, 'twas my word.</span><br />
-<div class="direction"><span>Lifts up the array and discovers POLONIUS</span></div><br />
+<div class="wide direction"><span class="wide direction">Lifts up the array and discovers POLONIUS</span></div><br />
 <span class="text HAMLET">Thou wretched, rash, intruding fool, farewell!</span><br />
 <span class="text HAMLET">Leave wringing of your hands: peace! sit you down,</span><br />
 <span class="text HAMLET">And let me wring your heart; for so I shall,</span><br />
@@ -1673,7 +1707,7 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="charlabel">QUEEN GERTRUDE</span><br />
 <span class="text QUEEN GERTRUDE">No more!</span><br />
 <span class="charlabel">HAMLET</span><br />
-<div class="direction"><span>Enter Ghost</span></div><br />
+<div class="wide direction"><span class="wide direction">Enter Ghost</span></div><br />
 <span class="text HAMLET">Save me, and hover o'er me with your wings,</span><br />
 <span class="text HAMLET">You heavenly guards! What would your gracious figure?</span><br />
 <span class="charlabel">GHOST</span><br />
@@ -1702,7 +1736,7 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text HAMLET">Why, look you there! look, how it steals away!</span><br />
 <span class="text HAMLET">My father, in his habit as he lived!</span><br />
 <span class="text HAMLET">Look, where he goes, even now, out at the portal!</span><br />
-<div class="direction"><span>Exit Ghost</span></div><br />
+<div class="wide direction"><span class="wide direction">Exit Ghost</span></div><br />
 <span class="charlabel">QUEEN GERTRUDE</span><br />
 <span class="text QUEEN GERTRUDE">This the very coinage of your brain:</span><br />
 <span class="charlabel">HAMLET</span><br />
@@ -1719,14 +1753,14 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text HAMLET">And live the purer with the other half.</span><br />
 <span class="text HAMLET">Good night: but go not to mine uncle's bed;</span><br />
 <span class="text HAMLET">For this same lord,</span><br />
-<div class="direction"><span>Pointing to POLONIUS</span></div><br />
+<div class="wide direction"><span class="wide direction">Pointing to POLONIUS</span></div><br />
 <span class="text HAMLET">I do repent: but heaven hath pleased it so,</span><br />
 <span class="text HAMLET">To punish me with this and this with me,</span><br />
 <span class="text HAMLET">Good night, mother.</span><br />
-<div class="direction"><span>Exeunt severally; HAMLET dragging in POLONIUS</span></div><br />
-<hr id="12" /><div class="act"><span>ACT IV</span></div><br />
-<hr id="13" /><div class="scene"><span>SCENE I. A room in the castle.</span></div><br />
-<div class="direction"><span>Enter KING CLAUDIUS, QUEEN GERTRUDE</span></div><br />
+<div class="wide direction"><span class="wide direction">Exeunt severally; HAMLET dragging in POLONIUS</span></div><br />
+<hr id="12" /><div class="wide act"><span class="wide act">ACT IV</span></div><br />
+<hr id="13" /><div class="wide scene"><span class="wide scene">SCENE I. A room in the castle.</span></div><br />
+<div class="wide direction"><span class="wide direction">Enter KING CLAUDIUS, QUEEN GERTRUDE</span></div><br />
 <span class="charlabel">QUEEN GERTRUDE</span><br />
 <span class="text QUEEN GERTRUDE">Ah, my good lord, what have I seen to-night!</span><br />
 <span class="charlabel">KING CLAUDIUS</span><br />
@@ -1757,8 +1791,8 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text KING CLAUDIUS">Yet must not we put the strong law on him:</span><br />
 <span class="text KING CLAUDIUS">He's loved of the distracted multitude,</span><br />
 <span class="text KING CLAUDIUS">Who like not in their judgment, but their eyes;</span><br />
-<div class="direction"><span>Enter ROSENCRANTZ</span></div><br />
-<div class="direction"><span>Enter HAMLET and GUILDENSTERN</span></div><br />
+<div class="wide direction"><span class="wide direction">Enter ROSENCRANTZ</span></div><br />
+<div class="wide direction"><span class="wide direction">Enter HAMLET and GUILDENSTERN</span></div><br />
 <span class="text KING CLAUDIUS">Now, Hamlet, where's Polonius?</span><br />
 <span class="charlabel">HAMLET</span><br />
 <span class="text HAMLET">At supper.</span><br />
@@ -1791,10 +1825,10 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text HAMLET">this month, you shall nose him as you go up the</span><br />
 <span class="text HAMLET">stairs into the lobby.</span><br />
 <span class="charlabel">KING CLAUDIUS</span><br />
-<div class="inline"><span>[To Gertrude]</span></div><span class="text KING CLAUDIUS">Go seek him there.</span><br />
+<div class="wide inline"><span class="wide inline">[To Gertrude]</span></div><span class="text KING CLAUDIUS">Go seek him there.</span><br />
 <span class="charlabel">HAMLET</span><br />
 <span class="text HAMLET">He will stay till ye come.</span><br />
-<div class="direction"><span>Exit Gertrude</span></div><br />
+<div class="wide direction"><span class="wide direction">Exit Gertrude</span></div><br />
 <span class="charlabel">KING CLAUDIUS</span><br />
 <span class="text KING CLAUDIUS">Hamlet, this deed, for thine especial safety,--</span><br />
 <span class="text KING CLAUDIUS">Which we do tender, as we dearly grieve</span><br />
@@ -1810,13 +1844,13 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="charlabel">HAMLET</span><br />
 <span class="text HAMLET">My mother: father and mother is man and wife; man</span><br />
 <span class="text HAMLET">and wife is one flesh; and so, my mother. Come, for England!</span><br />
-<div class="direction"><span>Exit</span></div><br />
+<div class="wide direction"><span class="wide direction">Exit</span></div><br />
 <span class="charlabel">KING CLAUDIUS</span><br />
 <span class="text KING CLAUDIUS">Follow him at foot; tempt him with speed aboard;</span><br />
 <span class="text KING CLAUDIUS">Delay it not; I'll have him hence to-night:</span><br />
 <span class="text KING CLAUDIUS">Away! for every thing is seal'd and done</span><br />
 <span class="text KING CLAUDIUS">That else leans on the affair: pray you, make haste.</span><br />
-<div class="direction"><span>Exeunt ROSENCRANTZ and GUILDENSTERN</span></div><br />
+<div class="wide direction"><span class="wide direction">Exeunt ROSENCRANTZ and GUILDENSTERN</span></div><br />
 <span class="text KING CLAUDIUS">And, England, if my love thou hold'st at aught--</span><br />
 <span class="text KING CLAUDIUS">Our sovereign process; doth import at full</span><br />
 <span class="text KING CLAUDIUS">By letters congruing to that effect,</span><br />
@@ -1824,10 +1858,10 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text KING CLAUDIUS">For like the hectic in my blood he rages,</span><br />
 <span class="text KING CLAUDIUS">And thou must cure me: till I know 'tis done,</span><br />
 <span class="text KING CLAUDIUS">Howe'er my haps, my joys were ne'er begun.</span><br />
-<div class="direction"><span>Exit</span></div><br />
-<hr id="14" /><div class="scene"><span>SCENE V. Elsinore. A room in the castle.</span></div><br />
-<div class="direction"><span>Enter QUEEN GERTRUDE</span></div><br />
-<div class="direction"><span>Enter HORATIO, with OPHELIA</span></div><br />
+<div class="wide direction"><span class="wide direction">Exit</span></div><br />
+<hr id="14" /><div class="wide scene"><span class="wide scene">SCENE V. Elsinore. A room in the castle.</span></div><br />
+<div class="wide direction"><span class="wide direction">Enter QUEEN GERTRUDE</span></div><br />
+<div class="wide direction"><span class="wide direction">Enter HORATIO, with OPHELIA</span></div><br />
 <span class="charlabel">OPHELIA</span><br />
 <span class="text OPHELIA">Where is the beauteous majesty of Denmark?</span><br />
 <span class="charlabel">KING CLAUDIUS</span><br />
@@ -1841,7 +1875,7 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="charlabel">OPHELIA</span><br />
 <span class="text OPHELIA">Pray you, let's have no words of this; but when they</span><br />
 <span class="text OPHELIA">ask you what it means, say you this:</span><br />
-<div class="direction"><span>[Sings]</span></div><br />
+<div class="wide direction"><span class="wide direction">[Sings]</span></div><br />
 <span class="text OPHELIA">To-morrow is Saint Valentine's day,</span><br />
 <span class="text OPHELIA">All in the morning betime,</span><br />
 <span class="text OPHELIA">And I a maid at your window,</span><br />
@@ -1853,7 +1887,7 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="charlabel">KING CLAUDIUS</span><br />
 <span class="text KING CLAUDIUS">Pretty Ophelia!</span><br />
 <span class="charlabel">OPHELIA</span><br />
-<div class="direction"><span>[Sings]</span></div><br />
+<div class="wide direction"><span class="wide direction">[Sings]</span></div><br />
 <span class="text OPHELIA">By Gis and by Saint Charity,</span><br />
 <span class="text OPHELIA">Alack, and fie for shame!</span><br />
 <span class="text OPHELIA">Young men will do't, if they come to't;</span><br />
@@ -1871,8 +1905,8 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text OPHELIA">and so I thank you for your good counsel. Come, my</span><br />
 <span class="text OPHELIA">coach! Good night, ladies; good night, sweet ladies;</span><br />
 <span class="text OPHELIA">good night, good night.</span><br />
-<div class="direction"><span>Exit</span></div><br />
-<div class="direction"><span>Exit HORATIO</span></div><br />
+<div class="wide direction"><span class="wide direction">Exit</span></div><br />
+<div class="wide direction"><span class="wide direction">Exit HORATIO</span></div><br />
 <span class="charlabel">KING CLAUDIUS</span><br />
 <span class="text KING CLAUDIUS">O, this is the poison of deep grief; it springs</span><br />
 <span class="text KING CLAUDIUS">All from her father's death. O Gertrude, Gertrude,</span><br />
@@ -1885,11 +1919,11 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text KING CLAUDIUS">In hugger-mugger to inter him: poor Ophelia</span><br />
 <span class="text KING CLAUDIUS">Divided from herself and her fair judgment,</span><br />
 <span class="text KING CLAUDIUS">Her brother is in secret come from France;</span><br />
-<div class="direction"><span>A noise within</span></div><br />
+<div class="wide direction"><span class="wide direction">A noise within</span></div><br />
 <span class="charlabel">QUEEN GERTRUDE</span><br />
 <span class="text QUEEN GERTRUDE">Alack, what noise is this?</span><br />
-<div class="direction"><span>Noise within</span></div><br />
-<div class="direction"><span>Enter LAERTES, armed; Danes following</span></div><br />
+<div class="wide direction"><span class="wide direction">Noise within</span></div><br />
+<div class="wide direction"><span class="wide direction">Enter LAERTES, armed; Danes following</span></div><br />
 <span class="charlabel">LAERTES</span><br />
 <span class="text LAERTES">Where is this king? O thou vile king,</span><br />
 <span class="text LAERTES">Give me my father!</span><br />
@@ -1923,7 +1957,7 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text KING CLAUDIUS">As day does to your eye.</span><br />
 <span class="charlabel">LAERTES</span><br />
 <span class="text LAERTES">How now! what noise is that?</span><br />
-<div class="direction"><span>Re-enter OPHELIA</span></div><br />
+<div class="wide direction"><span class="wide direction">Re-enter OPHELIA</span></div><br />
 <span class="text LAERTES">Dear maid, kind sister, sweet Ophelia!</span><br />
 <span class="charlabel">OPHELIA</span><br />
 <span class="text OPHELIA">[Sings]</span><br />
@@ -1946,17 +1980,17 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text OPHELIA">a difference. There's a daisy: I would give you</span><br />
 <span class="text OPHELIA">some violets, but they withered all when my father</span><br />
 <span class="text OPHELIA">died: they say he made a good end,--</span><br />
-<div class="direction"><span>[Sings]</span></div><br />
+<div class="wide direction"><span class="wide direction">[Sings]</span></div><br />
 <span class="text OPHELIA">For bonny sweet Robin is all my joy.</span><br />
 <span class="text OPHELIA">And will he not come again?</span><br />
 <span class="text OPHELIA">And will he not come again?</span><br />
 <span class="text OPHELIA">No, no, he is dead:</span><br />
 <span class="text OPHELIA">Go to thy death-bed:</span><br />
 <span class="text OPHELIA">He never will come again.</span><br />
-<div class="direction"><span>[Speaking]</span></div><br />
+<div class="wide direction"><span class="wide direction">[Speaking]</span></div><br />
 <span class="text OPHELIA">God ha' mercy on his soul!</span><br />
 <span class="text OPHELIA">And of all Christian souls, I pray God. God be wi' ye.</span><br />
-<div class="direction"><span>Exit</span></div><br />
+<div class="wide direction"><span class="wide direction">Exit</span></div><br />
 <span class="charlabel">LAERTES</span><br />
 <span class="text LAERTES">Do you see this, O God?</span><br />
 <span class="charlabel">KING CLAUDIUS</span><br />
@@ -1973,15 +2007,15 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text KING CLAUDIUS">So you shall;</span><br />
 <span class="text KING CLAUDIUS">And where the offence is let the great axe fall.</span><br />
 <span class="text KING CLAUDIUS">I pray you, go with me.</span><br />
-<div class="direction"><span>Exeunt</span></div><br />
-<hr id="15" /><div class="scene"><span>SCENE VI. Another room in the castle.</span></div><br />
-<div class="direction"><span>Enter HORATIO and a Servant</span></div><br />
+<div class="wide direction"><span class="wide direction">Exeunt</span></div><br />
+<hr id="15" /><div class="wide scene"><span class="wide scene">SCENE VI. Another room in the castle.</span></div><br />
+<div class="wide direction"><span class="wide direction">Enter HORATIO and a Servant</span></div><br />
 <span class="charlabel">FIRST SAILOR</span><br />
 <span class="text FIRST SAILOR">There's a letter for</span><br />
 <span class="text FIRST SAILOR">you, sir; it comes from the ambassador that was</span><br />
 <span class="text FIRST SAILOR">bound for England;</span><br />
 <span class="charlabel">HORATIO</span><span class="notes">[pre-recorded in Hamlet's voice?]</span><br />
-<div class="inline"><span>[Reads]</span></div><span class="text HORATIO">Horatio, when thou shalt have overlooked</span><br />
+<div class="wide inline"><span class="wide inline">[Reads]</span></div><span class="text HORATIO">Horatio, when thou shalt have overlooked</span><br />
 <span class="text HORATIO">this, give these fellows some means to the king:</span><br />
 <span class="text HORATIO">they have letters for him. Ere we were two days old</span><br />
 <span class="text HORATIO">at sea, a pirate of very warlike appointment gave us</span><br />
@@ -2000,9 +2034,9 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text HORATIO">course for England: of them I have much to tell</span><br />
 <span class="text HORATIO">thee. Farewell.</span><br />
 <span class="text HORATIO">He that thou knowest thine, HAMLET.'</span><br />
-<div class="direction"><span>Exeunt</span></div><br />
-<hr id="16" /><div class="scene"><span>SCENE VII. Another room in the castle.</span></div><br />
-<div class="direction"><span>Enter KING CLAUDIUS and LAERTES</span></div><br />
+<div class="wide direction"><span class="wide direction">Exeunt</span></div><br />
+<hr id="16" /><div class="wide scene"><span class="wide scene">SCENE VII. Another room in the castle.</span></div><br />
+<div class="wide direction"><span class="wide direction">Enter KING CLAUDIUS and LAERTES</span></div><br />
 <span class="charlabel">KING CLAUDIUS</span><br />
 <span class="text KING CLAUDIUS">Now must your conscience my acquaintance seal,</span><br />
 <span class="text KING CLAUDIUS">And you must put me in your heart for friend,</span><br />
@@ -2027,7 +2061,7 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text KING CLAUDIUS">And think it pastime. You shortly shall hear more:</span><br />
 <span class="text KING CLAUDIUS">I loved your father, and we love ourself;</span><br />
 <span class="text KING CLAUDIUS">And that, I hope, will teach you to imagine--</span><br />
-<div class="direction"><span>Enter a Messenger</span></div><br />
+<div class="wide direction"><span class="wide direction">Enter a Messenger</span></div><br />
 <span class="text KING CLAUDIUS">How now! what news?</span><br />
 <span class="charlabel">MESSANGER</span><br />
 <span class="text MESSANGER">Letters, my lord, from Hamlet:</span><br />
@@ -2040,13 +2074,13 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text MESSANGER">Of him that brought them.</span><br />
 <span class="charlabel">KING CLAUDIUS</span><br />
 <span class="text KING CLAUDIUS">Laertes, you shall hear them. Leave us.</span><br />
-<div class="direction"><span>Exit Messenger</span></div><br />
-<div class="direction"><span>[Reads]</span></div><br />
+<div class="wide direction"><span class="wide direction">Exit Messenger</span></div><br />
+<div class="wide direction"><span class="wide direction">[Reads]</span></div><br />
 <span class="text KING CLAUDIUS">High and mighty, You shall know I am set naked on</span><br />
 <span class="text KING CLAUDIUS">your kingdom. To-morrow shall I beg leave to see</span><br />
 <span class="text KING CLAUDIUS">your kingly eyes: when I shall, first asking your</span><br />
 <span class="text KING CLAUDIUS">pardon thereunto, recount the occasion of my sudden</span><br />
-<div class="inline"><span>[Stops reading]</span></div><span class="text KING CLAUDIUS">and more strange return. 'HAMLET.'</span><br />
+<div class="wide inline"><span class="wide inline">[Stops reading]</span></div><span class="text KING CLAUDIUS">and more strange return. 'HAMLET.'</span><br />
 <span class="text KING CLAUDIUS">What should this mean? Are all the rest come back?</span><br />
 <span class="text KING CLAUDIUS">Or is it some abuse, and no such thing?</span><br />
 <span class="charlabel">LAERTES</span><br />
@@ -2117,7 +2151,7 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text KING CLAUDIUS">A chalice for the nonce, whereon but sipping,</span><br />
 <span class="text KING CLAUDIUS">If he by chance escape your venom'd stuck,</span><br />
 <span class="text KING CLAUDIUS">Our purpose may hold there.</span><br />
-<div class="direction"><span>Enter QUEEN GERTRUDE</span></div><br />
+<div class="wide direction"><span class="wide direction">Enter QUEEN GERTRUDE</span></div><br />
 <span class="text KING CLAUDIUS">How now, sweet queen!</span><br />
 <span class="charlabel">QUEEN GERTRUDE</span><br />
 <span class="text QUEEN GERTRUDE">One woe doth tread upon another's heel,</span><br />
@@ -2148,15 +2182,15 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="charlabel">LAERTES</span><br />
 <span class="text LAERTES">Too much of water hast thou, poor Ophelia,</span><br />
 <span class="text LAERTES">And therefore I forbid my tears.</span><br />
-<div class="direction"><span>Exit</span></div><br />
+<div class="wide direction"><span class="wide direction">Exit</span></div><br />
 <span class="charlabel">KING CLAUDIUS</span><br />
 <span class="text KING CLAUDIUS">Let's follow, Gertrude:</span><br />
 <span class="text KING CLAUDIUS">How much I had to do to calm his rage!</span><br />
 <span class="text KING CLAUDIUS">Now fear I this will give it start again;</span><br />
-<div class="direction"><span>Exeunt</span></div><br />
-<hr id="16" /><div class="act"><span>ACT V</span></div><br />
-<hr id="17" /><div class="scene"><span>SCENE I. A churchyard.</span></div><br />
-<div class="direction"><span>Enter two Clowns, with spades, & c</span></div><br />
+<div class="wide direction"><span class="wide direction">Exeunt</span></div><br />
+<hr id="16" /><div class="wide act"><span class="wide act">ACT V</span></div><br />
+<hr id="17" /><div class="wide scene"><span class="wide scene">SCENE I. A churchyard.</span></div><br />
+<div class="wide direction"><span class="wide direction">Enter two Clowns, with spades, & c</span></div><br />
 <span class="charlabel">FIRST CLOWN</span><br />
 <span class="text FIRST CLOWN">Is she to be buried in Christian burial that</span><br />
 <span class="text FIRST CLOWN">wilfully seeks her own salvation?</span><br />
@@ -2215,13 +2249,13 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text FIRST CLOWN">To't.</span><br />
 <span class="charlabel">SECOND CLOWN</span><br />
 <span class="text SECOND CLOWN">Mass, I cannot tell.</span><br />
-<div class="direction"><span>Enter HAMLET and HORATIO, at a distance</span></div><br />
+<div class="wide direction"><span class="wide direction">Enter HAMLET and HORATIO, at a distance</span></div><br />
 <span class="charlabel">FIRST CLOWN</span><br />
 <span class="text FIRST CLOWN">Cudgel thy brains no more about it, and, when</span><br />
 <span class="text FIRST CLOWN">you are asked this question next, say 'a</span><br />
 <span class="text FIRST CLOWN">grave-maker: 'the houses that he makes last till</span><br />
 <span class="text FIRST CLOWN">doomsday.</span><br />
-<div class="direction"><span>Exit Second Clown</span></div><br />
+<div class="wide direction"><span class="wide direction">Exit Second Clown</span></div><br />
 <span class="charlabel">HAMLET</span><br />
 <span class="text HAMLET">Whose grave's this, sirrah?</span><br />
 <span class="charlabel">FIRST CLOWN</span><br />
@@ -2301,10 +2335,10 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="charlabel">HAMLET</span><br />
 <span class="text HAMLET">This?</span><br />
 <span class="charlabel">FIRST CLOWN</span><br />
-<div class="inline"><span>Exiting</span></div><span class="text FIRST CLOWN">E'en that.</span><br />
+<div class="wide inline"><span class="wide inline">Exiting</span></div><span class="text FIRST CLOWN">E'en that.</span><br />
 <span class="charlabel">HAMLET</span><br />
 <span class="text HAMLET">Let me see.</span><br />
-<div class="direction"><span>Takes the skull</span></div><br />
+<div class="wide direction"><span class="wide direction">Takes the skull</span></div><br />
 <span class="text HAMLET">Alas, poor Yorick! I knew him, Horatio: a fellow</span><br />
 <span class="text HAMLET">of infinite jest, of most excellent fancy: he hath</span><br />
 <span class="text HAMLET">borne me on his back a thousand times;</span><br />
@@ -2328,9 +2362,9 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text HORATIO">E'en so, my lord.</span><br />
 <span class="charlabel">HAMLET</span><br />
 <span class="text HAMLET">But soft! but soft! aside: here comes the king.</span><br />
-<div class="direction"><span>Enter Priest, & c. in procession; the Corpse of OPHELIA, LAERTES and Mourners following; KING CLAUDIUS, QUEEN GERTRUDE, their trains, & c</span></div><br />
+<div class="wide direction"><span class="wide direction">Enter Priest, & c. in procession; the Corpse of OPHELIA, LAERTES and Mourners following; KING CLAUDIUS, QUEEN GERTRUDE, their trains, & c</span></div><br />
 <span class="text HAMLET">The queen, the courtiers: who is this they follow?</span><br />
-<div class="direction"><span>Retiring with HORATIO</span></div><br />
+<div class="wide direction"><span class="wide direction">Retiring with HORATIO</span></div><br />
 <span class="charlabel">LAERTES</span><br />
 <span class="text LAERTES">What ceremony else?</span><br />
 <span class="charlabel">HAMLET</span><br />
@@ -2365,7 +2399,7 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text HAMLET">What, the fair Ophelia!</span><br />
 <span class="charlabel">QUEEN GERTRUDE</span><br />
 <span class="text QUEEN GERTRUDE">Sweets to the sweet: farewell!</span><br />
-<div class="direction"><span>Scattering flowers</span></div><br />
+<div class="wide direction"><span class="wide direction">Scattering flowers</span></div><br />
 <span class="text QUEEN GERTRUDE">I hoped thou shouldst have been my Hamlet's wife;</span><br />
 <span class="text QUEEN GERTRUDE">I thought thy bride-bed to have deck'd, sweet maid,</span><br />
 <span class="text QUEEN GERTRUDE">And not have strew'd thy grave.</span><br />
@@ -2375,25 +2409,25 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text LAERTES">Whose wicked deed thy most ingenious sense</span><br />
 <span class="text LAERTES">Deprived thee of! Hold off the earth awhile,</span><br />
 <span class="text LAERTES">Till I have caught her once more in mine arms:</span><br />
-<div class="direction"><span>Leaps into the grave</span></div><br />
+<div class="wide direction"><span class="wide direction">Leaps into the grave</span></div><br />
 <span class="text LAERTES">Now pile your dust upon the quick and dead,</span><br />
 <span class="charlabel">HAMLET</span><br />
-<div class="inline"><span>[Advancing]</span></div><span class="text HAMLET">What is he whose grief</span><br />
+<div class="wide inline"><span class="wide inline">[Advancing]</span></div><span class="text HAMLET">What is he whose grief</span><br />
 <span class="text HAMLET">Bears such an emphasis?</span><br />
-<div class="direction"><span>Leaps into the grave</span></div><br />
+<div class="wide direction"><span class="wide direction">Leaps into the grave</span></div><br />
 <span class="charlabel">LAERTES</span><br />
 <span class="text LAERTES">The devil take thy soul!</span><br />
-<div class="direction"><span>Grappling with him</span></div><br />
+<div class="wide direction"><span class="wide direction">Grappling with him</span></div><br />
 <span class="charlabel">HAMLET</span><br />
 <span class="text HAMLET">I prithee, take thy fingers from my throat;</span><br />
 <span class="charlabel">KING CLAUDIUS</span><br />
-<div class="inline"><span>Simultaneously</span></div><span class="text KING CLAUDIUS">Pluck them asunder.</span><br />
+<div class="wide inline"><span class="wide inline">Simultaneously</span></div><span class="text KING CLAUDIUS">Pluck them asunder.</span><br />
 <span class="charlabel">QUEEN GERTRUDE</span><br />
-<div class="inline"><span>Simultaneously</span></div><span class="text QUEEN GERTRUDE">Hamlet, Hamlet!</span><br />
+<div class="wide inline"><span class="wide inline">Simultaneously</span></div><span class="text QUEEN GERTRUDE">Hamlet, Hamlet!</span><br />
 <span class="charlabel">ALL</span><br />
-<div class="inline"><span>Simultaneously</span></div><span class="text ALL">Gentlemen,--</span><br />
+<div class="wide inline"><span class="wide inline">Simultaneously</span></div><span class="text ALL">Gentlemen,--</span><br />
 <span class="charlabel">HORATIO</span><br />
-<div class="inline"><span>Simultaneously</span></div><span class="text HORATIO">Good my lord,</span><br />
+<div class="wide inline"><span class="wide inline">Simultaneously</span></div><span class="text HORATIO">Good my lord,</span><br />
 <span class="charlabel">HAMLET</span><br />
 <span class="text HAMLET">Why I will fight with him upon this theme</span><br />
 <span class="text HAMLET">Until my eyelids will no longer wag.</span><br />
@@ -2417,16 +2451,16 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text HAMLET">I'll rant as well as thou.</span><br />
 <span class="charlabel">QUEEN GERTRUDE</span><br />
 <span class="text QUEEN GERTRUDE">This is mere madness:</span><br />
-<div class="direction"><span>Exit Hamlet</span></div><br />
+<div class="wide direction"><span class="wide direction">Exit Hamlet</span></div><br />
 <span class="charlabel">KING CLAUDIUS</span><br />
 <span class="text KING CLAUDIUS">I pray you, good Horatio, wait upon him.</span><br />
-<div class="direction"><span>Exit HORATIO</span></div><br />
-<div class="direction"><span>To LAERTES</span></div><br />
+<div class="wide direction"><span class="wide direction">Exit HORATIO</span></div><br />
+<div class="wide direction"><span class="wide direction">To LAERTES</span></div><br />
 <span class="text KING CLAUDIUS">Strengthen your patience in our last night's speech;</span><br />
 <span class="text KING CLAUDIUS">Good Gertrude, set some watch over your son.</span><br />
-<div class="direction"><span>Exeunt</span></div><br />
-<hr id="18" /><div class="scene"><span>SCENE II. A hall in the castle.</span></div><br />
-<div class="direction"><span>Enter HAMLET and HORATIO</span></div><br />
+<div class="wide direction"><span class="wide direction">Exeunt</span></div><br />
+<hr id="18" /><div class="wide scene"><span class="wide scene">SCENE II. A hall in the castle.</span></div><br />
+<div class="wide direction"><span class="wide direction">Enter HAMLET and HORATIO</span></div><br />
 <span class="charlabel">HAMLET</span><br />
 <span class="text HAMLET">So much for this, sir: now shall you see the other;</span><br />
 <span class="text HAMLET">You do remember all the circumstance?</span><br />
@@ -2510,7 +2544,7 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text HAMLET">That to Laertes I forgot myself;</span><br />
 <span class="charlabel">HORATIO</span><br />
 <span class="text HORATIO">Peace! who comes here?</span><br />
-<div class="direction"><span>Enter OSRIC</span></div><br />
+<div class="wide direction"><span class="wide direction">Enter OSRIC</span></div><br />
 <span class="charlabel">OSRIC</span><br />
 <span class="text OSRIC">Your lordship is right welcome back to Denmark.</span><br />
 <span class="charlabel">HAMLET</span><br />
@@ -2556,7 +2590,7 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text HAMLET">if not, I will gain nothing but my shame and the odd hits.</span><br />
 <span class="charlabel">OSRIC</span><br />
 <span class="text OSRIC">I commend my duty to your lordship.</span><br />
-<div class="direction"><span>Exit OSRIC</span></div><br />
+<div class="wide direction"><span class="wide direction">Exit OSRIC</span></div><br />
 <span class="charlabel">HORATIO</span><br />
 <span class="text HORATIO">You will lose this wager, my lord.</span><br />
 <span class="charlabel">HAMLET</span><br />
@@ -2575,7 +2609,7 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text HAMLET">now; if it be not now, yet it will come: the</span><br />
 <span class="text HAMLET">readiness is all: since no man has aught of what he</span><br />
 <span class="text HAMLET">leaves, what is't to leave betimes?</span><br />
-<div class="direction"><span>Enter KING CLAUDIUS, QUEEN GERTRUDE, LAERTES, Lords, OSRIC, and Attendants with foils, & c</span></div><br />
+<div class="wide direction"><span class="wide direction">Enter KING CLAUDIUS, QUEEN GERTRUDE, LAERTES, Lords, OSRIC, and Attendants with foils, & c</span></div><br />
 <span class="charlabel">KING CLAUDIUS</span><br />
 <span class="text KING CLAUDIUS">Come, Hamlet, come, and take this hand from me.</span><br />
 <span class="charlabel">HAMLET</span><br />
@@ -2595,7 +2629,7 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text LAERTES">This is too heavy, let me see another.</span><br />
 <span class="charlabel">HAMLET</span><br />
 <span class="text HAMLET">This likes me well. These foils have all a length?</span><br />
-<div class="direction"><span>They prepare to play</span></div><br />
+<div class="wide direction"><span class="wide direction">They prepare to play</span></div><br />
 <span class="charlabel">OSRIC</span><br />
 <span class="text OSRIC">Ay, my good lord.</span><br />
 <span class="charlabel">KING CLAUDIUS</span><br />
@@ -2610,7 +2644,7 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text HAMLET">Come on, sir.</span><br />
 <span class="charlabel">LAERTES</span><br />
 <span class="text LAERTES">Come, my lord.</span><br />
-<div class="direction"><span>They play</span></div><br />
+<div class="wide direction"><span class="wide direction">They play</span></div><br />
 <span class="charlabel">HAMLET</span><br />
 <span class="text HAMLET">One.</span><br />
 <span class="charlabel">LAERTES</span><br />
@@ -2627,7 +2661,7 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text KING CLAUDIUS">Give him the cup.</span><br />
 <span class="charlabel">HAMLET</span><br />
 <span class="text HAMLET">I'll play this bout first; set it by awhile. Come.</span><br />
-<div class="direction"><span>They play</span></div><br />
+<div class="wide direction"><span class="wide direction">They play</span></div><br />
 <span class="text HAMLET">Another hit; what say you?</span><br />
 <span class="charlabel">LAERTES</span><br />
 <span class="text LAERTES">A touch, a touch, I do confess.</span><br />
@@ -2644,7 +2678,7 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="charlabel">QUEEN GERTRUDE</span><br />
 <span class="text QUEEN GERTRUDE">I will, my lord; I pray you, pardon me.</span><br />
 <span class="charlabel">KING CLAUDIUS</span><br />
-<div class="inline"><span>Aside</span></div><span class="text KING CLAUDIUS">It is the poison'd cup: it is too late.</span><br />
+<div class="wide inline"><span class="wide inline">Aside</span></div><span class="text KING CLAUDIUS">It is the poison'd cup: it is too late.</span><br />
 <span class="charlabel">HAMLET</span><br />
 <span class="text HAMLET">I dare not drink yet, madam; by and by.</span><br />
 <span class="charlabel">QUEEN GERTRUDE</span><br />
@@ -2654,24 +2688,24 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="charlabel">KING CLAUDIUS</span><br />
 <span class="text KING CLAUDIUS">I do not think't.</span><br />
 <span class="charlabel">LAERTES</span><br />
-<div class="inline"><span>Aside</span></div><span class="text LAERTES">And yet 'tis almost 'gainst my conscience.</span><br />
+<div class="wide inline"><span class="wide inline">Aside</span></div><span class="text LAERTES">And yet 'tis almost 'gainst my conscience.</span><br />
 <span class="charlabel">HAMLET</span><br />
 <span class="text HAMLET">Come, for the third, Laertes: you but dally;</span><br />
 <span class="text HAMLET">I pray you, pass with your best violence;</span><br />
 <span class="text HAMLET">I am afeard you make a wanton of me.</span><br />
 <span class="charlabel">LAERTES</span><br />
 <span class="text LAERTES">Say you so? come on.</span><br />
-<div class="direction"><span>They play</span></div><br />
+<div class="wide direction"><span class="wide direction">They play</span></div><br />
 <span class="charlabel">OSRIC</span><br />
 <span class="text OSRIC">Nothing, neither way.</span><br />
 <span class="charlabel">LAERTES</span><br />
 <span class="text LAERTES">Have at you now!</span><br />
-<div class="direction"><span>LAERTES wounds HAMLET; then in scuffling, they change rapiers, and HAMLET wounds LAERTES</span></div><br />
+<div class="wide direction"><span class="wide direction">LAERTES wounds HAMLET; then in scuffling, they change rapiers, and HAMLET wounds LAERTES</span></div><br />
 <span class="charlabel">KING CLAUDIUS</span><br />
 <span class="text KING CLAUDIUS">Part them; they are incensed.</span><br />
 <span class="charlabel">HAMLET</span><br />
 <span class="text HAMLET">Nay, come, again.</span><br />
-<div class="direction"><span>QUEEN GERTRUDE falls</span></div><br />
+<div class="wide direction"><span class="wide direction">QUEEN GERTRUDE falls</span></div><br />
 <span class="charlabel">OSRIC</span><br />
 <span class="text OSRIC">Look to the queen there, ho!</span><br />
 <span class="charlabel">HORATIO</span><br />
@@ -2688,7 +2722,7 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="charlabel">QUEEN GERTRUDE</span><br />
 <span class="text QUEEN GERTRUDE">No, no, the drink, the drink,--O my dear Hamlet,--</span><br />
 <span class="text QUEEN GERTRUDE">The drink, the drink! I am poison'd.</span><br />
-<div class="direction"><span>Dies</span></div><br />
+<div class="wide direction"><span class="wide direction">Dies</span></div><br />
 <span class="charlabel">HAMLET</span><br />
 <span class="text HAMLET">O villany! Ho! let the door be lock'd:</span><br />
 <span class="text HAMLET">Treachery! Seek it out.</span><br />
@@ -2704,7 +2738,7 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="charlabel">HAMLET</span><br />
 <span class="text HAMLET">The point!--envenom'd too!</span><br />
 <span class="text HAMLET">Then, venom, to thy work.</span><br />
-<div class="direction"><span>Stabs KING CLAUDIUS</span></div><br />
+<div class="wide direction"><span class="wide direction">Stabs KING CLAUDIUS</span></div><br />
 <span class="charlabel">ALL</span><br />
 <span class="text ALL">Treason! treason!</span><br />
 <span class="charlabel">KING CLAUDIUS</span><br />
@@ -2713,14 +2747,14 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text HAMLET">Here, thou incestuous, murderous, damned Dane,</span><br />
 <span class="text HAMLET">Drink off this potion. Is thy union here?</span><br />
 <span class="text HAMLET">Follow my mother.</span><br />
-<div class="direction"><span>KING CLAUDIUS dies</span></div><br />
+<div class="wide direction"><span class="wide direction">KING CLAUDIUS dies</span></div><br />
 <span class="charlabel">LAERTES</span><br />
 <span class="text LAERTES">He is justly served;</span><br />
 <span class="text LAERTES">It is a poison temper'd by himself.</span><br />
 <span class="text LAERTES">Exchange forgiveness with me, noble Hamlet:</span><br />
 <span class="text LAERTES">Mine and my father's death come not upon thee,</span><br />
 <span class="text LAERTES">Nor thine on me.</span><br />
-<div class="direction"><span>Dies</span></div><br />
+<div class="wide direction"><span class="wide direction">Dies</span></div><br />
 <span class="charlabel">HAMLET</span><br />
 <span class="text HAMLET">Heaven make thee free of it! I follow thee.</span><br />
 <span class="text HAMLET">I am dead, Horatio. Wretched queen, adieu!</span><br />
@@ -2731,5 +2765,5 @@ Highlight: <select id="charselect"><option></option><option>BERNARDO</option><op
 <span class="text HAMLET">Give me the cup: let go; by heaven, I'll have't.</span><br />
 <span class="text HAMLET">O, I die, Horatio;</span><br />
 <span class="text HAMLET">The rest is silence.</span><br />
-<div class="direction"><span>Dies</span></div><br />
-<br /><br /><br /></div></div></body></html>
+<div class="wide direction"><span class="wide direction">Dies</span></div><br />
+<br /><br /><br /></div></body></html>
