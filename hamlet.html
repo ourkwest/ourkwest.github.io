@@ -6,8 +6,8 @@ div#plus {
     position: fixed;
     bottom: 10px;
     right: 10px;
-    width: 20px;
-    height: 20px;
+    width: 40px;
+    height: 40px;
     background-color: rgb(200,255,200);
     color: white;
     text-align: center;
@@ -22,7 +22,7 @@ div#control {
     left: 10%;
     visibility: hidden;
     background-color: rgb(200,255,200);
-    //font-size: larger;
+    font-size: larger;
     padding: 10px;
     border: 6px solid rgb(50,200,50);
     border-radius: 12px;
@@ -91,6 +91,7 @@ span.inline {
     background-color: rgb(255,255,0);
     display: inline-block;
     border-radius: 3px;
+    padding: 10px;
 }
 </style><script>
     window.onload = function() {
@@ -132,8 +133,9 @@ span.inline {
 
         var returnButton = document.getElementById('return');
         returnButton.onclick = toggleControl;
+
     };
-</script></head><body><div id="plus"></div><div id="control"><p>Quick Jump: <select id="sceneselect"><option value="2">ACT I - SCENE I. Elsinore. A platform before the castle.</option><option value="3">ACT I - SCENE II. A room of state in the castle.</option><option value="4">ACT I - SCENE III. A room in Polonius' house.</option><option value="5">ACT I - SCENE IV. The platform.</option><option value="6">ACT I - SCENE V. Another part of the platform.</option><option value="7">ACT II - SCENE I. A room in POLONIUS' house.</option><option value="8">ACT II - SCENE II. A room in the castle.</option><option value="9">ACT III - SCENE I. A room in the castle.</option><option value="10">ACT III - SCENE II. A hall in the castle.</option><option value="11">ACT III - SCENE III. A room in the castle.</option><option value="12">ACT III - SCENE IV. The Queen's closet.</option><option value="13">ACT IV - SCENE I. A room in the castle.</option><option value="14">ACT IV - SCENE V. Elsinore. A room in the castle.</option><option value="15">ACT IV - SCENE VI. Another room in the castle.</option><option value="16">ACT IV - SCENE VII. Another room in the castle.</option><option value="17">ACT V - SCENE I. A churchyard.</option><option value="18">ACT V - SCENE II. A hall in the castle.</option></select><br />Highlight: <select id="charselect"><option></option><option>ALL</option><option>All</option><option>BERNARDO</option><option>Characters</option><option>FIRST CLOWN</option><option>FIRST PLAYER</option><option>FIRST SAILOR</option><option>FRANCISCO</option><option>GHOST</option><option>GUILDENSTERN</option><option>HAMLET</option><option>HORATIO</option><option>HORATIO MARCELLUS</option><option>KING CLAUDIUS</option><option>LAERTES</option><option>LORD POLONIUS</option><option>LUCIANUS</option><option>MARCELLUS</option><option>MARCELLUS BERNARDO</option><option>MESSANGER</option><option>OPHELIA</option><option>OSRIC</option><option>PLAYER KING</option><option>PLAYER QUEEN</option><option>PRIEST</option><option>QUEEN GERTRUDE</option><option>ROSENCRANTZ</option><option>SECOND CLOWN</option></select><br /><div id="return">Close</div></p></div><div class="content"><hr id="1" /><div class="wide act"><span class="wide act">ACT I</span></div>
+</script></head><body id="body"><div id="plus"></div><div id="control"><p>Quick Jump: <select id="sceneselect"><option value="2">ACT I - SCENE I</option><option value="3">ACT I - SCENE II</option><option value="4">ACT I - SCENE III</option><option value="5">ACT I - SCENE IV</option><option value="6">ACT I - SCENE V</option><option value="7">ACT II - SCENE I</option><option value="8">ACT II - SCENE II</option><option value="9">ACT III - SCENE I</option><option value="10">ACT III - SCENE II</option><option value="11">ACT III - SCENE III</option><option value="12">ACT III - SCENE IV</option><option value="13">ACT IV - SCENE I</option><option value="14">ACT IV - SCENE V</option><option value="15">ACT IV - SCENE VI</option><option value="16">ACT IV - SCENE VII</option><option value="17">ACT V - SCENE I</option><option value="18">ACT V - SCENE II</option></select><br /><br />Highlight: <select id="charselect"><option></option><option>ALL</option><option>All</option><option>BERNARDO</option><option>Characters</option><option>FIRST CLOWN</option><option>FIRST PLAYER</option><option>FIRST SAILOR</option><option>FRANCISCO</option><option>GHOST</option><option>GUILDENSTERN</option><option>HAMLET</option><option>HORATIO</option><option>HORATIO MARCELLUS</option><option>KING CLAUDIUS</option><option>LAERTES</option><option>LORD POLONIUS</option><option>LUCIANUS</option><option>MARCELLUS</option><option>MARCELLUS BERNARDO</option><option>MESSANGER</option><option>OPHELIA</option><option>OSRIC</option><option>PLAYER KING</option><option>PLAYER QUEEN</option><option>PRIEST</option><option>QUEEN GERTRUDE</option><option>ROSENCRANTZ</option><option>SECOND CLOWN</option></select><br /><div id="return">Close</div></p></div><div class="content"><hr id="1" /><div class="wide act"><span class="wide act">ACT I</span></div>
 <hr id="2" /><div class="wide scene"><span class="wide scene">SCENE I. Elsinore. A platform before the castle.</span></div>
 <div class="wide direction"><span class="wide direction">FRANCISCO at his post. Enter to him BERNARDO</span></div>
 <span class="charlabel">BERNARDO</span><br />
