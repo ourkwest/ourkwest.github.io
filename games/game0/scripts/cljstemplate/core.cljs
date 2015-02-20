@@ -74,7 +74,8 @@
 ;;;;;;;;;
 
 (defn done-fn []
-  (set! (.-visibility (.-style (dom/getElement "nextButton"))) "visible"))
+  (set! (.-visibility (.-style (dom/getElement "nextButton"))) "visible")
+  (handle-msg "You did it!"))
 
 (def this-level-id (atom 0))
 (def this-level (atom nil))

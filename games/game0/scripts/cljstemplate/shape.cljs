@@ -302,7 +302,7 @@
                       )))
 
 
-                ;(. context (setLineDash #js []))
+                (. context (setLineDash #js []))
 
                 )
 
