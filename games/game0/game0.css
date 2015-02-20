@@ -1,5 +1,6 @@
 html {
     background-color: black;
+    text-align: center;
 }
 
 #theCanvas {
@@ -22,6 +23,12 @@ html {
 #levelCounter {
     top: 10px;
     right: 10px;
+    cursor: default;
+}
+
+#msgBus {
+    left: 10px;
+    top: 10px;
     cursor: default;
 }
 
