@@ -36,7 +36,26 @@
 ;(def msg-bus (chan))
 
 (defn handle-msg [msg]
-  (set! (.-innerHTML (dom/getElement "msgBus")) msg))
+
+  ;(if top?
+  ;  (do (set! (.-top (.-style (dom/getElement "msgBus"))) "10px")
+  ;      (set! (.-bottom (.-style (dom/getElement "msgBus"))) "auto"))
+  ;  (do (set! (.-top (.-style (dom/getElement "msgBus"))) "auto")
+  ;      (set! (.-bottom (.-style (dom/getElement "msgBus"))) "10px")))
+
+  (set! (.-transition (.-style (dom/getElement "msgBus"))) "bottom 0s")
+
+  (set! (.-bottom (.-style (dom/getElement "msgBus"))) "100%")
+  (set! (.-innerHTML (dom/getElement "msgBus")) msg)
+
+  (.setTimeout
+    js/window
+    (fn []
+      (set! (.-transition (.-style (dom/getElement "msgBus"))) "bottom 0.5s")
+      (set! (.-transitionTimingFunction (.-style (dom/getElement "msgBus"))) "ease-out") ;cubic-bezier(0.42,0,0.58,1)
+      (set! (.-bottom (.-style (dom/getElement "msgBus"))) "10px")) 10)
+
+  )
 
 ;(go (while true
 ;      (handle-msg (<! msg-bus))))
@@ -73,9 +92,9 @@
 
 ;;;;;;;;;
 
-(defn done-fn []
+(defn done-fn [msg]
   (set! (.-visibility (.-style (dom/getElement "nextButton"))) "visible")
-  (handle-msg "You did it!"))
+  (handle-msg msg))
 
 (def this-level-id (atom 0))
 (def this-level (atom nil))
@@ -130,7 +149,7 @@
 
     (cond
       (and @level-checked @done was-done) nil
-      (and @level-checked @done (not was-done)) (done-fn)
+      (and @level-checked @done (not was-done)) (done-fn (:end-msg @this-level))
       (and (not @level-checked) (not @done)) (reset! level-checked true)
       (and (not @level-checked) @done) (if (< 3 (swap! shuffles-so-far inc))
                                          (level-up identity)
@@ -161,8 +180,7 @@
   (reset! done false)
   (reset! shuffles-so-far 0)
   (set! (.-innerHTML (dom/getElement "levelCounter")) (str (inc @this-level-id)))
-  (if-let [msg (:msg @this-level)]
-    (handle-msg msg))
+  (handle-msg (:start-msg @this-level))
 
   ;(log (str @this-level))
   )
@@ -174,4 +192,4 @@
 
 (begin)
 
-;(level-up (fn [x] 3))
+;(level-up (fn [x] 16))

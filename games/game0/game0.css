@@ -28,8 +28,9 @@ html {
 
 #msgBus {
     left: 10px;
-    top: 10px;
+    bottom: 10px;
     cursor: default;
+    /*transition: bottom 1s;*/
 }
 
 .ui {

@@ -204,6 +204,20 @@
   (. context (lineTo x1 y1)))
 
 
+(def path-lengths
+  {[4 1] 1.6
+   [4 3] 1.6
+   [6 1] 1.3
+   [6 5] 1.3
+   [8 1] 1.0
+   [8 2] 1.5
+   [8 3] 1.8
+   [8 5] 1.8
+   [8 6] 1.5
+   [8 7] 1.0
+   })
+
+
 (defn render-shape [context sf [x-offset y-offset] [mx my :as mouse] channels [_ bdr fg] {[x y r] :location n :n rotation :rotation wiring :wiring :as shape} id timestamp]
   (set! (. context -lineWidth) 1)
   (. context (setLineDash #js []))
@@ -259,8 +273,9 @@
               (. context (moveTo xa ya))
               (. context (bezierCurveTo xb yb xc yc xd yd))
 
-              (let [offset (mod (* (/ timestamp 1000) channel-width) (inc (* 2.0 channel-width)))
-                    lineDash #js [1 (* 2.0 channel-width)]]
+              (let [length-est (* inner-radius (get path-lengths [n (Math/abs (- from onto))] 2))
+                    offset (mod (* (/ timestamp 2000) (inc length-est)) (inc length-est))
+                    lineDash #js [1 (/ length-est 2)]]
 
                 ; Render background
                 (if (some #{:on} switched)
@@ -381,7 +396,7 @@
     (fill-circle context [xs ys radius] [0 0 0 1])
 
     (doseq [i (range channel-count)]
-      (let [f (mod (+ (/ timestamp 100) (* i (/ radius channel-count))) radius)]
+      (let [f (mod (+ (/ timestamp 50) (* i (/ radius channel-count))) radius)]
         (fill-circle context [xs ys f] (conj (nth many-channels i) (- 1 (/ f radius))))))
 
     (. context (restore))
