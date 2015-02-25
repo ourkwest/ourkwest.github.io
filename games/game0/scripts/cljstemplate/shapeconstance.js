@@ -4,7 +4,7 @@ goog.require('cljs.core');
 goog.require('cljstemplate.constance');
 cljstemplate.shapeconstance.shape_side_length = (50);
 cljstemplate.shapeconstance.shape_pad = (function shape_pad(inner_radius){
-return (inner_radius * 1.025);
+return (inner_radius * 1.05);
 });
 cljstemplate.shapeconstance.square_side = cljstemplate.shapeconstance.shape_side_length;
 cljstemplate.shapeconstance.square_inner_radius = (cljstemplate.shapeconstance.square_side / (2));

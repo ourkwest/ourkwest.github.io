@@ -1,7 +1,7 @@
 // Compiled by ClojureScript 0.0-2719 {}
 goog.provide('cljstemplate.logging');
 goog.require('cljs.core');
-cljstemplate.logging.config = new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null,"core","core",-86019209),true,new cljs.core.Keyword(null,"shape","shape",1190694006),true,new cljs.core.Keyword(null,"changes","changes",1492088),true,new cljs.core.Keyword(null,"levels","levels",-950747887),false], null);
+cljstemplate.logging.config = new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null,"core","core",-86019209),true,new cljs.core.Keyword(null,"shape","shape",1190694006),true,new cljs.core.Keyword(null,"changes","changes",1492088),true,new cljs.core.Keyword(null,"levels","levels",-950747887),true], null);
 cljstemplate.logging.logger = (function logger(log_name){
 if(cljs.core.truth_(cljs.core.get.call(null,cljstemplate.logging.config,log_name,true))){
 return (function (x){

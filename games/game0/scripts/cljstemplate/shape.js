@@ -17,10 +17,10 @@ return null;
 if(cljs.core._EQ_.call(null,v,cljs.core.first.call(null,items))){
 return idx;
 } else {
-var G__74439 = (idx + (1));
-var G__74440 = cljs.core.rest.call(null,items);
-idx = G__74439;
-items = G__74440;
+var G__17525 = (idx + (1));
+var G__17526 = cljs.core.rest.call(null,items);
+idx = G__17525;
+items = G__17526;
 continue;
 
 }
@@ -32,37 +32,37 @@ cljstemplate.shape.not_rotating_QMARK_ = (function not_rotating_QMARK_(shape){
 return cljs.core.get_in.call(null,shape,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"rotation","rotation",-1728051644),new cljs.core.Keyword(null,"position","position",-2011731912)], null));
 });
 cljstemplate.shape.rotating_QMARK_ = cljs.core.complement.call(null,cljstemplate.shape.not_rotating_QMARK_);
-cljstemplate.shape.clear_wire_connections = (function clear_wire_connections(p__74441){
-var vec__74443 = p__74441;
-var in$ = cljs.core.nth.call(null,vec__74443,(0),null);
-var out = cljs.core.nth.call(null,vec__74443,(1),null);
-var _ = cljs.core.nth.call(null,vec__74443,(2),null);
-var ___$1 = cljs.core.nth.call(null,vec__74443,(3),null);
+cljstemplate.shape.clear_wire_connections = (function clear_wire_connections(p__17527){
+var vec__17529 = p__17527;
+var in$ = cljs.core.nth.call(null,vec__17529,(0),null);
+var out = cljs.core.nth.call(null,vec__17529,(1),null);
+var _ = cljs.core.nth.call(null,vec__17529,(2),null);
+var ___$1 = cljs.core.nth.call(null,vec__17529,(3),null);
 return new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [in$,out,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"off","off",606440789),new cljs.core.Keyword(null,"off","off",606440789)], null)], null);
 });
 cljstemplate.shape.clear_channel_connections = (function clear_channel_connections(channel_wires){
 return cljs.core.mapv.call(null,cljstemplate.shape.clear_wire_connections,channel_wires);
 });
 cljstemplate.shape.clear_shape_connections = (function clear_shape_connections(shape){
-return cljs.core.update.call(null,shape,new cljs.core.Keyword(null,"wiring","wiring",-1202756092),(function (p1__74444_SHARP_){
-return cljs.core.mapv.call(null,cljstemplate.shape.clear_channel_connections,p1__74444_SHARP_);
+return cljs.core.update.call(null,shape,new cljs.core.Keyword(null,"wiring","wiring",-1202756092),(function (p1__17530_SHARP_){
+return cljs.core.mapv.call(null,cljstemplate.shape.clear_channel_connections,p1__17530_SHARP_);
 }));
 });
 cljstemplate.shape.clear_connections = (function clear_connections(level){
-return cljs.core.update.call(null,level,new cljs.core.Keyword(null,"shapes","shapes",1897594879),(function (p1__74445_SHARP_){
-return cljs.core.mapv.call(null,cljstemplate.shape.clear_shape_connections,p1__74445_SHARP_);
+return cljs.core.update.call(null,level,new cljs.core.Keyword(null,"shapes","shapes",1897594879),(function (p1__17531_SHARP_){
+return cljs.core.mapv.call(null,cljstemplate.shape.clear_shape_connections,p1__17531_SHARP_);
 }));
 });
 cljstemplate.shape.switch_on = (function switch_on(shape,channel_id,wire_id,direction_id){
 return cljs.core.assoc_in.call(null,shape,new cljs.core.PersistentVector(null, 5, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"wiring","wiring",-1202756092),channel_id,wire_id,(2),direction_id], null),new cljs.core.Keyword(null,"on","on",173873944));
 });
-cljstemplate.shape.wire_index_select = (function wire_index_select(target,p__74446,index){
-var vec__74449 = p__74446;
-var from = cljs.core.nth.call(null,vec__74449,(0),null);
-var onto = cljs.core.nth.call(null,vec__74449,(1),null);
-var vec__74450 = cljs.core.nth.call(null,vec__74449,(2),null);
-var backward = cljs.core.nth.call(null,vec__74450,(0),null);
-var forward = cljs.core.nth.call(null,vec__74450,(1),null);
+cljstemplate.shape.wire_index_select = (function wire_index_select(target,p__17532,index){
+var vec__17535 = p__17532;
+var from = cljs.core.nth.call(null,vec__17535,(0),null);
+var onto = cljs.core.nth.call(null,vec__17535,(1),null);
+var vec__17536 = cljs.core.nth.call(null,vec__17535,(2),null);
+var backward = cljs.core.nth.call(null,vec__17536,(0),null);
+var forward = cljs.core.nth.call(null,vec__17536,(1),null);
 if((cljs.core._EQ_.call(null,from,target)) && (cljs.core._EQ_.call(null,forward,new cljs.core.Keyword(null,"off","off",606440789)))){
 return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [index,(1)], null);
 } else {
@@ -86,8 +86,8 @@ var n = new cljs.core.Keyword(null,"n","n",562130025).cljs$core$IFn$_invoke$arit
 var r = new cljs.core.Keyword(null,"position","position",-2011731912).cljs$core$IFn$_invoke$arity$1(new cljs.core.Keyword(null,"rotation","rotation",-1728051644).cljs$core$IFn$_invoke$arity$1(shape));
 var rotated_neighbour_index = cljs.core.mod.call(null,((neighbour_index + n) + (- r)),n);
 return cljs.core.mapv.call(null,((function (neighbour_index,channel_wires,n,r,rotated_neighbour_index,shape){
-return (function (p1__74451_SHARP_){
-return cljs.core.concat.call(null,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [shape_id,channel_id], null),p1__74451_SHARP_);
+return (function (p1__17537_SHARP_){
+return cljs.core.concat.call(null,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [shape_id,channel_id], null),p1__17537_SHARP_);
 });})(neighbour_index,channel_wires,n,r,rotated_neighbour_index,shape))
 ,cljstemplate.shape.find_wires.call(null,rotated_neighbour_index,channel_wires));
 } else {
@@ -117,26 +117,26 @@ return null;
 return null;
 }
 });
-cljstemplate.shape.populate_shape_connections = (function populate_shape_connections(shapes,p__74453){
+cljstemplate.shape.populate_shape_connections = (function populate_shape_connections(shapes,p__17539){
 while(true){
-var vec__74456 = p__74453;
-var vec__74457 = cljs.core.nth.call(null,vec__74456,(0),null);
-var shape_id = cljs.core.nth.call(null,vec__74457,(0),null);
-var channel_id = cljs.core.nth.call(null,vec__74457,(1),null);
-var wire_id = cljs.core.nth.call(null,vec__74457,(2),null);
-var direction_id = cljs.core.nth.call(null,vec__74457,(3),null);
-var seeds = cljs.core.nthnext.call(null,vec__74456,(1));
-var new_shapes = cljs.core.update.call(null,shapes,shape_id,((function (shapes,p__74453,vec__74456,vec__74457,shape_id,channel_id,wire_id,direction_id,seeds){
-return (function (p1__74452_SHARP_){
-return cljstemplate.shape.switch_on.call(null,p1__74452_SHARP_,channel_id,wire_id,direction_id);
-});})(shapes,p__74453,vec__74456,vec__74457,shape_id,channel_id,wire_id,direction_id,seeds))
+var vec__17542 = p__17539;
+var vec__17543 = cljs.core.nth.call(null,vec__17542,(0),null);
+var shape_id = cljs.core.nth.call(null,vec__17543,(0),null);
+var channel_id = cljs.core.nth.call(null,vec__17543,(1),null);
+var wire_id = cljs.core.nth.call(null,vec__17543,(2),null);
+var direction_id = cljs.core.nth.call(null,vec__17543,(3),null);
+var seeds = cljs.core.nthnext.call(null,vec__17542,(1));
+var new_shapes = cljs.core.update.call(null,shapes,shape_id,((function (shapes,p__17539,vec__17542,vec__17543,shape_id,channel_id,wire_id,direction_id,seeds){
+return (function (p1__17538_SHARP_){
+return cljstemplate.shape.switch_on.call(null,p1__17538_SHARP_,channel_id,wire_id,direction_id);
+});})(shapes,p__17539,vec__17542,vec__17543,shape_id,channel_id,wire_id,direction_id,seeds))
 );
 var new_seeds = cljs.core.concat.call(null,seeds,cljstemplate.shape.more_seeds.call(null,new_shapes,shape_id,channel_id,wire_id,direction_id));
 if(cljs.core.seq.call(null,new_seeds)){
-var G__74458 = new_shapes;
-var G__74459 = new_seeds;
-shapes = G__74458;
-p__74453 = G__74459;
+var G__17544 = new_shapes;
+var G__17545 = new_seeds;
+shapes = G__17544;
+p__17539 = G__17545;
 continue;
 } else {
 return new_shapes;
@@ -150,12 +150,12 @@ var shape = cljs.core.nth.call(null,shapes,shape_id);
 var wiring = new cljs.core.Keyword(null,"wiring","wiring",-1202756092).cljs$core$IFn$_invoke$arity$1(shape);
 var channel_wiring = cljs.core.nth.call(null,wiring,channel_id);
 return cljs.core.concat.call(null,cljs.core.mapv.call(null,((function (shapes,shape,wiring,channel_wiring){
-return (function (p1__74460_SHARP_){
-return cljs.core.vec.call(null,new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [shape_id,channel_id,p1__74460_SHARP_,(0)], null));
+return (function (p1__17546_SHARP_){
+return cljs.core.vec.call(null,new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [shape_id,channel_id,p1__17546_SHARP_,(0)], null));
 });})(shapes,shape,wiring,channel_wiring))
 ,cljs.core.range.call(null,cljs.core.count.call(null,channel_wiring))),cljs.core.mapv.call(null,((function (shapes,shape,wiring,channel_wiring){
-return (function (p1__74461_SHARP_){
-return cljs.core.vec.call(null,new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [shape_id,channel_id,p1__74461_SHARP_,(1)], null));
+return (function (p1__17547_SHARP_){
+return cljs.core.vec.call(null,new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [shape_id,channel_id,p1__17547_SHARP_,(1)], null));
 });})(shapes,shape,wiring,channel_wiring))
 ,cljs.core.range.call(null,cljs.core.count.call(null,channel_wiring))));
 });
@@ -163,8 +163,8 @@ cljstemplate.shape.seed_light = (function seed_light(level){
 return cljs.core.mapcat.call(null,cljstemplate.shape.seed_lights,cljs.core.repeat.call(null,level),new cljs.core.Keyword(null,"start","start",-355208981).cljs$core$IFn$_invoke$arity$1(level),cljs.core.range.call(null));
 });
 cljstemplate.shape.populate_connections = (function populate_connections(level){
-return cljs.core.update.call(null,level,new cljs.core.Keyword(null,"shapes","shapes",1897594879),(function (p1__74462_SHARP_){
-return cljstemplate.shape.populate_shape_connections.call(null,p1__74462_SHARP_,cljstemplate.shape.seed_light.call(null,level));
+return cljs.core.update.call(null,level,new cljs.core.Keyword(null,"shapes","shapes",1897594879),(function (p1__17548_SHARP_){
+return cljstemplate.shape.populate_shape_connections.call(null,p1__17548_SHARP_,cljstemplate.shape.seed_light.call(null,level));
 }));
 });
 cljstemplate.shape.check_connections = (function check_connections(level){
@@ -173,14 +173,14 @@ return cljstemplate.shape.populate_connections.call(null,cljstemplate.shape.clea
 /**
 * returns e
 */
-cljstemplate.shape.proportionalise = (function proportionalise(p__74463,p__74464){
-var vec__74467 = p__74463;
-var a = cljs.core.nth.call(null,vec__74467,(0),null);
-var b = cljs.core.nth.call(null,vec__74467,(1),null);
-var c = cljs.core.nth.call(null,vec__74467,(2),null);
-var vec__74468 = p__74464;
-var d = cljs.core.nth.call(null,vec__74468,(0),null);
-var f = cljs.core.nth.call(null,vec__74468,(1),null);
+cljstemplate.shape.proportionalise = (function proportionalise(p__17549,p__17550){
+var vec__17553 = p__17549;
+var a = cljs.core.nth.call(null,vec__17553,(0),null);
+var b = cljs.core.nth.call(null,vec__17553,(1),null);
+var c = cljs.core.nth.call(null,vec__17553,(2),null);
+var vec__17554 = p__17550;
+var d = cljs.core.nth.call(null,vec__17554,(0),null);
+var f = cljs.core.nth.call(null,vec__17554,(1),null);
 var dist1 = (c - a);
 var prog1 = (b - a);
 var prop = (prog1 / dist1);
@@ -189,16 +189,16 @@ var prog2 = (prop * dist2);
 var e = (d + prog2);
 return e;
 });
-cljstemplate.shape.rotated = (function rotated(timestamp,p__74469){
-var map__74472 = p__74469;
-var map__74472__$1 = ((cljs.core.seq_QMARK_.call(null,map__74472))?cljs.core.apply.call(null,cljs.core.hash_map,map__74472):map__74472);
-var shape = map__74472__$1;
-var map__74473 = cljs.core.get.call(null,map__74472__$1,new cljs.core.Keyword(null,"rotation","rotation",-1728051644));
-var map__74473__$1 = ((cljs.core.seq_QMARK_.call(null,map__74473))?cljs.core.apply.call(null,cljs.core.hash_map,map__74473):map__74473);
-var start = cljs.core.get.call(null,map__74473__$1,new cljs.core.Keyword(null,"start","start",-355208981));
-var end = cljs.core.get.call(null,map__74473__$1,new cljs.core.Keyword(null,"end","end",-268185958));
-var start_time = cljs.core.get.call(null,map__74473__$1,new cljs.core.Keyword(null,"start-time","start-time",814801386));
-var end_time = cljs.core.get.call(null,map__74473__$1,new cljs.core.Keyword(null,"end-time","end-time",-1849817460));
+cljstemplate.shape.rotated = (function rotated(timestamp,p__17555){
+var map__17558 = p__17555;
+var map__17558__$1 = ((cljs.core.seq_QMARK_.call(null,map__17558))?cljs.core.apply.call(null,cljs.core.hash_map,map__17558):map__17558);
+var shape = map__17558__$1;
+var map__17559 = cljs.core.get.call(null,map__17558__$1,new cljs.core.Keyword(null,"rotation","rotation",-1728051644));
+var map__17559__$1 = ((cljs.core.seq_QMARK_.call(null,map__17559))?cljs.core.apply.call(null,cljs.core.hash_map,map__17559):map__17559);
+var start = cljs.core.get.call(null,map__17559__$1,new cljs.core.Keyword(null,"start","start",-355208981));
+var end = cljs.core.get.call(null,map__17559__$1,new cljs.core.Keyword(null,"end","end",-268185958));
+var start_time = cljs.core.get.call(null,map__17559__$1,new cljs.core.Keyword(null,"start-time","start-time",814801386));
+var end_time = cljs.core.get.call(null,map__17559__$1,new cljs.core.Keyword(null,"end-time","end-time",-1849817460));
 if(cljs.core.truth_(cljs.core.get_in.call(null,shape,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"rotation","rotation",-1728051644),new cljs.core.Keyword(null,"position","position",-2011731912)], null)))){
 return shape;
 } else {
@@ -217,17 +217,17 @@ return cljs.core.assoc_in.call(null,shape,new cljs.core.PersistentVector(null, 2
 cljstemplate.shape.do_rotations = (function do_rotations(timestamp,level){
 var r_fn = cljs.core.partial.call(null,cljstemplate.shape.rotated,timestamp);
 return cljs.core.update.call(null,level,new cljs.core.Keyword(null,"shapes","shapes",1897594879),((function (r_fn){
-return (function (p1__74474_SHARP_){
-return cljs.core.map.call(null,r_fn,p1__74474_SHARP_);
+return (function (p1__17560_SHARP_){
+return cljs.core.map.call(null,r_fn,p1__17560_SHARP_);
 });})(r_fn))
 );
 });
-cljstemplate.shape.clicked = (function clicked(shape,p__74475){
-var vec__74477 = p__74475;
-var _ = cljs.core.nth.call(null,vec__74477,(0),null);
-var ___$1 = cljs.core.nth.call(null,vec__74477,(1),null);
-var ___$2 = cljs.core.nth.call(null,vec__74477,(2),null);
-var timestamp = cljs.core.nth.call(null,vec__74477,(3),null);
+cljstemplate.shape.clicked = (function clicked(shape,p__17561){
+var vec__17563 = p__17561;
+var _ = cljs.core.nth.call(null,vec__17563,(0),null);
+var ___$1 = cljs.core.nth.call(null,vec__17563,(1),null);
+var ___$2 = cljs.core.nth.call(null,vec__17563,(2),null);
+var timestamp = cljs.core.nth.call(null,vec__17563,(3),null);
 if(cljs.core.truth_(cljstemplate.shape.not_rotating_QMARK_.call(null,shape))){
 var start = new cljs.core.Keyword(null,"position","position",-2011731912).cljs$core$IFn$_invoke$arity$1(new cljs.core.Keyword(null,"rotation","rotation",-1728051644).cljs$core$IFn$_invoke$arity$1(shape));
 var end = start;
@@ -253,19 +253,19 @@ var end_time = (new cljs.core.Keyword(null,"end-time","end-time",-1849817460).cl
 return cljs.core.merge.call(null,shape,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"rotation","rotation",-1728051644),new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"start","start",-355208981),start,new cljs.core.Keyword(null,"current","current",-1088038603),start,new cljs.core.Keyword(null,"end","end",-268185958),end,new cljs.core.Keyword(null,"start-time","start-time",814801386),start_time,new cljs.core.Keyword(null,"end-time","end-time",-1849817460),end_time], null)], null));
 }
 });
-cljstemplate.shape.rgb_str = (function rgb_str(p__74478){
-var vec__74480 = p__74478;
-var r = cljs.core.nth.call(null,vec__74480,(0),null);
-var g = cljs.core.nth.call(null,vec__74480,(1),null);
-var b = cljs.core.nth.call(null,vec__74480,(2),null);
+cljstemplate.shape.rgb_str = (function rgb_str(p__17564){
+var vec__17566 = p__17564;
+var r = cljs.core.nth.call(null,vec__17566,(0),null);
+var g = cljs.core.nth.call(null,vec__17566,(1),null);
+var b = cljs.core.nth.call(null,vec__17566,(2),null);
 return [cljs.core.str("rgb("),cljs.core.str(r),cljs.core.str(","),cljs.core.str(g),cljs.core.str(","),cljs.core.str(b),cljs.core.str(")")].join('');
 });
-cljstemplate.shape.rgba_str = (function rgba_str(p__74481){
-var vec__74483 = p__74481;
-var r = cljs.core.nth.call(null,vec__74483,(0),null);
-var g = cljs.core.nth.call(null,vec__74483,(1),null);
-var b = cljs.core.nth.call(null,vec__74483,(2),null);
-var a = cljs.core.nth.call(null,vec__74483,(3),null);
+cljstemplate.shape.rgba_str = (function rgba_str(p__17567){
+var vec__17569 = p__17567;
+var r = cljs.core.nth.call(null,vec__17569,(0),null);
+var g = cljs.core.nth.call(null,vec__17569,(1),null);
+var b = cljs.core.nth.call(null,vec__17569,(2),null);
+var a = cljs.core.nth.call(null,vec__17569,(3),null);
 return [cljs.core.str("rgba("),cljs.core.str(r),cljs.core.str(","),cljs.core.str(g),cljs.core.str(","),cljs.core.str(b),cljs.core.str(","),cljs.core.str(a),cljs.core.str(")")].join('');
 });
 cljstemplate.shape.alphas = new cljs.core.PersistentArrayMap(null, 4, [(3),cljstemplate.constance.TAU_3RD,(4),cljstemplate.constance.TAU_4TH,(6),cljstemplate.constance.TAU_6TH,(8),cljstemplate.constance.TAU_8TH], null);
@@ -275,10 +275,10 @@ cljstemplate.shape.pads = new cljs.core.PersistentArrayMap(null, 4, [(3),cljstem
 cljstemplate.shape.click_result = (function click_result(shape,context,click){
 if(cljs.core.truth_((function (){var temp__4124__auto__ = click;
 if(cljs.core.truth_(temp__4124__auto__)){
-var vec__74485 = temp__4124__auto__;
-var x = cljs.core.nth.call(null,vec__74485,(0),null);
-var y = cljs.core.nth.call(null,vec__74485,(1),null);
-var clicked = cljs.core.nth.call(null,vec__74485,(2),null);
+var vec__17571 = temp__4124__auto__;
+var x = cljs.core.nth.call(null,vec__17571,(0),null);
+var y = cljs.core.nth.call(null,vec__17571,(1),null);
+var clicked = cljs.core.nth.call(null,vec__17571,(2),null);
 var and__3799__auto__ = clicked;
 if(cljs.core.truth_(and__3799__auto__)){
 return context.isPointInPath(x,y);
@@ -294,15 +294,15 @@ return cljstemplate.shape.clicked.call(null,shape,click);
 return shape;
 }
 });
-cljstemplate.shape.vertices = (function vertices(p__74487,xs,ys,sf){
-var map__74494 = p__74487;
-var map__74494__$1 = ((cljs.core.seq_QMARK_.call(null,map__74494))?cljs.core.apply.call(null,cljs.core.hash_map,map__74494):map__74494);
-var n = cljs.core.get.call(null,map__74494__$1,new cljs.core.Keyword(null,"n","n",562130025));
-var vec__74495 = cljs.core.get.call(null,map__74494__$1,new cljs.core.Keyword(null,"location","location",1815599388));
-var x = cljs.core.nth.call(null,vec__74495,(0),null);
-var y = cljs.core.nth.call(null,vec__74495,(1),null);
-var r = cljs.core.nth.call(null,vec__74495,(2),null);
-var rotation = cljs.core.get.call(null,map__74494__$1,new cljs.core.Keyword(null,"rotation","rotation",-1728051644));
+cljstemplate.shape.vertices = (function vertices(p__17573,xs,ys,sf){
+var map__17580 = p__17573;
+var map__17580__$1 = ((cljs.core.seq_QMARK_.call(null,map__17580))?cljs.core.apply.call(null,cljs.core.hash_map,map__17580):map__17580);
+var n = cljs.core.get.call(null,map__17580__$1,new cljs.core.Keyword(null,"n","n",562130025));
+var vec__17581 = cljs.core.get.call(null,map__17580__$1,new cljs.core.Keyword(null,"location","location",1815599388));
+var x = cljs.core.nth.call(null,vec__17581,(0),null);
+var y = cljs.core.nth.call(null,vec__17581,(1),null);
+var r = cljs.core.nth.call(null,vec__17581,(2),null);
+var rotation = cljs.core.get.call(null,map__17580__$1,new cljs.core.Keyword(null,"rotation","rotation",-1728051644));
 var alpha = cljstemplate.shape.alphas.call(null,n);
 var delta = (alpha / (2));
 var radius = (cljstemplate.shape.radii.call(null,n) * sf);
@@ -313,32 +313,32 @@ return or__3811__auto__;
 return new cljs.core.Keyword(null,"position","position",-2011731912).cljs$core$IFn$_invoke$arity$1(rotation);
 }
 })() * alpha));
-var gammas = cljs.core.take.call(null,n,cljs.core.iterate.call(null,((function (alpha,delta,radius,beta,map__74494,map__74494__$1,n,vec__74495,x,y,r,rotation){
-return (function (p1__74486_SHARP_){
-return (p1__74486_SHARP_ + alpha);
-});})(alpha,delta,radius,beta,map__74494,map__74494__$1,n,vec__74495,x,y,r,rotation))
+var gammas = cljs.core.take.call(null,n,cljs.core.iterate.call(null,((function (alpha,delta,radius,beta,map__17580,map__17580__$1,n,vec__17581,x,y,r,rotation){
+return (function (p1__17572_SHARP_){
+return (p1__17572_SHARP_ + alpha);
+});})(alpha,delta,radius,beta,map__17580,map__17580__$1,n,vec__17581,x,y,r,rotation))
 ,beta));
-var iter__4567__auto__ = ((function (alpha,delta,radius,beta,gammas,map__74494,map__74494__$1,n,vec__74495,x,y,r,rotation){
-return (function iter__74496(s__74497){
-return (new cljs.core.LazySeq(null,((function (alpha,delta,radius,beta,gammas,map__74494,map__74494__$1,n,vec__74495,x,y,r,rotation){
+var iter__4567__auto__ = ((function (alpha,delta,radius,beta,gammas,map__17580,map__17580__$1,n,vec__17581,x,y,r,rotation){
+return (function iter__17582(s__17583){
+return (new cljs.core.LazySeq(null,((function (alpha,delta,radius,beta,gammas,map__17580,map__17580__$1,n,vec__17581,x,y,r,rotation){
 return (function (){
-var s__74497__$1 = s__74497;
+var s__17583__$1 = s__17583;
 while(true){
-var temp__4126__auto__ = cljs.core.seq.call(null,s__74497__$1);
+var temp__4126__auto__ = cljs.core.seq.call(null,s__17583__$1);
 if(temp__4126__auto__){
-var s__74497__$2 = temp__4126__auto__;
-if(cljs.core.chunked_seq_QMARK_.call(null,s__74497__$2)){
-var c__4565__auto__ = cljs.core.chunk_first.call(null,s__74497__$2);
+var s__17583__$2 = temp__4126__auto__;
+if(cljs.core.chunked_seq_QMARK_.call(null,s__17583__$2)){
+var c__4565__auto__ = cljs.core.chunk_first.call(null,s__17583__$2);
 var size__4566__auto__ = cljs.core.count.call(null,c__4565__auto__);
-var b__74499 = cljs.core.chunk_buffer.call(null,size__4566__auto__);
-if((function (){var i__74498 = (0);
+var b__17585 = cljs.core.chunk_buffer.call(null,size__4566__auto__);
+if((function (){var i__17584 = (0);
 while(true){
-if((i__74498 < size__4566__auto__)){
-var gamma = cljs.core._nth.call(null,c__4565__auto__,i__74498);
-cljs.core.chunk_append.call(null,b__74499,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [(xs + (radius * Math.sin.call(null,gamma))),(ys + (radius * Math.cos.call(null,gamma)))], null));
+if((i__17584 < size__4566__auto__)){
+var gamma = cljs.core._nth.call(null,c__4565__auto__,i__17584);
+cljs.core.chunk_append.call(null,b__17585,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [(xs + (radius * Math.sin.call(null,gamma))),(ys + (radius * Math.cos.call(null,gamma)))], null));
 
-var G__74500 = (i__74498 + (1));
-i__74498 = G__74500;
+var G__17586 = (i__17584 + (1));
+i__17584 = G__17586;
 continue;
 } else {
 return true;
@@ -346,84 +346,84 @@ return true;
 break;
 }
 })()){
-return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__74499),iter__74496.call(null,cljs.core.chunk_rest.call(null,s__74497__$2)));
+return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__17585),iter__17582.call(null,cljs.core.chunk_rest.call(null,s__17583__$2)));
 } else {
-return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__74499),null);
+return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__17585),null);
 }
 } else {
-var gamma = cljs.core.first.call(null,s__74497__$2);
-return cljs.core.cons.call(null,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [(xs + (radius * Math.sin.call(null,gamma))),(ys + (radius * Math.cos.call(null,gamma)))], null),iter__74496.call(null,cljs.core.rest.call(null,s__74497__$2)));
+var gamma = cljs.core.first.call(null,s__17583__$2);
+return cljs.core.cons.call(null,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [(xs + (radius * Math.sin.call(null,gamma))),(ys + (radius * Math.cos.call(null,gamma)))], null),iter__17582.call(null,cljs.core.rest.call(null,s__17583__$2)));
 }
 } else {
 return null;
 }
 break;
 }
-});})(alpha,delta,radius,beta,gammas,map__74494,map__74494__$1,n,vec__74495,x,y,r,rotation))
+});})(alpha,delta,radius,beta,gammas,map__17580,map__17580__$1,n,vec__17581,x,y,r,rotation))
 ,null,null));
-});})(alpha,delta,radius,beta,gammas,map__74494,map__74494__$1,n,vec__74495,x,y,r,rotation))
+});})(alpha,delta,radius,beta,gammas,map__17580,map__17580__$1,n,vec__17581,x,y,r,rotation))
 ;
 return iter__4567__auto__.call(null,gammas);
 });
-cljstemplate.shape.trace_path = (function trace_path(context,p__74501){
-var vec__74510 = p__74501;
-var vec__74511 = cljs.core.nth.call(null,vec__74510,(0),null);
-var x1 = cljs.core.nth.call(null,vec__74511,(0),null);
-var y1 = cljs.core.nth.call(null,vec__74511,(1),null);
-var rest = cljs.core.nthnext.call(null,vec__74510,(1));
+cljstemplate.shape.trace_path = (function trace_path(context,p__17587){
+var vec__17596 = p__17587;
+var vec__17597 = cljs.core.nth.call(null,vec__17596,(0),null);
+var x1 = cljs.core.nth.call(null,vec__17597,(0),null);
+var y1 = cljs.core.nth.call(null,vec__17597,(1),null);
+var rest = cljs.core.nthnext.call(null,vec__17596,(1));
 context.beginPath();
 
 context.moveTo(x1,y1);
 
-var seq__74512_74518 = cljs.core.seq.call(null,rest);
-var chunk__74513_74519 = null;
-var count__74514_74520 = (0);
-var i__74515_74521 = (0);
+var seq__17598_17604 = cljs.core.seq.call(null,rest);
+var chunk__17599_17605 = null;
+var count__17600_17606 = (0);
+var i__17601_17607 = (0);
 while(true){
-if((i__74515_74521 < count__74514_74520)){
-var vec__74516_74522 = cljs.core._nth.call(null,chunk__74513_74519,i__74515_74521);
-var xr_74523 = cljs.core.nth.call(null,vec__74516_74522,(0),null);
-var yr_74524 = cljs.core.nth.call(null,vec__74516_74522,(1),null);
-context.lineTo(xr_74523,yr_74524);
+if((i__17601_17607 < count__17600_17606)){
+var vec__17602_17608 = cljs.core._nth.call(null,chunk__17599_17605,i__17601_17607);
+var xr_17609 = cljs.core.nth.call(null,vec__17602_17608,(0),null);
+var yr_17610 = cljs.core.nth.call(null,vec__17602_17608,(1),null);
+context.lineTo(xr_17609,yr_17610);
 
-var G__74525 = seq__74512_74518;
-var G__74526 = chunk__74513_74519;
-var G__74527 = count__74514_74520;
-var G__74528 = (i__74515_74521 + (1));
-seq__74512_74518 = G__74525;
-chunk__74513_74519 = G__74526;
-count__74514_74520 = G__74527;
-i__74515_74521 = G__74528;
+var G__17611 = seq__17598_17604;
+var G__17612 = chunk__17599_17605;
+var G__17613 = count__17600_17606;
+var G__17614 = (i__17601_17607 + (1));
+seq__17598_17604 = G__17611;
+chunk__17599_17605 = G__17612;
+count__17600_17606 = G__17613;
+i__17601_17607 = G__17614;
 continue;
 } else {
-var temp__4126__auto___74529 = cljs.core.seq.call(null,seq__74512_74518);
-if(temp__4126__auto___74529){
-var seq__74512_74530__$1 = temp__4126__auto___74529;
-if(cljs.core.chunked_seq_QMARK_.call(null,seq__74512_74530__$1)){
-var c__4598__auto___74531 = cljs.core.chunk_first.call(null,seq__74512_74530__$1);
-var G__74532 = cljs.core.chunk_rest.call(null,seq__74512_74530__$1);
-var G__74533 = c__4598__auto___74531;
-var G__74534 = cljs.core.count.call(null,c__4598__auto___74531);
-var G__74535 = (0);
-seq__74512_74518 = G__74532;
-chunk__74513_74519 = G__74533;
-count__74514_74520 = G__74534;
-i__74515_74521 = G__74535;
+var temp__4126__auto___17615 = cljs.core.seq.call(null,seq__17598_17604);
+if(temp__4126__auto___17615){
+var seq__17598_17616__$1 = temp__4126__auto___17615;
+if(cljs.core.chunked_seq_QMARK_.call(null,seq__17598_17616__$1)){
+var c__4598__auto___17617 = cljs.core.chunk_first.call(null,seq__17598_17616__$1);
+var G__17618 = cljs.core.chunk_rest.call(null,seq__17598_17616__$1);
+var G__17619 = c__4598__auto___17617;
+var G__17620 = cljs.core.count.call(null,c__4598__auto___17617);
+var G__17621 = (0);
+seq__17598_17604 = G__17618;
+chunk__17599_17605 = G__17619;
+count__17600_17606 = G__17620;
+i__17601_17607 = G__17621;
 continue;
 } else {
-var vec__74517_74536 = cljs.core.first.call(null,seq__74512_74530__$1);
-var xr_74537 = cljs.core.nth.call(null,vec__74517_74536,(0),null);
-var yr_74538 = cljs.core.nth.call(null,vec__74517_74536,(1),null);
-context.lineTo(xr_74537,yr_74538);
+var vec__17603_17622 = cljs.core.first.call(null,seq__17598_17616__$1);
+var xr_17623 = cljs.core.nth.call(null,vec__17603_17622,(0),null);
+var yr_17624 = cljs.core.nth.call(null,vec__17603_17622,(1),null);
+context.lineTo(xr_17623,yr_17624);
 
-var G__74539 = cljs.core.next.call(null,seq__74512_74530__$1);
-var G__74540 = null;
-var G__74541 = (0);
-var G__74542 = (0);
-seq__74512_74518 = G__74539;
-chunk__74513_74519 = G__74540;
-count__74514_74520 = G__74541;
-i__74515_74521 = G__74542;
+var G__17625 = cljs.core.next.call(null,seq__17598_17616__$1);
+var G__17626 = null;
+var G__17627 = (0);
+var G__17628 = (0);
+seq__17598_17604 = G__17625;
+chunk__17599_17605 = G__17626;
+count__17600_17606 = G__17627;
+i__17601_17607 = G__17628;
 continue;
 }
 } else {
@@ -435,32 +435,28 @@ break;
 return context.lineTo(x1,y1);
 });
 cljstemplate.shape.path_lengths = cljs.core.PersistentHashMap.fromArrays([new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [(8),(7)], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [(4),(3)], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [(8),(3)], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [(8),(6)], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [(6),(5)], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [(4),(1)], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [(8),(2)], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [(8),(1)], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [(6),(1)], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [(8),(5)], null)],[1.0,1.6,1.8,1.5,1.3,1.6,1.5,1.0,1.3,1.8]);
-cljstemplate.shape.render_shape = (function render_shape(context,sf,p__74545,p__74546,channels,p__74547,p__74548,id,timestamp){
-var vec__74638 = p__74545;
-var x_offset = cljs.core.nth.call(null,vec__74638,(0),null);
-var y_offset = cljs.core.nth.call(null,vec__74638,(1),null);
-var vec__74639 = p__74546;
-var mx = cljs.core.nth.call(null,vec__74639,(0),null);
-var my = cljs.core.nth.call(null,vec__74639,(1),null);
-var mouse = vec__74639;
-var vec__74640 = p__74547;
-var _ = cljs.core.nth.call(null,vec__74640,(0),null);
-var bdr = cljs.core.nth.call(null,vec__74640,(1),null);
-var fg = cljs.core.nth.call(null,vec__74640,(2),null);
-var map__74641 = p__74548;
-var map__74641__$1 = ((cljs.core.seq_QMARK_.call(null,map__74641))?cljs.core.apply.call(null,cljs.core.hash_map,map__74641):map__74641);
-var shape = map__74641__$1;
-var vec__74642 = cljs.core.get.call(null,map__74641__$1,new cljs.core.Keyword(null,"location","location",1815599388));
-var x = cljs.core.nth.call(null,vec__74642,(0),null);
-var y = cljs.core.nth.call(null,vec__74642,(1),null);
-var r = cljs.core.nth.call(null,vec__74642,(2),null);
-var n = cljs.core.get.call(null,map__74641__$1,new cljs.core.Keyword(null,"n","n",562130025));
-var rotation = cljs.core.get.call(null,map__74641__$1,new cljs.core.Keyword(null,"rotation","rotation",-1728051644));
-var wiring = cljs.core.get.call(null,map__74641__$1,new cljs.core.Keyword(null,"wiring","wiring",-1202756092));
-context.lineWidth = (1);
-
-context.setLineDash([]);
-
+cljstemplate.shape.render_shape = (function render_shape(context,sf,p__17631,p__17632,channels,p__17633,p__17634,id,timestamp){
+var vec__17724 = p__17631;
+var x_offset = cljs.core.nth.call(null,vec__17724,(0),null);
+var y_offset = cljs.core.nth.call(null,vec__17724,(1),null);
+var vec__17725 = p__17632;
+var mx = cljs.core.nth.call(null,vec__17725,(0),null);
+var my = cljs.core.nth.call(null,vec__17725,(1),null);
+var mouse = vec__17725;
+var vec__17726 = p__17633;
+var _ = cljs.core.nth.call(null,vec__17726,(0),null);
+var bdr = cljs.core.nth.call(null,vec__17726,(1),null);
+var fg = cljs.core.nth.call(null,vec__17726,(2),null);
+var map__17727 = p__17634;
+var map__17727__$1 = ((cljs.core.seq_QMARK_.call(null,map__17727))?cljs.core.apply.call(null,cljs.core.hash_map,map__17727):map__17727);
+var shape = map__17727__$1;
+var vec__17728 = cljs.core.get.call(null,map__17727__$1,new cljs.core.Keyword(null,"location","location",1815599388));
+var x = cljs.core.nth.call(null,vec__17728,(0),null);
+var y = cljs.core.nth.call(null,vec__17728,(1),null);
+var r = cljs.core.nth.call(null,vec__17728,(2),null);
+var n = cljs.core.get.call(null,map__17727__$1,new cljs.core.Keyword(null,"n","n",562130025));
+var rotation = cljs.core.get.call(null,map__17727__$1,new cljs.core.Keyword(null,"rotation","rotation",-1728051644));
+var wiring = cljs.core.get.call(null,map__17727__$1,new cljs.core.Keyword(null,"wiring","wiring",-1202756092));
 var alpha = cljstemplate.shape.alphas.call(null,n);
 var delta = (alpha / (2));
 var radius = (cljstemplate.shape.radii.call(null,n) * sf);
@@ -473,68 +469,71 @@ return or__3811__auto__;
 return new cljs.core.Keyword(null,"position","position",-2011731912).cljs$core$IFn$_invoke$arity$1(rotation);
 }
 })() * alpha));
-var gammas = cljs.core.iterate.call(null,((function (alpha,delta,radius,inner_radius,pad,beta,vec__74638,x_offset,y_offset,vec__74639,mx,my,mouse,vec__74640,_,bdr,fg,map__74641,map__74641__$1,shape,vec__74642,x,y,r,n,rotation,wiring){
-return (function (p1__74543_SHARP_){
-return (p1__74543_SHARP_ + alpha);
-});})(alpha,delta,radius,inner_radius,pad,beta,vec__74638,x_offset,y_offset,vec__74639,mx,my,mouse,vec__74640,_,bdr,fg,map__74641,map__74641__$1,shape,vec__74642,x,y,r,n,rotation,wiring))
+var gammas = cljs.core.iterate.call(null,((function (alpha,delta,radius,inner_radius,pad,beta,vec__17724,x_offset,y_offset,vec__17725,mx,my,mouse,vec__17726,_,bdr,fg,map__17727,map__17727__$1,shape,vec__17728,x,y,r,n,rotation,wiring){
+return (function (p1__17629_SHARP_){
+return (p1__17629_SHARP_ + alpha);
+});})(alpha,delta,radius,inner_radius,pad,beta,vec__17724,x_offset,y_offset,vec__17725,mx,my,mouse,vec__17726,_,bdr,fg,map__17727,map__17727__$1,shape,vec__17728,x,y,r,n,rotation,wiring))
 ,beta);
-var epsilons = cljs.core.iterate.call(null,((function (alpha,delta,radius,inner_radius,pad,beta,gammas,vec__74638,x_offset,y_offset,vec__74639,mx,my,mouse,vec__74640,_,bdr,fg,map__74641,map__74641__$1,shape,vec__74642,x,y,r,n,rotation,wiring){
-return (function (p1__74544_SHARP_){
-return (p1__74544_SHARP_ + alpha);
-});})(alpha,delta,radius,inner_radius,pad,beta,gammas,vec__74638,x_offset,y_offset,vec__74639,mx,my,mouse,vec__74640,_,bdr,fg,map__74641,map__74641__$1,shape,vec__74642,x,y,r,n,rotation,wiring))
+var epsilons = cljs.core.iterate.call(null,((function (alpha,delta,radius,inner_radius,pad,beta,gammas,vec__17724,x_offset,y_offset,vec__17725,mx,my,mouse,vec__17726,_,bdr,fg,map__17727,map__17727__$1,shape,vec__17728,x,y,r,n,rotation,wiring){
+return (function (p1__17630_SHARP_){
+return (p1__17630_SHARP_ + alpha);
+});})(alpha,delta,radius,inner_radius,pad,beta,gammas,vec__17724,x_offset,y_offset,vec__17725,mx,my,mouse,vec__17726,_,bdr,fg,map__17727,map__17727__$1,shape,vec__17728,x,y,r,n,rotation,wiring))
 ,(beta - delta));
-var channel_width = ((5) * sf);
+var side_length = (cljstemplate.shapeconstance.shape_side_length * sf);
+var channel_width = (side_length * 0.07);
 var xs = ((x * sf) + x_offset);
 var ys = ((y * sf) + y_offset);
+context.lineWidth = (1);
+
 context.beginPath();
 
 context.moveTo((xs + (radius * Math.sin.call(null,beta))),(ys + (radius * Math.cos.call(null,beta))));
 
-var seq__74643_74727 = cljs.core.seq.call(null,cljs.core.take.call(null,(n - (1)),cljs.core.drop.call(null,(1),gammas)));
-var chunk__74644_74728 = null;
-var count__74645_74729 = (0);
-var i__74646_74730 = (0);
+var seq__17729_17813 = cljs.core.seq.call(null,cljs.core.take.call(null,(n - (1)),cljs.core.drop.call(null,(1),gammas)));
+var chunk__17730_17814 = null;
+var count__17731_17815 = (0);
+var i__17732_17816 = (0);
 while(true){
-if((i__74646_74730 < count__74645_74729)){
-var gamma_74731 = cljs.core._nth.call(null,chunk__74644_74728,i__74646_74730);
-context.lineTo((xs + (radius * Math.sin.call(null,gamma_74731))),(ys + (radius * Math.cos.call(null,gamma_74731))));
+if((i__17732_17816 < count__17731_17815)){
+var gamma_17817 = cljs.core._nth.call(null,chunk__17730_17814,i__17732_17816);
+context.lineTo((xs + (radius * Math.sin.call(null,gamma_17817))),(ys + (radius * Math.cos.call(null,gamma_17817))));
 
-var G__74732 = seq__74643_74727;
-var G__74733 = chunk__74644_74728;
-var G__74734 = count__74645_74729;
-var G__74735 = (i__74646_74730 + (1));
-seq__74643_74727 = G__74732;
-chunk__74644_74728 = G__74733;
-count__74645_74729 = G__74734;
-i__74646_74730 = G__74735;
+var G__17818 = seq__17729_17813;
+var G__17819 = chunk__17730_17814;
+var G__17820 = count__17731_17815;
+var G__17821 = (i__17732_17816 + (1));
+seq__17729_17813 = G__17818;
+chunk__17730_17814 = G__17819;
+count__17731_17815 = G__17820;
+i__17732_17816 = G__17821;
 continue;
 } else {
-var temp__4126__auto___74736 = cljs.core.seq.call(null,seq__74643_74727);
-if(temp__4126__auto___74736){
-var seq__74643_74737__$1 = temp__4126__auto___74736;
-if(cljs.core.chunked_seq_QMARK_.call(null,seq__74643_74737__$1)){
-var c__4598__auto___74738 = cljs.core.chunk_first.call(null,seq__74643_74737__$1);
-var G__74739 = cljs.core.chunk_rest.call(null,seq__74643_74737__$1);
-var G__74740 = c__4598__auto___74738;
-var G__74741 = cljs.core.count.call(null,c__4598__auto___74738);
-var G__74742 = (0);
-seq__74643_74727 = G__74739;
-chunk__74644_74728 = G__74740;
-count__74645_74729 = G__74741;
-i__74646_74730 = G__74742;
+var temp__4126__auto___17822 = cljs.core.seq.call(null,seq__17729_17813);
+if(temp__4126__auto___17822){
+var seq__17729_17823__$1 = temp__4126__auto___17822;
+if(cljs.core.chunked_seq_QMARK_.call(null,seq__17729_17823__$1)){
+var c__4598__auto___17824 = cljs.core.chunk_first.call(null,seq__17729_17823__$1);
+var G__17825 = cljs.core.chunk_rest.call(null,seq__17729_17823__$1);
+var G__17826 = c__4598__auto___17824;
+var G__17827 = cljs.core.count.call(null,c__4598__auto___17824);
+var G__17828 = (0);
+seq__17729_17813 = G__17825;
+chunk__17730_17814 = G__17826;
+count__17731_17815 = G__17827;
+i__17732_17816 = G__17828;
 continue;
 } else {
-var gamma_74743 = cljs.core.first.call(null,seq__74643_74737__$1);
-context.lineTo((xs + (radius * Math.sin.call(null,gamma_74743))),(ys + (radius * Math.cos.call(null,gamma_74743))));
+var gamma_17829 = cljs.core.first.call(null,seq__17729_17823__$1);
+context.lineTo((xs + (radius * Math.sin.call(null,gamma_17829))),(ys + (radius * Math.cos.call(null,gamma_17829))));
 
-var G__74744 = cljs.core.next.call(null,seq__74643_74737__$1);
-var G__74745 = null;
-var G__74746 = (0);
-var G__74747 = (0);
-seq__74643_74727 = G__74744;
-chunk__74644_74728 = G__74745;
-count__74645_74729 = G__74746;
-i__74646_74730 = G__74747;
+var G__17830 = cljs.core.next.call(null,seq__17729_17823__$1);
+var G__17831 = null;
+var G__17832 = (0);
+var G__17833 = (0);
+seq__17729_17813 = G__17830;
+chunk__17730_17814 = G__17831;
+count__17731_17815 = G__17832;
+i__17732_17816 = G__17833;
 continue;
 }
 } else {
@@ -554,171 +553,163 @@ context.save();
 context.clip();
 
 var result = cljstemplate.shape.click_result.call(null,shape,context,mouse);
-var seq__74647_74748 = cljs.core.seq.call(null,cljs.core.range.call(null,cljs.core.count.call(null,channels)));
-var chunk__74648_74749 = null;
-var count__74649_74750 = (0);
-var i__74650_74751 = (0);
+var seq__17733_17834 = cljs.core.seq.call(null,cljs.core.range.call(null,cljs.core.count.call(null,channels)));
+var chunk__17734_17835 = null;
+var count__17735_17836 = (0);
+var i__17736_17837 = (0);
 while(true){
-if((i__74650_74751 < count__74649_74750)){
-var ch_74752 = cljs.core._nth.call(null,chunk__74648_74749,i__74650_74751);
-var channel_74753 = cljs.core.nth.call(null,channels,ch_74752);
-var channel_wiring_74754 = cljs.core.nth.call(null,wiring,ch_74752);
-var ch_pos_74755 = ((ch_74752 - ((cljs.core.count.call(null,channels) - (1)) / (2))) * (inner_radius / (2)));
-var seq__74651_74756 = cljs.core.seq.call(null,channel_wiring_74754);
-var chunk__74652_74757 = null;
-var count__74653_74758 = (0);
-var i__74654_74759 = (0);
+if((i__17736_17837 < count__17735_17836)){
+var ch_17838 = cljs.core._nth.call(null,chunk__17734_17835,i__17736_17837);
+var channel_17839 = cljs.core.nth.call(null,channels,ch_17838);
+var channel_wiring_17840 = cljs.core.nth.call(null,wiring,ch_17838);
+var ch_pos_17841 = (((ch_17838 - ((cljs.core.count.call(null,channels) - (1)) / (2))) * (inner_radius / n)) * 2.5);
+var seq__17737_17842 = cljs.core.seq.call(null,channel_wiring_17840);
+var chunk__17738_17843 = null;
+var count__17739_17844 = (0);
+var i__17740_17845 = (0);
 while(true){
-if((i__74654_74759 < count__74653_74758)){
-var vec__74655_74760 = cljs.core._nth.call(null,chunk__74652_74757,i__74654_74759);
-var from_74761 = cljs.core.nth.call(null,vec__74655_74760,(0),null);
-var onto_74762 = cljs.core.nth.call(null,vec__74655_74760,(1),null);
-var vec__74656_74763 = cljs.core.nth.call(null,vec__74655_74760,(2),null);
-var fw_74764 = cljs.core.nth.call(null,vec__74656_74763,(0),null);
-var bw_74765 = cljs.core.nth.call(null,vec__74656_74763,(1),null);
-var switched_74766 = vec__74656_74763;
+if((i__17740_17845 < count__17739_17844)){
+var vec__17741_17846 = cljs.core._nth.call(null,chunk__17738_17843,i__17740_17845);
+var from_17847 = cljs.core.nth.call(null,vec__17741_17846,(0),null);
+var onto_17848 = cljs.core.nth.call(null,vec__17741_17846,(1),null);
+var vec__17742_17849 = cljs.core.nth.call(null,vec__17741_17846,(2),null);
+var fw_17850 = cljs.core.nth.call(null,vec__17742_17849,(0),null);
+var bw_17851 = cljs.core.nth.call(null,vec__17742_17849,(1),null);
+var switched_17852 = vec__17742_17849;
 context.beginPath();
 
-var vec__74657_74767 = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [Math.sin.call(null,cljs.core.nth.call(null,epsilons,from_74761)),Math.cos.call(null,cljs.core.nth.call(null,epsilons,from_74761))], null);
-var from_x_74768 = cljs.core.nth.call(null,vec__74657_74767,(0),null);
-var from_y_74769 = cljs.core.nth.call(null,vec__74657_74767,(1),null);
-var vec__74658_74770 = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [Math.sin.call(null,cljs.core.nth.call(null,epsilons,onto_74762)),Math.cos.call(null,cljs.core.nth.call(null,epsilons,onto_74762))], null);
-var onto_x_74771 = cljs.core.nth.call(null,vec__74658_74770,(0),null);
-var onto_y_74772 = cljs.core.nth.call(null,vec__74658_74770,(1),null);
-var vec__74659_74773 = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [Math.cos.call(null,cljs.core.nth.call(null,epsilons,from_74761)),(- Math.sin.call(null,cljs.core.nth.call(null,epsilons,from_74761)))], null);
-var from_x_p_74774 = cljs.core.nth.call(null,vec__74659_74773,(0),null);
-var from_y_p_74775 = cljs.core.nth.call(null,vec__74659_74773,(1),null);
-var vec__74660_74776 = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [Math.cos.call(null,cljs.core.nth.call(null,epsilons,onto_74762)),(- Math.sin.call(null,cljs.core.nth.call(null,epsilons,onto_74762)))], null);
-var onto_x_p_74777 = cljs.core.nth.call(null,vec__74660_74776,(0),null);
-var onto_y_p_74778 = cljs.core.nth.call(null,vec__74660_74776,(1),null);
-var vec__74661_74779 = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [(xs + (pad * from_x_74768)),(ys + (pad * from_y_74769))], null);
-var xa_74780 = cljs.core.nth.call(null,vec__74661_74779,(0),null);
-var ya_74781 = cljs.core.nth.call(null,vec__74661_74779,(1),null);
-var vec__74662_74782 = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [((xs + ((0.5 * inner_radius) * from_x_74768)) + (ch_pos_74755 * from_x_p_74774)),((ys + ((0.5 * inner_radius) * from_y_74769)) + (ch_pos_74755 * from_y_p_74775))], null);
-var xb_74783 = cljs.core.nth.call(null,vec__74662_74782,(0),null);
-var yb_74784 = cljs.core.nth.call(null,vec__74662_74782,(1),null);
-var vec__74663_74785 = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [((xs + ((0.5 * inner_radius) * onto_x_74771)) + (ch_pos_74755 * onto_x_p_74777)),((ys + ((0.5 * inner_radius) * onto_y_74772)) + (ch_pos_74755 * onto_y_p_74778))], null);
-var xc_74786 = cljs.core.nth.call(null,vec__74663_74785,(0),null);
-var yc_74787 = cljs.core.nth.call(null,vec__74663_74785,(1),null);
-var vec__74664_74788 = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [(xs + (pad * onto_x_74771)),(ys + (pad * onto_y_74772))], null);
-var xd_74789 = cljs.core.nth.call(null,vec__74664_74788,(0),null);
-var yd_74790 = cljs.core.nth.call(null,vec__74664_74788,(1),null);
-context.moveTo(xa_74780,ya_74781);
+var vec__17743_17853 = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [Math.sin.call(null,cljs.core.nth.call(null,epsilons,from_17847)),Math.cos.call(null,cljs.core.nth.call(null,epsilons,from_17847))], null);
+var from_x_17854 = cljs.core.nth.call(null,vec__17743_17853,(0),null);
+var from_y_17855 = cljs.core.nth.call(null,vec__17743_17853,(1),null);
+var vec__17744_17856 = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [Math.sin.call(null,cljs.core.nth.call(null,epsilons,onto_17848)),Math.cos.call(null,cljs.core.nth.call(null,epsilons,onto_17848))], null);
+var onto_x_17857 = cljs.core.nth.call(null,vec__17744_17856,(0),null);
+var onto_y_17858 = cljs.core.nth.call(null,vec__17744_17856,(1),null);
+var vec__17745_17859 = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [Math.cos.call(null,cljs.core.nth.call(null,epsilons,from_17847)),(- Math.sin.call(null,cljs.core.nth.call(null,epsilons,from_17847)))], null);
+var from_x_p_17860 = cljs.core.nth.call(null,vec__17745_17859,(0),null);
+var from_y_p_17861 = cljs.core.nth.call(null,vec__17745_17859,(1),null);
+var vec__17746_17862 = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [Math.cos.call(null,cljs.core.nth.call(null,epsilons,onto_17848)),(- Math.sin.call(null,cljs.core.nth.call(null,epsilons,onto_17848)))], null);
+var onto_x_p_17863 = cljs.core.nth.call(null,vec__17746_17862,(0),null);
+var onto_y_p_17864 = cljs.core.nth.call(null,vec__17746_17862,(1),null);
+var vec__17747_17865 = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [(xs + (pad * from_x_17854)),(ys + (pad * from_y_17855))], null);
+var xa_17866 = cljs.core.nth.call(null,vec__17747_17865,(0),null);
+var ya_17867 = cljs.core.nth.call(null,vec__17747_17865,(1),null);
+var vec__17748_17868 = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [((xs + ((0.5 * inner_radius) * from_x_17854)) + (ch_pos_17841 * from_x_p_17860)),((ys + ((0.5 * inner_radius) * from_y_17855)) + (ch_pos_17841 * from_y_p_17861))], null);
+var xb_17869 = cljs.core.nth.call(null,vec__17748_17868,(0),null);
+var yb_17870 = cljs.core.nth.call(null,vec__17748_17868,(1),null);
+var vec__17749_17871 = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [((xs + ((0.5 * inner_radius) * onto_x_17857)) + (ch_pos_17841 * onto_x_p_17863)),((ys + ((0.5 * inner_radius) * onto_y_17858)) + (ch_pos_17841 * onto_y_p_17864))], null);
+var xc_17872 = cljs.core.nth.call(null,vec__17749_17871,(0),null);
+var yc_17873 = cljs.core.nth.call(null,vec__17749_17871,(1),null);
+var vec__17750_17874 = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [(xs + (pad * onto_x_17857)),(ys + (pad * onto_y_17858))], null);
+var xd_17875 = cljs.core.nth.call(null,vec__17750_17874,(0),null);
+var yd_17876 = cljs.core.nth.call(null,vec__17750_17874,(1),null);
+context.moveTo(xa_17866,ya_17867);
 
-context.bezierCurveTo(xb_74783,yb_74784,xc_74786,yc_74787,xd_74789,yd_74790);
+context.bezierCurveTo(xb_17869,yb_17870,xc_17872,yc_17873,xd_17875,yd_17876);
 
-var length_est_74791 = (inner_radius * cljs.core.get.call(null,cljstemplate.shape.path_lengths,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [n,Math.abs.call(null,(from_74761 - onto_74762))], null),(2)));
-var offset_74792 = cljs.core.mod.call(null,((timestamp / (2000)) * (length_est_74791 + (1))),(length_est_74791 + (1)));
-var lineDash_74793 = [(1),(length_est_74791 / (2))];
-if(cljs.core.truth_(cljs.core.some.call(null,new cljs.core.PersistentHashSet(null, new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"on","on",173873944),null], null), null),switched_74766))){
+var length_est_17877 = (inner_radius * cljs.core.get.call(null,cljstemplate.shape.path_lengths,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [n,Math.abs.call(null,(from_17847 - onto_17848))], null),(2)));
+var length_bit_17878 = (length_est_17877 / ((length_est_17877 / (sf * (10))) | (0)));
+var bit_1_17879 = (channel_width / (3));
+var bit_2_17880 = (length_bit_17878 * ((2) / (3)));
+var bits_17881 = (bit_1_17879 + bit_2_17880);
+var offset_17882 = cljs.core.mod.call(null,((timestamp / (1000)) * bits_17881),bits_17881);
+var lineDash_17883 = [bit_1_17879,bit_2_17880];
+if(cljs.core.truth_(cljs.core.some.call(null,new cljs.core.PersistentHashSet(null, new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"on","on",173873944),null], null), null),switched_17852))){
 context.strokeStyle = "rgb(255,255,255)";
 
-context.lineWidth = ((channel_width / (2)) + (1));
+context.lineWidth = (channel_width + (1));
 
 context.stroke();
 
-context.strokeStyle = cljstemplate.shape.rgb_str.call(null,channel_74753);
+context.strokeStyle = cljstemplate.shape.rgb_str.call(null,channel_17839);
 
-context.lineWidth = (channel_width / (2));
+context.lineWidth = channel_width;
 
 context.stroke();
 } else {
 context.strokeStyle = "rgb(0,0,0)";
 
-context.lineWidth = ((channel_width / (2)) + (1));
+context.lineWidth = ((channel_width / (3)) + (1));
 
 context.stroke();
 
-context.strokeStyle = cljstemplate.shape.rgba_str.call(null,cljs.core.conj.call(null,channel_74753,0.75));
+context.strokeStyle = cljstemplate.shape.rgb_str.call(null,channel_17839);
 
-context.lineWidth = (channel_width / (2));
+context.lineWidth = (channel_width / (3));
 
 context.stroke();
 }
 
-var seq__74665_74794 = cljs.core.seq.call(null,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [fw_74764,offset_74792], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [bw_74765,(- offset_74792)], null)], null));
-var chunk__74666_74795 = null;
-var count__74667_74796 = (0);
-var i__74668_74797 = (0);
+var seq__17751_17884 = cljs.core.seq.call(null,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [fw_17850,offset_17882], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [bw_17851,(- offset_17882)], null)], null));
+var chunk__17752_17885 = null;
+var count__17753_17886 = (0);
+var i__17754_17887 = (0);
 while(true){
-if((i__74668_74797 < count__74667_74796)){
-var vec__74669_74798 = cljs.core._nth.call(null,chunk__74666_74795,i__74668_74797);
-var direction_74799 = cljs.core.nth.call(null,vec__74669_74798,(0),null);
-var os_74800 = cljs.core.nth.call(null,vec__74669_74798,(1),null);
-if(cljs.core._EQ_.call(null,new cljs.core.Keyword(null,"on","on",173873944),direction_74799)){
-context.setLineDash(lineDash_74793);
+if((i__17754_17887 < count__17753_17886)){
+var vec__17755_17888 = cljs.core._nth.call(null,chunk__17752_17885,i__17754_17887);
+var direction_17889 = cljs.core.nth.call(null,vec__17755_17888,(0),null);
+var os_17890 = cljs.core.nth.call(null,vec__17755_17888,(1),null);
+if(cljs.core._EQ_.call(null,new cljs.core.Keyword(null,"on","on",173873944),direction_17889)){
+context.setLineDash(lineDash_17883);
 
-context.lineDashOffset = os_74800;
+context.lineDashOffset = os_17890;
 
-context.strokeStyle = cljstemplate.shape.rgb_str.call(null,channel_74753);
+context.strokeStyle = "black";
 
-context.lineWidth = channel_width;
-
-context.stroke();
-
-context.strokeStyle = "rgba(255,255,255, 0.5)";
-
-context.lineWidth = (channel_width / (2));
+context.lineWidth = (channel_width / (3));
 
 context.stroke();
 } else {
 }
 
-var G__74801 = seq__74665_74794;
-var G__74802 = chunk__74666_74795;
-var G__74803 = count__74667_74796;
-var G__74804 = (i__74668_74797 + (1));
-seq__74665_74794 = G__74801;
-chunk__74666_74795 = G__74802;
-count__74667_74796 = G__74803;
-i__74668_74797 = G__74804;
+var G__17891 = seq__17751_17884;
+var G__17892 = chunk__17752_17885;
+var G__17893 = count__17753_17886;
+var G__17894 = (i__17754_17887 + (1));
+seq__17751_17884 = G__17891;
+chunk__17752_17885 = G__17892;
+count__17753_17886 = G__17893;
+i__17754_17887 = G__17894;
 continue;
 } else {
-var temp__4126__auto___74805 = cljs.core.seq.call(null,seq__74665_74794);
-if(temp__4126__auto___74805){
-var seq__74665_74806__$1 = temp__4126__auto___74805;
-if(cljs.core.chunked_seq_QMARK_.call(null,seq__74665_74806__$1)){
-var c__4598__auto___74807 = cljs.core.chunk_first.call(null,seq__74665_74806__$1);
-var G__74808 = cljs.core.chunk_rest.call(null,seq__74665_74806__$1);
-var G__74809 = c__4598__auto___74807;
-var G__74810 = cljs.core.count.call(null,c__4598__auto___74807);
-var G__74811 = (0);
-seq__74665_74794 = G__74808;
-chunk__74666_74795 = G__74809;
-count__74667_74796 = G__74810;
-i__74668_74797 = G__74811;
+var temp__4126__auto___17895 = cljs.core.seq.call(null,seq__17751_17884);
+if(temp__4126__auto___17895){
+var seq__17751_17896__$1 = temp__4126__auto___17895;
+if(cljs.core.chunked_seq_QMARK_.call(null,seq__17751_17896__$1)){
+var c__4598__auto___17897 = cljs.core.chunk_first.call(null,seq__17751_17896__$1);
+var G__17898 = cljs.core.chunk_rest.call(null,seq__17751_17896__$1);
+var G__17899 = c__4598__auto___17897;
+var G__17900 = cljs.core.count.call(null,c__4598__auto___17897);
+var G__17901 = (0);
+seq__17751_17884 = G__17898;
+chunk__17752_17885 = G__17899;
+count__17753_17886 = G__17900;
+i__17754_17887 = G__17901;
 continue;
 } else {
-var vec__74670_74812 = cljs.core.first.call(null,seq__74665_74806__$1);
-var direction_74813 = cljs.core.nth.call(null,vec__74670_74812,(0),null);
-var os_74814 = cljs.core.nth.call(null,vec__74670_74812,(1),null);
-if(cljs.core._EQ_.call(null,new cljs.core.Keyword(null,"on","on",173873944),direction_74813)){
-context.setLineDash(lineDash_74793);
+var vec__17756_17902 = cljs.core.first.call(null,seq__17751_17896__$1);
+var direction_17903 = cljs.core.nth.call(null,vec__17756_17902,(0),null);
+var os_17904 = cljs.core.nth.call(null,vec__17756_17902,(1),null);
+if(cljs.core._EQ_.call(null,new cljs.core.Keyword(null,"on","on",173873944),direction_17903)){
+context.setLineDash(lineDash_17883);
 
-context.lineDashOffset = os_74814;
+context.lineDashOffset = os_17904;
 
-context.strokeStyle = cljstemplate.shape.rgb_str.call(null,channel_74753);
+context.strokeStyle = "black";
 
-context.lineWidth = channel_width;
-
-context.stroke();
-
-context.strokeStyle = "rgba(255,255,255, 0.5)";
-
-context.lineWidth = (channel_width / (2));
+context.lineWidth = (channel_width / (3));
 
 context.stroke();
 } else {
 }
 
-var G__74815 = cljs.core.next.call(null,seq__74665_74806__$1);
-var G__74816 = null;
-var G__74817 = (0);
-var G__74818 = (0);
-seq__74665_74794 = G__74815;
-chunk__74666_74795 = G__74816;
-count__74667_74796 = G__74817;
-i__74668_74797 = G__74818;
+var G__17905 = cljs.core.next.call(null,seq__17751_17896__$1);
+var G__17906 = null;
+var G__17907 = (0);
+var G__17908 = (0);
+seq__17751_17884 = G__17905;
+chunk__17752_17885 = G__17906;
+count__17753_17886 = G__17907;
+i__17754_17887 = G__17908;
 continue;
 }
 } else {
@@ -729,180 +720,172 @@ break;
 
 context.setLineDash([]);
 
-var G__74819 = seq__74651_74756;
-var G__74820 = chunk__74652_74757;
-var G__74821 = count__74653_74758;
-var G__74822 = (i__74654_74759 + (1));
-seq__74651_74756 = G__74819;
-chunk__74652_74757 = G__74820;
-count__74653_74758 = G__74821;
-i__74654_74759 = G__74822;
+var G__17909 = seq__17737_17842;
+var G__17910 = chunk__17738_17843;
+var G__17911 = count__17739_17844;
+var G__17912 = (i__17740_17845 + (1));
+seq__17737_17842 = G__17909;
+chunk__17738_17843 = G__17910;
+count__17739_17844 = G__17911;
+i__17740_17845 = G__17912;
 continue;
 } else {
-var temp__4126__auto___74823 = cljs.core.seq.call(null,seq__74651_74756);
-if(temp__4126__auto___74823){
-var seq__74651_74824__$1 = temp__4126__auto___74823;
-if(cljs.core.chunked_seq_QMARK_.call(null,seq__74651_74824__$1)){
-var c__4598__auto___74825 = cljs.core.chunk_first.call(null,seq__74651_74824__$1);
-var G__74826 = cljs.core.chunk_rest.call(null,seq__74651_74824__$1);
-var G__74827 = c__4598__auto___74825;
-var G__74828 = cljs.core.count.call(null,c__4598__auto___74825);
-var G__74829 = (0);
-seq__74651_74756 = G__74826;
-chunk__74652_74757 = G__74827;
-count__74653_74758 = G__74828;
-i__74654_74759 = G__74829;
+var temp__4126__auto___17913 = cljs.core.seq.call(null,seq__17737_17842);
+if(temp__4126__auto___17913){
+var seq__17737_17914__$1 = temp__4126__auto___17913;
+if(cljs.core.chunked_seq_QMARK_.call(null,seq__17737_17914__$1)){
+var c__4598__auto___17915 = cljs.core.chunk_first.call(null,seq__17737_17914__$1);
+var G__17916 = cljs.core.chunk_rest.call(null,seq__17737_17914__$1);
+var G__17917 = c__4598__auto___17915;
+var G__17918 = cljs.core.count.call(null,c__4598__auto___17915);
+var G__17919 = (0);
+seq__17737_17842 = G__17916;
+chunk__17738_17843 = G__17917;
+count__17739_17844 = G__17918;
+i__17740_17845 = G__17919;
 continue;
 } else {
-var vec__74671_74830 = cljs.core.first.call(null,seq__74651_74824__$1);
-var from_74831 = cljs.core.nth.call(null,vec__74671_74830,(0),null);
-var onto_74832 = cljs.core.nth.call(null,vec__74671_74830,(1),null);
-var vec__74672_74833 = cljs.core.nth.call(null,vec__74671_74830,(2),null);
-var fw_74834 = cljs.core.nth.call(null,vec__74672_74833,(0),null);
-var bw_74835 = cljs.core.nth.call(null,vec__74672_74833,(1),null);
-var switched_74836 = vec__74672_74833;
+var vec__17757_17920 = cljs.core.first.call(null,seq__17737_17914__$1);
+var from_17921 = cljs.core.nth.call(null,vec__17757_17920,(0),null);
+var onto_17922 = cljs.core.nth.call(null,vec__17757_17920,(1),null);
+var vec__17758_17923 = cljs.core.nth.call(null,vec__17757_17920,(2),null);
+var fw_17924 = cljs.core.nth.call(null,vec__17758_17923,(0),null);
+var bw_17925 = cljs.core.nth.call(null,vec__17758_17923,(1),null);
+var switched_17926 = vec__17758_17923;
 context.beginPath();
 
-var vec__74673_74837 = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [Math.sin.call(null,cljs.core.nth.call(null,epsilons,from_74831)),Math.cos.call(null,cljs.core.nth.call(null,epsilons,from_74831))], null);
-var from_x_74838 = cljs.core.nth.call(null,vec__74673_74837,(0),null);
-var from_y_74839 = cljs.core.nth.call(null,vec__74673_74837,(1),null);
-var vec__74674_74840 = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [Math.sin.call(null,cljs.core.nth.call(null,epsilons,onto_74832)),Math.cos.call(null,cljs.core.nth.call(null,epsilons,onto_74832))], null);
-var onto_x_74841 = cljs.core.nth.call(null,vec__74674_74840,(0),null);
-var onto_y_74842 = cljs.core.nth.call(null,vec__74674_74840,(1),null);
-var vec__74675_74843 = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [Math.cos.call(null,cljs.core.nth.call(null,epsilons,from_74831)),(- Math.sin.call(null,cljs.core.nth.call(null,epsilons,from_74831)))], null);
-var from_x_p_74844 = cljs.core.nth.call(null,vec__74675_74843,(0),null);
-var from_y_p_74845 = cljs.core.nth.call(null,vec__74675_74843,(1),null);
-var vec__74676_74846 = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [Math.cos.call(null,cljs.core.nth.call(null,epsilons,onto_74832)),(- Math.sin.call(null,cljs.core.nth.call(null,epsilons,onto_74832)))], null);
-var onto_x_p_74847 = cljs.core.nth.call(null,vec__74676_74846,(0),null);
-var onto_y_p_74848 = cljs.core.nth.call(null,vec__74676_74846,(1),null);
-var vec__74677_74849 = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [(xs + (pad * from_x_74838)),(ys + (pad * from_y_74839))], null);
-var xa_74850 = cljs.core.nth.call(null,vec__74677_74849,(0),null);
-var ya_74851 = cljs.core.nth.call(null,vec__74677_74849,(1),null);
-var vec__74678_74852 = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [((xs + ((0.5 * inner_radius) * from_x_74838)) + (ch_pos_74755 * from_x_p_74844)),((ys + ((0.5 * inner_radius) * from_y_74839)) + (ch_pos_74755 * from_y_p_74845))], null);
-var xb_74853 = cljs.core.nth.call(null,vec__74678_74852,(0),null);
-var yb_74854 = cljs.core.nth.call(null,vec__74678_74852,(1),null);
-var vec__74679_74855 = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [((xs + ((0.5 * inner_radius) * onto_x_74841)) + (ch_pos_74755 * onto_x_p_74847)),((ys + ((0.5 * inner_radius) * onto_y_74842)) + (ch_pos_74755 * onto_y_p_74848))], null);
-var xc_74856 = cljs.core.nth.call(null,vec__74679_74855,(0),null);
-var yc_74857 = cljs.core.nth.call(null,vec__74679_74855,(1),null);
-var vec__74680_74858 = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [(xs + (pad * onto_x_74841)),(ys + (pad * onto_y_74842))], null);
-var xd_74859 = cljs.core.nth.call(null,vec__74680_74858,(0),null);
-var yd_74860 = cljs.core.nth.call(null,vec__74680_74858,(1),null);
-context.moveTo(xa_74850,ya_74851);
+var vec__17759_17927 = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [Math.sin.call(null,cljs.core.nth.call(null,epsilons,from_17921)),Math.cos.call(null,cljs.core.nth.call(null,epsilons,from_17921))], null);
+var from_x_17928 = cljs.core.nth.call(null,vec__17759_17927,(0),null);
+var from_y_17929 = cljs.core.nth.call(null,vec__17759_17927,(1),null);
+var vec__17760_17930 = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [Math.sin.call(null,cljs.core.nth.call(null,epsilons,onto_17922)),Math.cos.call(null,cljs.core.nth.call(null,epsilons,onto_17922))], null);
+var onto_x_17931 = cljs.core.nth.call(null,vec__17760_17930,(0),null);
+var onto_y_17932 = cljs.core.nth.call(null,vec__17760_17930,(1),null);
+var vec__17761_17933 = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [Math.cos.call(null,cljs.core.nth.call(null,epsilons,from_17921)),(- Math.sin.call(null,cljs.core.nth.call(null,epsilons,from_17921)))], null);
+var from_x_p_17934 = cljs.core.nth.call(null,vec__17761_17933,(0),null);
+var from_y_p_17935 = cljs.core.nth.call(null,vec__17761_17933,(1),null);
+var vec__17762_17936 = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [Math.cos.call(null,cljs.core.nth.call(null,epsilons,onto_17922)),(- Math.sin.call(null,cljs.core.nth.call(null,epsilons,onto_17922)))], null);
+var onto_x_p_17937 = cljs.core.nth.call(null,vec__17762_17936,(0),null);
+var onto_y_p_17938 = cljs.core.nth.call(null,vec__17762_17936,(1),null);
+var vec__17763_17939 = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [(xs + (pad * from_x_17928)),(ys + (pad * from_y_17929))], null);
+var xa_17940 = cljs.core.nth.call(null,vec__17763_17939,(0),null);
+var ya_17941 = cljs.core.nth.call(null,vec__17763_17939,(1),null);
+var vec__17764_17942 = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [((xs + ((0.5 * inner_radius) * from_x_17928)) + (ch_pos_17841 * from_x_p_17934)),((ys + ((0.5 * inner_radius) * from_y_17929)) + (ch_pos_17841 * from_y_p_17935))], null);
+var xb_17943 = cljs.core.nth.call(null,vec__17764_17942,(0),null);
+var yb_17944 = cljs.core.nth.call(null,vec__17764_17942,(1),null);
+var vec__17765_17945 = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [((xs + ((0.5 * inner_radius) * onto_x_17931)) + (ch_pos_17841 * onto_x_p_17937)),((ys + ((0.5 * inner_radius) * onto_y_17932)) + (ch_pos_17841 * onto_y_p_17938))], null);
+var xc_17946 = cljs.core.nth.call(null,vec__17765_17945,(0),null);
+var yc_17947 = cljs.core.nth.call(null,vec__17765_17945,(1),null);
+var vec__17766_17948 = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [(xs + (pad * onto_x_17931)),(ys + (pad * onto_y_17932))], null);
+var xd_17949 = cljs.core.nth.call(null,vec__17766_17948,(0),null);
+var yd_17950 = cljs.core.nth.call(null,vec__17766_17948,(1),null);
+context.moveTo(xa_17940,ya_17941);
 
-context.bezierCurveTo(xb_74853,yb_74854,xc_74856,yc_74857,xd_74859,yd_74860);
+context.bezierCurveTo(xb_17943,yb_17944,xc_17946,yc_17947,xd_17949,yd_17950);
 
-var length_est_74861 = (inner_radius * cljs.core.get.call(null,cljstemplate.shape.path_lengths,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [n,Math.abs.call(null,(from_74831 - onto_74832))], null),(2)));
-var offset_74862 = cljs.core.mod.call(null,((timestamp / (2000)) * (length_est_74861 + (1))),(length_est_74861 + (1)));
-var lineDash_74863 = [(1),(length_est_74861 / (2))];
-if(cljs.core.truth_(cljs.core.some.call(null,new cljs.core.PersistentHashSet(null, new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"on","on",173873944),null], null), null),switched_74836))){
+var length_est_17951 = (inner_radius * cljs.core.get.call(null,cljstemplate.shape.path_lengths,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [n,Math.abs.call(null,(from_17921 - onto_17922))], null),(2)));
+var length_bit_17952 = (length_est_17951 / ((length_est_17951 / (sf * (10))) | (0)));
+var bit_1_17953 = (channel_width / (3));
+var bit_2_17954 = (length_bit_17952 * ((2) / (3)));
+var bits_17955 = (bit_1_17953 + bit_2_17954);
+var offset_17956 = cljs.core.mod.call(null,((timestamp / (1000)) * bits_17955),bits_17955);
+var lineDash_17957 = [bit_1_17953,bit_2_17954];
+if(cljs.core.truth_(cljs.core.some.call(null,new cljs.core.PersistentHashSet(null, new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"on","on",173873944),null], null), null),switched_17926))){
 context.strokeStyle = "rgb(255,255,255)";
 
-context.lineWidth = ((channel_width / (2)) + (1));
+context.lineWidth = (channel_width + (1));
 
 context.stroke();
 
-context.strokeStyle = cljstemplate.shape.rgb_str.call(null,channel_74753);
+context.strokeStyle = cljstemplate.shape.rgb_str.call(null,channel_17839);
 
-context.lineWidth = (channel_width / (2));
+context.lineWidth = channel_width;
 
 context.stroke();
 } else {
 context.strokeStyle = "rgb(0,0,0)";
 
-context.lineWidth = ((channel_width / (2)) + (1));
+context.lineWidth = ((channel_width / (3)) + (1));
 
 context.stroke();
 
-context.strokeStyle = cljstemplate.shape.rgba_str.call(null,cljs.core.conj.call(null,channel_74753,0.75));
+context.strokeStyle = cljstemplate.shape.rgb_str.call(null,channel_17839);
 
-context.lineWidth = (channel_width / (2));
+context.lineWidth = (channel_width / (3));
 
 context.stroke();
 }
 
-var seq__74681_74864 = cljs.core.seq.call(null,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [fw_74834,offset_74862], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [bw_74835,(- offset_74862)], null)], null));
-var chunk__74682_74865 = null;
-var count__74683_74866 = (0);
-var i__74684_74867 = (0);
+var seq__17767_17958 = cljs.core.seq.call(null,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [fw_17924,offset_17956], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [bw_17925,(- offset_17956)], null)], null));
+var chunk__17768_17959 = null;
+var count__17769_17960 = (0);
+var i__17770_17961 = (0);
 while(true){
-if((i__74684_74867 < count__74683_74866)){
-var vec__74685_74868 = cljs.core._nth.call(null,chunk__74682_74865,i__74684_74867);
-var direction_74869 = cljs.core.nth.call(null,vec__74685_74868,(0),null);
-var os_74870 = cljs.core.nth.call(null,vec__74685_74868,(1),null);
-if(cljs.core._EQ_.call(null,new cljs.core.Keyword(null,"on","on",173873944),direction_74869)){
-context.setLineDash(lineDash_74863);
+if((i__17770_17961 < count__17769_17960)){
+var vec__17771_17962 = cljs.core._nth.call(null,chunk__17768_17959,i__17770_17961);
+var direction_17963 = cljs.core.nth.call(null,vec__17771_17962,(0),null);
+var os_17964 = cljs.core.nth.call(null,vec__17771_17962,(1),null);
+if(cljs.core._EQ_.call(null,new cljs.core.Keyword(null,"on","on",173873944),direction_17963)){
+context.setLineDash(lineDash_17957);
 
-context.lineDashOffset = os_74870;
+context.lineDashOffset = os_17964;
 
-context.strokeStyle = cljstemplate.shape.rgb_str.call(null,channel_74753);
+context.strokeStyle = "black";
 
-context.lineWidth = channel_width;
-
-context.stroke();
-
-context.strokeStyle = "rgba(255,255,255, 0.5)";
-
-context.lineWidth = (channel_width / (2));
+context.lineWidth = (channel_width / (3));
 
 context.stroke();
 } else {
 }
 
-var G__74871 = seq__74681_74864;
-var G__74872 = chunk__74682_74865;
-var G__74873 = count__74683_74866;
-var G__74874 = (i__74684_74867 + (1));
-seq__74681_74864 = G__74871;
-chunk__74682_74865 = G__74872;
-count__74683_74866 = G__74873;
-i__74684_74867 = G__74874;
+var G__17965 = seq__17767_17958;
+var G__17966 = chunk__17768_17959;
+var G__17967 = count__17769_17960;
+var G__17968 = (i__17770_17961 + (1));
+seq__17767_17958 = G__17965;
+chunk__17768_17959 = G__17966;
+count__17769_17960 = G__17967;
+i__17770_17961 = G__17968;
 continue;
 } else {
-var temp__4126__auto___74875__$1 = cljs.core.seq.call(null,seq__74681_74864);
-if(temp__4126__auto___74875__$1){
-var seq__74681_74876__$1 = temp__4126__auto___74875__$1;
-if(cljs.core.chunked_seq_QMARK_.call(null,seq__74681_74876__$1)){
-var c__4598__auto___74877 = cljs.core.chunk_first.call(null,seq__74681_74876__$1);
-var G__74878 = cljs.core.chunk_rest.call(null,seq__74681_74876__$1);
-var G__74879 = c__4598__auto___74877;
-var G__74880 = cljs.core.count.call(null,c__4598__auto___74877);
-var G__74881 = (0);
-seq__74681_74864 = G__74878;
-chunk__74682_74865 = G__74879;
-count__74683_74866 = G__74880;
-i__74684_74867 = G__74881;
+var temp__4126__auto___17969__$1 = cljs.core.seq.call(null,seq__17767_17958);
+if(temp__4126__auto___17969__$1){
+var seq__17767_17970__$1 = temp__4126__auto___17969__$1;
+if(cljs.core.chunked_seq_QMARK_.call(null,seq__17767_17970__$1)){
+var c__4598__auto___17971 = cljs.core.chunk_first.call(null,seq__17767_17970__$1);
+var G__17972 = cljs.core.chunk_rest.call(null,seq__17767_17970__$1);
+var G__17973 = c__4598__auto___17971;
+var G__17974 = cljs.core.count.call(null,c__4598__auto___17971);
+var G__17975 = (0);
+seq__17767_17958 = G__17972;
+chunk__17768_17959 = G__17973;
+count__17769_17960 = G__17974;
+i__17770_17961 = G__17975;
 continue;
 } else {
-var vec__74686_74882 = cljs.core.first.call(null,seq__74681_74876__$1);
-var direction_74883 = cljs.core.nth.call(null,vec__74686_74882,(0),null);
-var os_74884 = cljs.core.nth.call(null,vec__74686_74882,(1),null);
-if(cljs.core._EQ_.call(null,new cljs.core.Keyword(null,"on","on",173873944),direction_74883)){
-context.setLineDash(lineDash_74863);
+var vec__17772_17976 = cljs.core.first.call(null,seq__17767_17970__$1);
+var direction_17977 = cljs.core.nth.call(null,vec__17772_17976,(0),null);
+var os_17978 = cljs.core.nth.call(null,vec__17772_17976,(1),null);
+if(cljs.core._EQ_.call(null,new cljs.core.Keyword(null,"on","on",173873944),direction_17977)){
+context.setLineDash(lineDash_17957);
 
-context.lineDashOffset = os_74884;
+context.lineDashOffset = os_17978;
 
-context.strokeStyle = cljstemplate.shape.rgb_str.call(null,channel_74753);
+context.strokeStyle = "black";
 
-context.lineWidth = channel_width;
-
-context.stroke();
-
-context.strokeStyle = "rgba(255,255,255, 0.5)";
-
-context.lineWidth = (channel_width / (2));
+context.lineWidth = (channel_width / (3));
 
 context.stroke();
 } else {
 }
 
-var G__74885 = cljs.core.next.call(null,seq__74681_74876__$1);
-var G__74886 = null;
-var G__74887 = (0);
-var G__74888 = (0);
-seq__74681_74864 = G__74885;
-chunk__74682_74865 = G__74886;
-count__74683_74866 = G__74887;
-i__74684_74867 = G__74888;
+var G__17979 = cljs.core.next.call(null,seq__17767_17970__$1);
+var G__17980 = null;
+var G__17981 = (0);
+var G__17982 = (0);
+seq__17767_17958 = G__17979;
+chunk__17768_17959 = G__17980;
+count__17769_17960 = G__17981;
+i__17770_17961 = G__17982;
 continue;
 }
 } else {
@@ -913,14 +896,14 @@ break;
 
 context.setLineDash([]);
 
-var G__74889 = cljs.core.next.call(null,seq__74651_74824__$1);
-var G__74890 = null;
-var G__74891 = (0);
-var G__74892 = (0);
-seq__74651_74756 = G__74889;
-chunk__74652_74757 = G__74890;
-count__74653_74758 = G__74891;
-i__74654_74759 = G__74892;
+var G__17983 = cljs.core.next.call(null,seq__17737_17914__$1);
+var G__17984 = null;
+var G__17985 = (0);
+var G__17986 = (0);
+seq__17737_17842 = G__17983;
+chunk__17738_17843 = G__17984;
+count__17739_17844 = G__17985;
+i__17740_17845 = G__17986;
 continue;
 }
 } else {
@@ -929,190 +912,182 @@ continue;
 break;
 }
 
-var G__74893 = seq__74647_74748;
-var G__74894 = chunk__74648_74749;
-var G__74895 = count__74649_74750;
-var G__74896 = (i__74650_74751 + (1));
-seq__74647_74748 = G__74893;
-chunk__74648_74749 = G__74894;
-count__74649_74750 = G__74895;
-i__74650_74751 = G__74896;
+var G__17987 = seq__17733_17834;
+var G__17988 = chunk__17734_17835;
+var G__17989 = count__17735_17836;
+var G__17990 = (i__17736_17837 + (1));
+seq__17733_17834 = G__17987;
+chunk__17734_17835 = G__17988;
+count__17735_17836 = G__17989;
+i__17736_17837 = G__17990;
 continue;
 } else {
-var temp__4126__auto___74897 = cljs.core.seq.call(null,seq__74647_74748);
-if(temp__4126__auto___74897){
-var seq__74647_74898__$1 = temp__4126__auto___74897;
-if(cljs.core.chunked_seq_QMARK_.call(null,seq__74647_74898__$1)){
-var c__4598__auto___74899 = cljs.core.chunk_first.call(null,seq__74647_74898__$1);
-var G__74900 = cljs.core.chunk_rest.call(null,seq__74647_74898__$1);
-var G__74901 = c__4598__auto___74899;
-var G__74902 = cljs.core.count.call(null,c__4598__auto___74899);
-var G__74903 = (0);
-seq__74647_74748 = G__74900;
-chunk__74648_74749 = G__74901;
-count__74649_74750 = G__74902;
-i__74650_74751 = G__74903;
+var temp__4126__auto___17991 = cljs.core.seq.call(null,seq__17733_17834);
+if(temp__4126__auto___17991){
+var seq__17733_17992__$1 = temp__4126__auto___17991;
+if(cljs.core.chunked_seq_QMARK_.call(null,seq__17733_17992__$1)){
+var c__4598__auto___17993 = cljs.core.chunk_first.call(null,seq__17733_17992__$1);
+var G__17994 = cljs.core.chunk_rest.call(null,seq__17733_17992__$1);
+var G__17995 = c__4598__auto___17993;
+var G__17996 = cljs.core.count.call(null,c__4598__auto___17993);
+var G__17997 = (0);
+seq__17733_17834 = G__17994;
+chunk__17734_17835 = G__17995;
+count__17735_17836 = G__17996;
+i__17736_17837 = G__17997;
 continue;
 } else {
-var ch_74904 = cljs.core.first.call(null,seq__74647_74898__$1);
-var channel_74905 = cljs.core.nth.call(null,channels,ch_74904);
-var channel_wiring_74906 = cljs.core.nth.call(null,wiring,ch_74904);
-var ch_pos_74907 = ((ch_74904 - ((cljs.core.count.call(null,channels) - (1)) / (2))) * (inner_radius / (2)));
-var seq__74687_74908 = cljs.core.seq.call(null,channel_wiring_74906);
-var chunk__74688_74909 = null;
-var count__74689_74910 = (0);
-var i__74690_74911 = (0);
+var ch_17998 = cljs.core.first.call(null,seq__17733_17992__$1);
+var channel_17999 = cljs.core.nth.call(null,channels,ch_17998);
+var channel_wiring_18000 = cljs.core.nth.call(null,wiring,ch_17998);
+var ch_pos_18001 = (((ch_17998 - ((cljs.core.count.call(null,channels) - (1)) / (2))) * (inner_radius / n)) * 2.5);
+var seq__17773_18002 = cljs.core.seq.call(null,channel_wiring_18000);
+var chunk__17774_18003 = null;
+var count__17775_18004 = (0);
+var i__17776_18005 = (0);
 while(true){
-if((i__74690_74911 < count__74689_74910)){
-var vec__74691_74912 = cljs.core._nth.call(null,chunk__74688_74909,i__74690_74911);
-var from_74913 = cljs.core.nth.call(null,vec__74691_74912,(0),null);
-var onto_74914 = cljs.core.nth.call(null,vec__74691_74912,(1),null);
-var vec__74692_74915 = cljs.core.nth.call(null,vec__74691_74912,(2),null);
-var fw_74916 = cljs.core.nth.call(null,vec__74692_74915,(0),null);
-var bw_74917 = cljs.core.nth.call(null,vec__74692_74915,(1),null);
-var switched_74918 = vec__74692_74915;
+if((i__17776_18005 < count__17775_18004)){
+var vec__17777_18006 = cljs.core._nth.call(null,chunk__17774_18003,i__17776_18005);
+var from_18007 = cljs.core.nth.call(null,vec__17777_18006,(0),null);
+var onto_18008 = cljs.core.nth.call(null,vec__17777_18006,(1),null);
+var vec__17778_18009 = cljs.core.nth.call(null,vec__17777_18006,(2),null);
+var fw_18010 = cljs.core.nth.call(null,vec__17778_18009,(0),null);
+var bw_18011 = cljs.core.nth.call(null,vec__17778_18009,(1),null);
+var switched_18012 = vec__17778_18009;
 context.beginPath();
 
-var vec__74693_74919 = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [Math.sin.call(null,cljs.core.nth.call(null,epsilons,from_74913)),Math.cos.call(null,cljs.core.nth.call(null,epsilons,from_74913))], null);
-var from_x_74920 = cljs.core.nth.call(null,vec__74693_74919,(0),null);
-var from_y_74921 = cljs.core.nth.call(null,vec__74693_74919,(1),null);
-var vec__74694_74922 = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [Math.sin.call(null,cljs.core.nth.call(null,epsilons,onto_74914)),Math.cos.call(null,cljs.core.nth.call(null,epsilons,onto_74914))], null);
-var onto_x_74923 = cljs.core.nth.call(null,vec__74694_74922,(0),null);
-var onto_y_74924 = cljs.core.nth.call(null,vec__74694_74922,(1),null);
-var vec__74695_74925 = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [Math.cos.call(null,cljs.core.nth.call(null,epsilons,from_74913)),(- Math.sin.call(null,cljs.core.nth.call(null,epsilons,from_74913)))], null);
-var from_x_p_74926 = cljs.core.nth.call(null,vec__74695_74925,(0),null);
-var from_y_p_74927 = cljs.core.nth.call(null,vec__74695_74925,(1),null);
-var vec__74696_74928 = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [Math.cos.call(null,cljs.core.nth.call(null,epsilons,onto_74914)),(- Math.sin.call(null,cljs.core.nth.call(null,epsilons,onto_74914)))], null);
-var onto_x_p_74929 = cljs.core.nth.call(null,vec__74696_74928,(0),null);
-var onto_y_p_74930 = cljs.core.nth.call(null,vec__74696_74928,(1),null);
-var vec__74697_74931 = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [(xs + (pad * from_x_74920)),(ys + (pad * from_y_74921))], null);
-var xa_74932 = cljs.core.nth.call(null,vec__74697_74931,(0),null);
-var ya_74933 = cljs.core.nth.call(null,vec__74697_74931,(1),null);
-var vec__74698_74934 = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [((xs + ((0.5 * inner_radius) * from_x_74920)) + (ch_pos_74907 * from_x_p_74926)),((ys + ((0.5 * inner_radius) * from_y_74921)) + (ch_pos_74907 * from_y_p_74927))], null);
-var xb_74935 = cljs.core.nth.call(null,vec__74698_74934,(0),null);
-var yb_74936 = cljs.core.nth.call(null,vec__74698_74934,(1),null);
-var vec__74699_74937 = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [((xs + ((0.5 * inner_radius) * onto_x_74923)) + (ch_pos_74907 * onto_x_p_74929)),((ys + ((0.5 * inner_radius) * onto_y_74924)) + (ch_pos_74907 * onto_y_p_74930))], null);
-var xc_74938 = cljs.core.nth.call(null,vec__74699_74937,(0),null);
-var yc_74939 = cljs.core.nth.call(null,vec__74699_74937,(1),null);
-var vec__74700_74940 = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [(xs + (pad * onto_x_74923)),(ys + (pad * onto_y_74924))], null);
-var xd_74941 = cljs.core.nth.call(null,vec__74700_74940,(0),null);
-var yd_74942 = cljs.core.nth.call(null,vec__74700_74940,(1),null);
-context.moveTo(xa_74932,ya_74933);
+var vec__17779_18013 = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [Math.sin.call(null,cljs.core.nth.call(null,epsilons,from_18007)),Math.cos.call(null,cljs.core.nth.call(null,epsilons,from_18007))], null);
+var from_x_18014 = cljs.core.nth.call(null,vec__17779_18013,(0),null);
+var from_y_18015 = cljs.core.nth.call(null,vec__17779_18013,(1),null);
+var vec__17780_18016 = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [Math.sin.call(null,cljs.core.nth.call(null,epsilons,onto_18008)),Math.cos.call(null,cljs.core.nth.call(null,epsilons,onto_18008))], null);
+var onto_x_18017 = cljs.core.nth.call(null,vec__17780_18016,(0),null);
+var onto_y_18018 = cljs.core.nth.call(null,vec__17780_18016,(1),null);
+var vec__17781_18019 = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [Math.cos.call(null,cljs.core.nth.call(null,epsilons,from_18007)),(- Math.sin.call(null,cljs.core.nth.call(null,epsilons,from_18007)))], null);
+var from_x_p_18020 = cljs.core.nth.call(null,vec__17781_18019,(0),null);
+var from_y_p_18021 = cljs.core.nth.call(null,vec__17781_18019,(1),null);
+var vec__17782_18022 = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [Math.cos.call(null,cljs.core.nth.call(null,epsilons,onto_18008)),(- Math.sin.call(null,cljs.core.nth.call(null,epsilons,onto_18008)))], null);
+var onto_x_p_18023 = cljs.core.nth.call(null,vec__17782_18022,(0),null);
+var onto_y_p_18024 = cljs.core.nth.call(null,vec__17782_18022,(1),null);
+var vec__17783_18025 = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [(xs + (pad * from_x_18014)),(ys + (pad * from_y_18015))], null);
+var xa_18026 = cljs.core.nth.call(null,vec__17783_18025,(0),null);
+var ya_18027 = cljs.core.nth.call(null,vec__17783_18025,(1),null);
+var vec__17784_18028 = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [((xs + ((0.5 * inner_radius) * from_x_18014)) + (ch_pos_18001 * from_x_p_18020)),((ys + ((0.5 * inner_radius) * from_y_18015)) + (ch_pos_18001 * from_y_p_18021))], null);
+var xb_18029 = cljs.core.nth.call(null,vec__17784_18028,(0),null);
+var yb_18030 = cljs.core.nth.call(null,vec__17784_18028,(1),null);
+var vec__17785_18031 = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [((xs + ((0.5 * inner_radius) * onto_x_18017)) + (ch_pos_18001 * onto_x_p_18023)),((ys + ((0.5 * inner_radius) * onto_y_18018)) + (ch_pos_18001 * onto_y_p_18024))], null);
+var xc_18032 = cljs.core.nth.call(null,vec__17785_18031,(0),null);
+var yc_18033 = cljs.core.nth.call(null,vec__17785_18031,(1),null);
+var vec__17786_18034 = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [(xs + (pad * onto_x_18017)),(ys + (pad * onto_y_18018))], null);
+var xd_18035 = cljs.core.nth.call(null,vec__17786_18034,(0),null);
+var yd_18036 = cljs.core.nth.call(null,vec__17786_18034,(1),null);
+context.moveTo(xa_18026,ya_18027);
 
-context.bezierCurveTo(xb_74935,yb_74936,xc_74938,yc_74939,xd_74941,yd_74942);
+context.bezierCurveTo(xb_18029,yb_18030,xc_18032,yc_18033,xd_18035,yd_18036);
 
-var length_est_74943 = (inner_radius * cljs.core.get.call(null,cljstemplate.shape.path_lengths,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [n,Math.abs.call(null,(from_74913 - onto_74914))], null),(2)));
-var offset_74944 = cljs.core.mod.call(null,((timestamp / (2000)) * (length_est_74943 + (1))),(length_est_74943 + (1)));
-var lineDash_74945 = [(1),(length_est_74943 / (2))];
-if(cljs.core.truth_(cljs.core.some.call(null,new cljs.core.PersistentHashSet(null, new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"on","on",173873944),null], null), null),switched_74918))){
+var length_est_18037 = (inner_radius * cljs.core.get.call(null,cljstemplate.shape.path_lengths,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [n,Math.abs.call(null,(from_18007 - onto_18008))], null),(2)));
+var length_bit_18038 = (length_est_18037 / ((length_est_18037 / (sf * (10))) | (0)));
+var bit_1_18039 = (channel_width / (3));
+var bit_2_18040 = (length_bit_18038 * ((2) / (3)));
+var bits_18041 = (bit_1_18039 + bit_2_18040);
+var offset_18042 = cljs.core.mod.call(null,((timestamp / (1000)) * bits_18041),bits_18041);
+var lineDash_18043 = [bit_1_18039,bit_2_18040];
+if(cljs.core.truth_(cljs.core.some.call(null,new cljs.core.PersistentHashSet(null, new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"on","on",173873944),null], null), null),switched_18012))){
 context.strokeStyle = "rgb(255,255,255)";
 
-context.lineWidth = ((channel_width / (2)) + (1));
+context.lineWidth = (channel_width + (1));
 
 context.stroke();
 
-context.strokeStyle = cljstemplate.shape.rgb_str.call(null,channel_74905);
+context.strokeStyle = cljstemplate.shape.rgb_str.call(null,channel_17999);
 
-context.lineWidth = (channel_width / (2));
+context.lineWidth = channel_width;
 
 context.stroke();
 } else {
 context.strokeStyle = "rgb(0,0,0)";
 
-context.lineWidth = ((channel_width / (2)) + (1));
+context.lineWidth = ((channel_width / (3)) + (1));
 
 context.stroke();
 
-context.strokeStyle = cljstemplate.shape.rgba_str.call(null,cljs.core.conj.call(null,channel_74905,0.75));
+context.strokeStyle = cljstemplate.shape.rgb_str.call(null,channel_17999);
 
-context.lineWidth = (channel_width / (2));
+context.lineWidth = (channel_width / (3));
 
 context.stroke();
 }
 
-var seq__74701_74946 = cljs.core.seq.call(null,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [fw_74916,offset_74944], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [bw_74917,(- offset_74944)], null)], null));
-var chunk__74702_74947 = null;
-var count__74703_74948 = (0);
-var i__74704_74949 = (0);
+var seq__17787_18044 = cljs.core.seq.call(null,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [fw_18010,offset_18042], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [bw_18011,(- offset_18042)], null)], null));
+var chunk__17788_18045 = null;
+var count__17789_18046 = (0);
+var i__17790_18047 = (0);
 while(true){
-if((i__74704_74949 < count__74703_74948)){
-var vec__74705_74950 = cljs.core._nth.call(null,chunk__74702_74947,i__74704_74949);
-var direction_74951 = cljs.core.nth.call(null,vec__74705_74950,(0),null);
-var os_74952 = cljs.core.nth.call(null,vec__74705_74950,(1),null);
-if(cljs.core._EQ_.call(null,new cljs.core.Keyword(null,"on","on",173873944),direction_74951)){
-context.setLineDash(lineDash_74945);
+if((i__17790_18047 < count__17789_18046)){
+var vec__17791_18048 = cljs.core._nth.call(null,chunk__17788_18045,i__17790_18047);
+var direction_18049 = cljs.core.nth.call(null,vec__17791_18048,(0),null);
+var os_18050 = cljs.core.nth.call(null,vec__17791_18048,(1),null);
+if(cljs.core._EQ_.call(null,new cljs.core.Keyword(null,"on","on",173873944),direction_18049)){
+context.setLineDash(lineDash_18043);
 
-context.lineDashOffset = os_74952;
+context.lineDashOffset = os_18050;
 
-context.strokeStyle = cljstemplate.shape.rgb_str.call(null,channel_74905);
+context.strokeStyle = "black";
 
-context.lineWidth = channel_width;
-
-context.stroke();
-
-context.strokeStyle = "rgba(255,255,255, 0.5)";
-
-context.lineWidth = (channel_width / (2));
+context.lineWidth = (channel_width / (3));
 
 context.stroke();
 } else {
 }
 
-var G__74953 = seq__74701_74946;
-var G__74954 = chunk__74702_74947;
-var G__74955 = count__74703_74948;
-var G__74956 = (i__74704_74949 + (1));
-seq__74701_74946 = G__74953;
-chunk__74702_74947 = G__74954;
-count__74703_74948 = G__74955;
-i__74704_74949 = G__74956;
+var G__18051 = seq__17787_18044;
+var G__18052 = chunk__17788_18045;
+var G__18053 = count__17789_18046;
+var G__18054 = (i__17790_18047 + (1));
+seq__17787_18044 = G__18051;
+chunk__17788_18045 = G__18052;
+count__17789_18046 = G__18053;
+i__17790_18047 = G__18054;
 continue;
 } else {
-var temp__4126__auto___74957__$1 = cljs.core.seq.call(null,seq__74701_74946);
-if(temp__4126__auto___74957__$1){
-var seq__74701_74958__$1 = temp__4126__auto___74957__$1;
-if(cljs.core.chunked_seq_QMARK_.call(null,seq__74701_74958__$1)){
-var c__4598__auto___74959 = cljs.core.chunk_first.call(null,seq__74701_74958__$1);
-var G__74960 = cljs.core.chunk_rest.call(null,seq__74701_74958__$1);
-var G__74961 = c__4598__auto___74959;
-var G__74962 = cljs.core.count.call(null,c__4598__auto___74959);
-var G__74963 = (0);
-seq__74701_74946 = G__74960;
-chunk__74702_74947 = G__74961;
-count__74703_74948 = G__74962;
-i__74704_74949 = G__74963;
+var temp__4126__auto___18055__$1 = cljs.core.seq.call(null,seq__17787_18044);
+if(temp__4126__auto___18055__$1){
+var seq__17787_18056__$1 = temp__4126__auto___18055__$1;
+if(cljs.core.chunked_seq_QMARK_.call(null,seq__17787_18056__$1)){
+var c__4598__auto___18057 = cljs.core.chunk_first.call(null,seq__17787_18056__$1);
+var G__18058 = cljs.core.chunk_rest.call(null,seq__17787_18056__$1);
+var G__18059 = c__4598__auto___18057;
+var G__18060 = cljs.core.count.call(null,c__4598__auto___18057);
+var G__18061 = (0);
+seq__17787_18044 = G__18058;
+chunk__17788_18045 = G__18059;
+count__17789_18046 = G__18060;
+i__17790_18047 = G__18061;
 continue;
 } else {
-var vec__74706_74964 = cljs.core.first.call(null,seq__74701_74958__$1);
-var direction_74965 = cljs.core.nth.call(null,vec__74706_74964,(0),null);
-var os_74966 = cljs.core.nth.call(null,vec__74706_74964,(1),null);
-if(cljs.core._EQ_.call(null,new cljs.core.Keyword(null,"on","on",173873944),direction_74965)){
-context.setLineDash(lineDash_74945);
+var vec__17792_18062 = cljs.core.first.call(null,seq__17787_18056__$1);
+var direction_18063 = cljs.core.nth.call(null,vec__17792_18062,(0),null);
+var os_18064 = cljs.core.nth.call(null,vec__17792_18062,(1),null);
+if(cljs.core._EQ_.call(null,new cljs.core.Keyword(null,"on","on",173873944),direction_18063)){
+context.setLineDash(lineDash_18043);
 
-context.lineDashOffset = os_74966;
+context.lineDashOffset = os_18064;
 
-context.strokeStyle = cljstemplate.shape.rgb_str.call(null,channel_74905);
+context.strokeStyle = "black";
 
-context.lineWidth = channel_width;
-
-context.stroke();
-
-context.strokeStyle = "rgba(255,255,255, 0.5)";
-
-context.lineWidth = (channel_width / (2));
+context.lineWidth = (channel_width / (3));
 
 context.stroke();
 } else {
 }
 
-var G__74967 = cljs.core.next.call(null,seq__74701_74958__$1);
-var G__74968 = null;
-var G__74969 = (0);
-var G__74970 = (0);
-seq__74701_74946 = G__74967;
-chunk__74702_74947 = G__74968;
-count__74703_74948 = G__74969;
-i__74704_74949 = G__74970;
+var G__18065 = cljs.core.next.call(null,seq__17787_18056__$1);
+var G__18066 = null;
+var G__18067 = (0);
+var G__18068 = (0);
+seq__17787_18044 = G__18065;
+chunk__17788_18045 = G__18066;
+count__17789_18046 = G__18067;
+i__17790_18047 = G__18068;
 continue;
 }
 } else {
@@ -1123,180 +1098,172 @@ break;
 
 context.setLineDash([]);
 
-var G__74971 = seq__74687_74908;
-var G__74972 = chunk__74688_74909;
-var G__74973 = count__74689_74910;
-var G__74974 = (i__74690_74911 + (1));
-seq__74687_74908 = G__74971;
-chunk__74688_74909 = G__74972;
-count__74689_74910 = G__74973;
-i__74690_74911 = G__74974;
+var G__18069 = seq__17773_18002;
+var G__18070 = chunk__17774_18003;
+var G__18071 = count__17775_18004;
+var G__18072 = (i__17776_18005 + (1));
+seq__17773_18002 = G__18069;
+chunk__17774_18003 = G__18070;
+count__17775_18004 = G__18071;
+i__17776_18005 = G__18072;
 continue;
 } else {
-var temp__4126__auto___74975__$1 = cljs.core.seq.call(null,seq__74687_74908);
-if(temp__4126__auto___74975__$1){
-var seq__74687_74976__$1 = temp__4126__auto___74975__$1;
-if(cljs.core.chunked_seq_QMARK_.call(null,seq__74687_74976__$1)){
-var c__4598__auto___74977 = cljs.core.chunk_first.call(null,seq__74687_74976__$1);
-var G__74978 = cljs.core.chunk_rest.call(null,seq__74687_74976__$1);
-var G__74979 = c__4598__auto___74977;
-var G__74980 = cljs.core.count.call(null,c__4598__auto___74977);
-var G__74981 = (0);
-seq__74687_74908 = G__74978;
-chunk__74688_74909 = G__74979;
-count__74689_74910 = G__74980;
-i__74690_74911 = G__74981;
+var temp__4126__auto___18073__$1 = cljs.core.seq.call(null,seq__17773_18002);
+if(temp__4126__auto___18073__$1){
+var seq__17773_18074__$1 = temp__4126__auto___18073__$1;
+if(cljs.core.chunked_seq_QMARK_.call(null,seq__17773_18074__$1)){
+var c__4598__auto___18075 = cljs.core.chunk_first.call(null,seq__17773_18074__$1);
+var G__18076 = cljs.core.chunk_rest.call(null,seq__17773_18074__$1);
+var G__18077 = c__4598__auto___18075;
+var G__18078 = cljs.core.count.call(null,c__4598__auto___18075);
+var G__18079 = (0);
+seq__17773_18002 = G__18076;
+chunk__17774_18003 = G__18077;
+count__17775_18004 = G__18078;
+i__17776_18005 = G__18079;
 continue;
 } else {
-var vec__74707_74982 = cljs.core.first.call(null,seq__74687_74976__$1);
-var from_74983 = cljs.core.nth.call(null,vec__74707_74982,(0),null);
-var onto_74984 = cljs.core.nth.call(null,vec__74707_74982,(1),null);
-var vec__74708_74985 = cljs.core.nth.call(null,vec__74707_74982,(2),null);
-var fw_74986 = cljs.core.nth.call(null,vec__74708_74985,(0),null);
-var bw_74987 = cljs.core.nth.call(null,vec__74708_74985,(1),null);
-var switched_74988 = vec__74708_74985;
+var vec__17793_18080 = cljs.core.first.call(null,seq__17773_18074__$1);
+var from_18081 = cljs.core.nth.call(null,vec__17793_18080,(0),null);
+var onto_18082 = cljs.core.nth.call(null,vec__17793_18080,(1),null);
+var vec__17794_18083 = cljs.core.nth.call(null,vec__17793_18080,(2),null);
+var fw_18084 = cljs.core.nth.call(null,vec__17794_18083,(0),null);
+var bw_18085 = cljs.core.nth.call(null,vec__17794_18083,(1),null);
+var switched_18086 = vec__17794_18083;
 context.beginPath();
 
-var vec__74709_74989 = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [Math.sin.call(null,cljs.core.nth.call(null,epsilons,from_74983)),Math.cos.call(null,cljs.core.nth.call(null,epsilons,from_74983))], null);
-var from_x_74990 = cljs.core.nth.call(null,vec__74709_74989,(0),null);
-var from_y_74991 = cljs.core.nth.call(null,vec__74709_74989,(1),null);
-var vec__74710_74992 = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [Math.sin.call(null,cljs.core.nth.call(null,epsilons,onto_74984)),Math.cos.call(null,cljs.core.nth.call(null,epsilons,onto_74984))], null);
-var onto_x_74993 = cljs.core.nth.call(null,vec__74710_74992,(0),null);
-var onto_y_74994 = cljs.core.nth.call(null,vec__74710_74992,(1),null);
-var vec__74711_74995 = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [Math.cos.call(null,cljs.core.nth.call(null,epsilons,from_74983)),(- Math.sin.call(null,cljs.core.nth.call(null,epsilons,from_74983)))], null);
-var from_x_p_74996 = cljs.core.nth.call(null,vec__74711_74995,(0),null);
-var from_y_p_74997 = cljs.core.nth.call(null,vec__74711_74995,(1),null);
-var vec__74712_74998 = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [Math.cos.call(null,cljs.core.nth.call(null,epsilons,onto_74984)),(- Math.sin.call(null,cljs.core.nth.call(null,epsilons,onto_74984)))], null);
-var onto_x_p_74999 = cljs.core.nth.call(null,vec__74712_74998,(0),null);
-var onto_y_p_75000 = cljs.core.nth.call(null,vec__74712_74998,(1),null);
-var vec__74713_75001 = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [(xs + (pad * from_x_74990)),(ys + (pad * from_y_74991))], null);
-var xa_75002 = cljs.core.nth.call(null,vec__74713_75001,(0),null);
-var ya_75003 = cljs.core.nth.call(null,vec__74713_75001,(1),null);
-var vec__74714_75004 = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [((xs + ((0.5 * inner_radius) * from_x_74990)) + (ch_pos_74907 * from_x_p_74996)),((ys + ((0.5 * inner_radius) * from_y_74991)) + (ch_pos_74907 * from_y_p_74997))], null);
-var xb_75005 = cljs.core.nth.call(null,vec__74714_75004,(0),null);
-var yb_75006 = cljs.core.nth.call(null,vec__74714_75004,(1),null);
-var vec__74715_75007 = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [((xs + ((0.5 * inner_radius) * onto_x_74993)) + (ch_pos_74907 * onto_x_p_74999)),((ys + ((0.5 * inner_radius) * onto_y_74994)) + (ch_pos_74907 * onto_y_p_75000))], null);
-var xc_75008 = cljs.core.nth.call(null,vec__74715_75007,(0),null);
-var yc_75009 = cljs.core.nth.call(null,vec__74715_75007,(1),null);
-var vec__74716_75010 = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [(xs + (pad * onto_x_74993)),(ys + (pad * onto_y_74994))], null);
-var xd_75011 = cljs.core.nth.call(null,vec__74716_75010,(0),null);
-var yd_75012 = cljs.core.nth.call(null,vec__74716_75010,(1),null);
-context.moveTo(xa_75002,ya_75003);
+var vec__17795_18087 = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [Math.sin.call(null,cljs.core.nth.call(null,epsilons,from_18081)),Math.cos.call(null,cljs.core.nth.call(null,epsilons,from_18081))], null);
+var from_x_18088 = cljs.core.nth.call(null,vec__17795_18087,(0),null);
+var from_y_18089 = cljs.core.nth.call(null,vec__17795_18087,(1),null);
+var vec__17796_18090 = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [Math.sin.call(null,cljs.core.nth.call(null,epsilons,onto_18082)),Math.cos.call(null,cljs.core.nth.call(null,epsilons,onto_18082))], null);
+var onto_x_18091 = cljs.core.nth.call(null,vec__17796_18090,(0),null);
+var onto_y_18092 = cljs.core.nth.call(null,vec__17796_18090,(1),null);
+var vec__17797_18093 = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [Math.cos.call(null,cljs.core.nth.call(null,epsilons,from_18081)),(- Math.sin.call(null,cljs.core.nth.call(null,epsilons,from_18081)))], null);
+var from_x_p_18094 = cljs.core.nth.call(null,vec__17797_18093,(0),null);
+var from_y_p_18095 = cljs.core.nth.call(null,vec__17797_18093,(1),null);
+var vec__17798_18096 = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [Math.cos.call(null,cljs.core.nth.call(null,epsilons,onto_18082)),(- Math.sin.call(null,cljs.core.nth.call(null,epsilons,onto_18082)))], null);
+var onto_x_p_18097 = cljs.core.nth.call(null,vec__17798_18096,(0),null);
+var onto_y_p_18098 = cljs.core.nth.call(null,vec__17798_18096,(1),null);
+var vec__17799_18099 = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [(xs + (pad * from_x_18088)),(ys + (pad * from_y_18089))], null);
+var xa_18100 = cljs.core.nth.call(null,vec__17799_18099,(0),null);
+var ya_18101 = cljs.core.nth.call(null,vec__17799_18099,(1),null);
+var vec__17800_18102 = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [((xs + ((0.5 * inner_radius) * from_x_18088)) + (ch_pos_18001 * from_x_p_18094)),((ys + ((0.5 * inner_radius) * from_y_18089)) + (ch_pos_18001 * from_y_p_18095))], null);
+var xb_18103 = cljs.core.nth.call(null,vec__17800_18102,(0),null);
+var yb_18104 = cljs.core.nth.call(null,vec__17800_18102,(1),null);
+var vec__17801_18105 = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [((xs + ((0.5 * inner_radius) * onto_x_18091)) + (ch_pos_18001 * onto_x_p_18097)),((ys + ((0.5 * inner_radius) * onto_y_18092)) + (ch_pos_18001 * onto_y_p_18098))], null);
+var xc_18106 = cljs.core.nth.call(null,vec__17801_18105,(0),null);
+var yc_18107 = cljs.core.nth.call(null,vec__17801_18105,(1),null);
+var vec__17802_18108 = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [(xs + (pad * onto_x_18091)),(ys + (pad * onto_y_18092))], null);
+var xd_18109 = cljs.core.nth.call(null,vec__17802_18108,(0),null);
+var yd_18110 = cljs.core.nth.call(null,vec__17802_18108,(1),null);
+context.moveTo(xa_18100,ya_18101);
 
-context.bezierCurveTo(xb_75005,yb_75006,xc_75008,yc_75009,xd_75011,yd_75012);
+context.bezierCurveTo(xb_18103,yb_18104,xc_18106,yc_18107,xd_18109,yd_18110);
 
-var length_est_75013 = (inner_radius * cljs.core.get.call(null,cljstemplate.shape.path_lengths,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [n,Math.abs.call(null,(from_74983 - onto_74984))], null),(2)));
-var offset_75014 = cljs.core.mod.call(null,((timestamp / (2000)) * (length_est_75013 + (1))),(length_est_75013 + (1)));
-var lineDash_75015 = [(1),(length_est_75013 / (2))];
-if(cljs.core.truth_(cljs.core.some.call(null,new cljs.core.PersistentHashSet(null, new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"on","on",173873944),null], null), null),switched_74988))){
+var length_est_18111 = (inner_radius * cljs.core.get.call(null,cljstemplate.shape.path_lengths,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [n,Math.abs.call(null,(from_18081 - onto_18082))], null),(2)));
+var length_bit_18112 = (length_est_18111 / ((length_est_18111 / (sf * (10))) | (0)));
+var bit_1_18113 = (channel_width / (3));
+var bit_2_18114 = (length_bit_18112 * ((2) / (3)));
+var bits_18115 = (bit_1_18113 + bit_2_18114);
+var offset_18116 = cljs.core.mod.call(null,((timestamp / (1000)) * bits_18115),bits_18115);
+var lineDash_18117 = [bit_1_18113,bit_2_18114];
+if(cljs.core.truth_(cljs.core.some.call(null,new cljs.core.PersistentHashSet(null, new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"on","on",173873944),null], null), null),switched_18086))){
 context.strokeStyle = "rgb(255,255,255)";
 
-context.lineWidth = ((channel_width / (2)) + (1));
+context.lineWidth = (channel_width + (1));
 
 context.stroke();
 
-context.strokeStyle = cljstemplate.shape.rgb_str.call(null,channel_74905);
+context.strokeStyle = cljstemplate.shape.rgb_str.call(null,channel_17999);
 
-context.lineWidth = (channel_width / (2));
+context.lineWidth = channel_width;
 
 context.stroke();
 } else {
 context.strokeStyle = "rgb(0,0,0)";
 
-context.lineWidth = ((channel_width / (2)) + (1));
+context.lineWidth = ((channel_width / (3)) + (1));
 
 context.stroke();
 
-context.strokeStyle = cljstemplate.shape.rgba_str.call(null,cljs.core.conj.call(null,channel_74905,0.75));
+context.strokeStyle = cljstemplate.shape.rgb_str.call(null,channel_17999);
 
-context.lineWidth = (channel_width / (2));
+context.lineWidth = (channel_width / (3));
 
 context.stroke();
 }
 
-var seq__74717_75016 = cljs.core.seq.call(null,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [fw_74986,offset_75014], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [bw_74987,(- offset_75014)], null)], null));
-var chunk__74718_75017 = null;
-var count__74719_75018 = (0);
-var i__74720_75019 = (0);
+var seq__17803_18118 = cljs.core.seq.call(null,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [fw_18084,offset_18116], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [bw_18085,(- offset_18116)], null)], null));
+var chunk__17804_18119 = null;
+var count__17805_18120 = (0);
+var i__17806_18121 = (0);
 while(true){
-if((i__74720_75019 < count__74719_75018)){
-var vec__74721_75020 = cljs.core._nth.call(null,chunk__74718_75017,i__74720_75019);
-var direction_75021 = cljs.core.nth.call(null,vec__74721_75020,(0),null);
-var os_75022 = cljs.core.nth.call(null,vec__74721_75020,(1),null);
-if(cljs.core._EQ_.call(null,new cljs.core.Keyword(null,"on","on",173873944),direction_75021)){
-context.setLineDash(lineDash_75015);
+if((i__17806_18121 < count__17805_18120)){
+var vec__17807_18122 = cljs.core._nth.call(null,chunk__17804_18119,i__17806_18121);
+var direction_18123 = cljs.core.nth.call(null,vec__17807_18122,(0),null);
+var os_18124 = cljs.core.nth.call(null,vec__17807_18122,(1),null);
+if(cljs.core._EQ_.call(null,new cljs.core.Keyword(null,"on","on",173873944),direction_18123)){
+context.setLineDash(lineDash_18117);
 
-context.lineDashOffset = os_75022;
+context.lineDashOffset = os_18124;
 
-context.strokeStyle = cljstemplate.shape.rgb_str.call(null,channel_74905);
+context.strokeStyle = "black";
 
-context.lineWidth = channel_width;
-
-context.stroke();
-
-context.strokeStyle = "rgba(255,255,255, 0.5)";
-
-context.lineWidth = (channel_width / (2));
+context.lineWidth = (channel_width / (3));
 
 context.stroke();
 } else {
 }
 
-var G__75023 = seq__74717_75016;
-var G__75024 = chunk__74718_75017;
-var G__75025 = count__74719_75018;
-var G__75026 = (i__74720_75019 + (1));
-seq__74717_75016 = G__75023;
-chunk__74718_75017 = G__75024;
-count__74719_75018 = G__75025;
-i__74720_75019 = G__75026;
+var G__18125 = seq__17803_18118;
+var G__18126 = chunk__17804_18119;
+var G__18127 = count__17805_18120;
+var G__18128 = (i__17806_18121 + (1));
+seq__17803_18118 = G__18125;
+chunk__17804_18119 = G__18126;
+count__17805_18120 = G__18127;
+i__17806_18121 = G__18128;
 continue;
 } else {
-var temp__4126__auto___75027__$2 = cljs.core.seq.call(null,seq__74717_75016);
-if(temp__4126__auto___75027__$2){
-var seq__74717_75028__$1 = temp__4126__auto___75027__$2;
-if(cljs.core.chunked_seq_QMARK_.call(null,seq__74717_75028__$1)){
-var c__4598__auto___75029 = cljs.core.chunk_first.call(null,seq__74717_75028__$1);
-var G__75030 = cljs.core.chunk_rest.call(null,seq__74717_75028__$1);
-var G__75031 = c__4598__auto___75029;
-var G__75032 = cljs.core.count.call(null,c__4598__auto___75029);
-var G__75033 = (0);
-seq__74717_75016 = G__75030;
-chunk__74718_75017 = G__75031;
-count__74719_75018 = G__75032;
-i__74720_75019 = G__75033;
+var temp__4126__auto___18129__$2 = cljs.core.seq.call(null,seq__17803_18118);
+if(temp__4126__auto___18129__$2){
+var seq__17803_18130__$1 = temp__4126__auto___18129__$2;
+if(cljs.core.chunked_seq_QMARK_.call(null,seq__17803_18130__$1)){
+var c__4598__auto___18131 = cljs.core.chunk_first.call(null,seq__17803_18130__$1);
+var G__18132 = cljs.core.chunk_rest.call(null,seq__17803_18130__$1);
+var G__18133 = c__4598__auto___18131;
+var G__18134 = cljs.core.count.call(null,c__4598__auto___18131);
+var G__18135 = (0);
+seq__17803_18118 = G__18132;
+chunk__17804_18119 = G__18133;
+count__17805_18120 = G__18134;
+i__17806_18121 = G__18135;
 continue;
 } else {
-var vec__74722_75034 = cljs.core.first.call(null,seq__74717_75028__$1);
-var direction_75035 = cljs.core.nth.call(null,vec__74722_75034,(0),null);
-var os_75036 = cljs.core.nth.call(null,vec__74722_75034,(1),null);
-if(cljs.core._EQ_.call(null,new cljs.core.Keyword(null,"on","on",173873944),direction_75035)){
-context.setLineDash(lineDash_75015);
+var vec__17808_18136 = cljs.core.first.call(null,seq__17803_18130__$1);
+var direction_18137 = cljs.core.nth.call(null,vec__17808_18136,(0),null);
+var os_18138 = cljs.core.nth.call(null,vec__17808_18136,(1),null);
+if(cljs.core._EQ_.call(null,new cljs.core.Keyword(null,"on","on",173873944),direction_18137)){
+context.setLineDash(lineDash_18117);
 
-context.lineDashOffset = os_75036;
+context.lineDashOffset = os_18138;
 
-context.strokeStyle = cljstemplate.shape.rgb_str.call(null,channel_74905);
+context.strokeStyle = "black";
 
-context.lineWidth = channel_width;
-
-context.stroke();
-
-context.strokeStyle = "rgba(255,255,255, 0.5)";
-
-context.lineWidth = (channel_width / (2));
+context.lineWidth = (channel_width / (3));
 
 context.stroke();
 } else {
 }
 
-var G__75037 = cljs.core.next.call(null,seq__74717_75028__$1);
-var G__75038 = null;
-var G__75039 = (0);
-var G__75040 = (0);
-seq__74717_75016 = G__75037;
-chunk__74718_75017 = G__75038;
-count__74719_75018 = G__75039;
-i__74720_75019 = G__75040;
+var G__18139 = cljs.core.next.call(null,seq__17803_18130__$1);
+var G__18140 = null;
+var G__18141 = (0);
+var G__18142 = (0);
+seq__17803_18118 = G__18139;
+chunk__17804_18119 = G__18140;
+count__17805_18120 = G__18141;
+i__17806_18121 = G__18142;
 continue;
 }
 } else {
@@ -1307,14 +1274,14 @@ break;
 
 context.setLineDash([]);
 
-var G__75041 = cljs.core.next.call(null,seq__74687_74976__$1);
-var G__75042 = null;
-var G__75043 = (0);
-var G__75044 = (0);
-seq__74687_74908 = G__75041;
-chunk__74688_74909 = G__75042;
-count__74689_74910 = G__75043;
-i__74690_74911 = G__75044;
+var G__18143 = cljs.core.next.call(null,seq__17773_18074__$1);
+var G__18144 = null;
+var G__18145 = (0);
+var G__18146 = (0);
+seq__17773_18002 = G__18143;
+chunk__17774_18003 = G__18144;
+count__17775_18004 = G__18145;
+i__17776_18005 = G__18146;
 continue;
 }
 } else {
@@ -1323,14 +1290,14 @@ continue;
 break;
 }
 
-var G__75045 = cljs.core.next.call(null,seq__74647_74898__$1);
-var G__75046 = null;
-var G__75047 = (0);
-var G__75048 = (0);
-seq__74647_74748 = G__75045;
-chunk__74648_74749 = G__75046;
-count__74649_74750 = G__75047;
-i__74650_74751 = G__75048;
+var G__18147 = cljs.core.next.call(null,seq__17733_17992__$1);
+var G__18148 = null;
+var G__18149 = (0);
+var G__18150 = (0);
+seq__17733_17834 = G__18147;
+chunk__17734_17835 = G__18148;
+count__17735_17836 = G__18149;
+i__17736_17837 = G__18150;
 continue;
 }
 } else {
@@ -1356,51 +1323,51 @@ context.beginPath();
 
 context.moveTo((xs + (radius * Math.sin.call(null,beta))),(ys + (radius * Math.cos.call(null,beta))));
 
-var seq__74723_75049 = cljs.core.seq.call(null,cljs.core.take.call(null,(n - (1)),cljs.core.drop.call(null,(1),gammas)));
-var chunk__74724_75050 = null;
-var count__74725_75051 = (0);
-var i__74726_75052 = (0);
+var seq__17809_18151 = cljs.core.seq.call(null,cljs.core.take.call(null,(n - (1)),cljs.core.drop.call(null,(1),gammas)));
+var chunk__17810_18152 = null;
+var count__17811_18153 = (0);
+var i__17812_18154 = (0);
 while(true){
-if((i__74726_75052 < count__74725_75051)){
-var gamma_75053 = cljs.core._nth.call(null,chunk__74724_75050,i__74726_75052);
-context.lineTo((xs + (radius * Math.sin.call(null,gamma_75053))),(ys + (radius * Math.cos.call(null,gamma_75053))));
+if((i__17812_18154 < count__17811_18153)){
+var gamma_18155 = cljs.core._nth.call(null,chunk__17810_18152,i__17812_18154);
+context.lineTo((xs + (radius * Math.sin.call(null,gamma_18155))),(ys + (radius * Math.cos.call(null,gamma_18155))));
 
-var G__75054 = seq__74723_75049;
-var G__75055 = chunk__74724_75050;
-var G__75056 = count__74725_75051;
-var G__75057 = (i__74726_75052 + (1));
-seq__74723_75049 = G__75054;
-chunk__74724_75050 = G__75055;
-count__74725_75051 = G__75056;
-i__74726_75052 = G__75057;
+var G__18156 = seq__17809_18151;
+var G__18157 = chunk__17810_18152;
+var G__18158 = count__17811_18153;
+var G__18159 = (i__17812_18154 + (1));
+seq__17809_18151 = G__18156;
+chunk__17810_18152 = G__18157;
+count__17811_18153 = G__18158;
+i__17812_18154 = G__18159;
 continue;
 } else {
-var temp__4126__auto___75058 = cljs.core.seq.call(null,seq__74723_75049);
-if(temp__4126__auto___75058){
-var seq__74723_75059__$1 = temp__4126__auto___75058;
-if(cljs.core.chunked_seq_QMARK_.call(null,seq__74723_75059__$1)){
-var c__4598__auto___75060 = cljs.core.chunk_first.call(null,seq__74723_75059__$1);
-var G__75061 = cljs.core.chunk_rest.call(null,seq__74723_75059__$1);
-var G__75062 = c__4598__auto___75060;
-var G__75063 = cljs.core.count.call(null,c__4598__auto___75060);
-var G__75064 = (0);
-seq__74723_75049 = G__75061;
-chunk__74724_75050 = G__75062;
-count__74725_75051 = G__75063;
-i__74726_75052 = G__75064;
+var temp__4126__auto___18160 = cljs.core.seq.call(null,seq__17809_18151);
+if(temp__4126__auto___18160){
+var seq__17809_18161__$1 = temp__4126__auto___18160;
+if(cljs.core.chunked_seq_QMARK_.call(null,seq__17809_18161__$1)){
+var c__4598__auto___18162 = cljs.core.chunk_first.call(null,seq__17809_18161__$1);
+var G__18163 = cljs.core.chunk_rest.call(null,seq__17809_18161__$1);
+var G__18164 = c__4598__auto___18162;
+var G__18165 = cljs.core.count.call(null,c__4598__auto___18162);
+var G__18166 = (0);
+seq__17809_18151 = G__18163;
+chunk__17810_18152 = G__18164;
+count__17811_18153 = G__18165;
+i__17812_18154 = G__18166;
 continue;
 } else {
-var gamma_75065 = cljs.core.first.call(null,seq__74723_75059__$1);
-context.lineTo((xs + (radius * Math.sin.call(null,gamma_75065))),(ys + (radius * Math.cos.call(null,gamma_75065))));
+var gamma_18167 = cljs.core.first.call(null,seq__17809_18161__$1);
+context.lineTo((xs + (radius * Math.sin.call(null,gamma_18167))),(ys + (radius * Math.cos.call(null,gamma_18167))));
 
-var G__75066 = cljs.core.next.call(null,seq__74723_75059__$1);
-var G__75067 = null;
-var G__75068 = (0);
-var G__75069 = (0);
-seq__74723_75049 = G__75066;
-chunk__74724_75050 = G__75067;
-count__74725_75051 = G__75068;
-i__74726_75052 = G__75069;
+var G__18168 = cljs.core.next.call(null,seq__17809_18161__$1);
+var G__18169 = null;
+var G__18170 = (0);
+var G__18171 = (0);
+seq__17809_18151 = G__18168;
+chunk__17810_18152 = G__18169;
+count__17811_18153 = G__18170;
+i__17812_18154 = G__18171;
 continue;
 }
 } else {
@@ -1449,10 +1416,10 @@ return shape;
 }
 });
 cljstemplate.shape.fill_circle = (function fill_circle(surface,coords,colour){
-var vec__75071 = coords;
-var x = cljs.core.nth.call(null,vec__75071,(0),null);
-var y = cljs.core.nth.call(null,vec__75071,(1),null);
-var d = cljs.core.nth.call(null,vec__75071,(2),null);
+var vec__18173 = coords;
+var x = cljs.core.nth.call(null,vec__18173,(0),null);
+var y = cljs.core.nth.call(null,vec__18173,(1),null);
+var d = cljs.core.nth.call(null,vec__18173,(2),null);
 surface.fillStyle = cljstemplate.shape.rgba_str.call(null,colour);
 
 surface.beginPath();
@@ -1464,10 +1431,10 @@ surface.closePath();
 return surface.fill();
 });
 cljstemplate.shape.stroke_circle = (function stroke_circle(surface,coords,colour){
-var vec__75073 = coords;
-var x = cljs.core.nth.call(null,vec__75073,(0),null);
-var y = cljs.core.nth.call(null,vec__75073,(1),null);
-var d = cljs.core.nth.call(null,vec__75073,(2),null);
+var vec__18175 = coords;
+var x = cljs.core.nth.call(null,vec__18175,(0),null);
+var y = cljs.core.nth.call(null,vec__18175,(1),null);
+var d = cljs.core.nth.call(null,vec__18175,(2),null);
 surface.strokeStyle = cljstemplate.shape.rgba_str.call(null,colour);
 
 surface.beginPath();
@@ -1478,92 +1445,92 @@ surface.closePath();
 
 return surface.stroke();
 });
-cljstemplate.shape.render_start = (function render_start(p__75074,context,timestamp,p__75075,sf,p__75076){
-var map__75087 = p__75074;
-var map__75087__$1 = ((cljs.core.seq_QMARK_.call(null,map__75087))?cljs.core.apply.call(null,cljs.core.hash_map,map__75087):map__75087);
-var level = map__75087__$1;
-var shapes = cljs.core.get.call(null,map__75087__$1,new cljs.core.Keyword(null,"shapes","shapes",1897594879));
-var vec__75088 = cljs.core.get.call(null,map__75087__$1,new cljs.core.Keyword(null,"start","start",-355208981));
-var start = cljs.core.nth.call(null,vec__75088,(0),null);
-var _ = cljs.core.nth.call(null,vec__75088,(1),null);
-var ___$1 = cljs.core.nth.call(null,vec__75088,(2),null);
-var channels = cljs.core.get.call(null,map__75087__$1,new cljs.core.Keyword(null,"channels","channels",1132759174));
-var vec__75089 = p__75075;
-var ___$2 = cljs.core.nth.call(null,vec__75089,(0),null);
-var bdr = cljs.core.nth.call(null,vec__75089,(1),null);
-var ___$3 = cljs.core.nth.call(null,vec__75089,(2),null);
-var vec__75090 = p__75076;
-var x_offset = cljs.core.nth.call(null,vec__75090,(0),null);
-var y_offset = cljs.core.nth.call(null,vec__75090,(1),null);
-var shape_75097 = cljs.core.nth.call(null,shapes,start);
-var map__75091_75098 = shape_75097;
-var map__75091_75099__$1 = ((cljs.core.seq_QMARK_.call(null,map__75091_75098))?cljs.core.apply.call(null,cljs.core.hash_map,map__75091_75098):map__75091_75098);
-var vec__75092_75100 = cljs.core.get.call(null,map__75091_75099__$1,new cljs.core.Keyword(null,"location","location",1815599388));
-var x_75101 = cljs.core.nth.call(null,vec__75092_75100,(0),null);
-var y_75102 = cljs.core.nth.call(null,vec__75092_75100,(1),null);
-var __75103__$4 = cljs.core.nth.call(null,vec__75092_75100,(2),null);
-var n_75104 = cljs.core.get.call(null,map__75091_75099__$1,new cljs.core.Keyword(null,"n","n",562130025));
-var xs_75105 = ((x_75101 * sf) + x_offset);
-var ys_75106 = ((y_75102 * sf) + y_offset);
-var vtxs_75107 = cljstemplate.shape.vertices.call(null,shape_75097,xs_75105,ys_75106,sf);
-var radius_75108 = (cljstemplate.shape.radii.call(null,n_75104) * sf);
-var many_channels_75109 = cljs.core.apply.call(null,cljs.core.concat,cljs.core.repeat.call(null,((4) - cljs.core.count.call(null,channels)),channels));
-var channel_count_75110 = cljs.core.count.call(null,many_channels_75109);
+cljstemplate.shape.render_start = (function render_start(p__18176,context,timestamp,p__18177,sf,p__18178){
+var map__18189 = p__18176;
+var map__18189__$1 = ((cljs.core.seq_QMARK_.call(null,map__18189))?cljs.core.apply.call(null,cljs.core.hash_map,map__18189):map__18189);
+var level = map__18189__$1;
+var shapes = cljs.core.get.call(null,map__18189__$1,new cljs.core.Keyword(null,"shapes","shapes",1897594879));
+var vec__18190 = cljs.core.get.call(null,map__18189__$1,new cljs.core.Keyword(null,"start","start",-355208981));
+var start = cljs.core.nth.call(null,vec__18190,(0),null);
+var _ = cljs.core.nth.call(null,vec__18190,(1),null);
+var ___$1 = cljs.core.nth.call(null,vec__18190,(2),null);
+var channels = cljs.core.get.call(null,map__18189__$1,new cljs.core.Keyword(null,"channels","channels",1132759174));
+var vec__18191 = p__18177;
+var ___$2 = cljs.core.nth.call(null,vec__18191,(0),null);
+var bdr = cljs.core.nth.call(null,vec__18191,(1),null);
+var ___$3 = cljs.core.nth.call(null,vec__18191,(2),null);
+var vec__18192 = p__18178;
+var x_offset = cljs.core.nth.call(null,vec__18192,(0),null);
+var y_offset = cljs.core.nth.call(null,vec__18192,(1),null);
+var shape_18199 = cljs.core.nth.call(null,shapes,start);
+var map__18193_18200 = shape_18199;
+var map__18193_18201__$1 = ((cljs.core.seq_QMARK_.call(null,map__18193_18200))?cljs.core.apply.call(null,cljs.core.hash_map,map__18193_18200):map__18193_18200);
+var vec__18194_18202 = cljs.core.get.call(null,map__18193_18201__$1,new cljs.core.Keyword(null,"location","location",1815599388));
+var x_18203 = cljs.core.nth.call(null,vec__18194_18202,(0),null);
+var y_18204 = cljs.core.nth.call(null,vec__18194_18202,(1),null);
+var __18205__$4 = cljs.core.nth.call(null,vec__18194_18202,(2),null);
+var n_18206 = cljs.core.get.call(null,map__18193_18201__$1,new cljs.core.Keyword(null,"n","n",562130025));
+var xs_18207 = ((x_18203 * sf) + x_offset);
+var ys_18208 = ((y_18204 * sf) + y_offset);
+var vtxs_18209 = cljstemplate.shape.vertices.call(null,shape_18199,xs_18207,ys_18208,sf);
+var radius_18210 = (cljstemplate.shape.radii.call(null,n_18206) * sf);
+var many_channels_18211 = cljs.core.apply.call(null,cljs.core.concat,cljs.core.repeat.call(null,((4) - cljs.core.count.call(null,channels)),channels));
+var channel_count_18212 = cljs.core.count.call(null,many_channels_18211);
 context.save();
 
-cljstemplate.shape.trace_path.call(null,context,vtxs_75107);
+cljstemplate.shape.trace_path.call(null,context,vtxs_18209);
 
 context.clip();
 
-cljstemplate.shape.fill_circle.call(null,context,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [xs_75105,ys_75106,radius_75108], null),new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [(0),(0),(0),(1)], null));
+cljstemplate.shape.fill_circle.call(null,context,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [xs_18207,ys_18208,radius_18210], null),new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [(0),(0),(0),(1)], null));
 
-var seq__75093_75111 = cljs.core.seq.call(null,cljs.core.range.call(null,channel_count_75110));
-var chunk__75094_75112 = null;
-var count__75095_75113 = (0);
-var i__75096_75114 = (0);
+var seq__18195_18213 = cljs.core.seq.call(null,cljs.core.range.call(null,channel_count_18212));
+var chunk__18196_18214 = null;
+var count__18197_18215 = (0);
+var i__18198_18216 = (0);
 while(true){
-if((i__75096_75114 < count__75095_75113)){
-var i_75115 = cljs.core._nth.call(null,chunk__75094_75112,i__75096_75114);
-var f_75116 = cljs.core.mod.call(null,((timestamp / (50)) + (i_75115 * (radius_75108 / channel_count_75110))),radius_75108);
-cljstemplate.shape.fill_circle.call(null,context,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [xs_75105,ys_75106,f_75116], null),cljs.core.conj.call(null,cljs.core.nth.call(null,many_channels_75109,i_75115),((1) - (f_75116 / radius_75108))));
+if((i__18198_18216 < count__18197_18215)){
+var i_18217 = cljs.core._nth.call(null,chunk__18196_18214,i__18198_18216);
+var f_18218 = cljs.core.mod.call(null,(((sf * timestamp) * 0.01) + (i_18217 * (radius_18210 / channel_count_18212))),radius_18210);
+cljstemplate.shape.fill_circle.call(null,context,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [xs_18207,ys_18208,f_18218], null),cljs.core.conj.call(null,cljs.core.nth.call(null,many_channels_18211,i_18217),((1) - (f_18218 / radius_18210))));
 
-var G__75117 = seq__75093_75111;
-var G__75118 = chunk__75094_75112;
-var G__75119 = count__75095_75113;
-var G__75120 = (i__75096_75114 + (1));
-seq__75093_75111 = G__75117;
-chunk__75094_75112 = G__75118;
-count__75095_75113 = G__75119;
-i__75096_75114 = G__75120;
+var G__18219 = seq__18195_18213;
+var G__18220 = chunk__18196_18214;
+var G__18221 = count__18197_18215;
+var G__18222 = (i__18198_18216 + (1));
+seq__18195_18213 = G__18219;
+chunk__18196_18214 = G__18220;
+count__18197_18215 = G__18221;
+i__18198_18216 = G__18222;
 continue;
 } else {
-var temp__4126__auto___75121 = cljs.core.seq.call(null,seq__75093_75111);
-if(temp__4126__auto___75121){
-var seq__75093_75122__$1 = temp__4126__auto___75121;
-if(cljs.core.chunked_seq_QMARK_.call(null,seq__75093_75122__$1)){
-var c__4598__auto___75123 = cljs.core.chunk_first.call(null,seq__75093_75122__$1);
-var G__75124 = cljs.core.chunk_rest.call(null,seq__75093_75122__$1);
-var G__75125 = c__4598__auto___75123;
-var G__75126 = cljs.core.count.call(null,c__4598__auto___75123);
-var G__75127 = (0);
-seq__75093_75111 = G__75124;
-chunk__75094_75112 = G__75125;
-count__75095_75113 = G__75126;
-i__75096_75114 = G__75127;
+var temp__4126__auto___18223 = cljs.core.seq.call(null,seq__18195_18213);
+if(temp__4126__auto___18223){
+var seq__18195_18224__$1 = temp__4126__auto___18223;
+if(cljs.core.chunked_seq_QMARK_.call(null,seq__18195_18224__$1)){
+var c__4598__auto___18225 = cljs.core.chunk_first.call(null,seq__18195_18224__$1);
+var G__18226 = cljs.core.chunk_rest.call(null,seq__18195_18224__$1);
+var G__18227 = c__4598__auto___18225;
+var G__18228 = cljs.core.count.call(null,c__4598__auto___18225);
+var G__18229 = (0);
+seq__18195_18213 = G__18226;
+chunk__18196_18214 = G__18227;
+count__18197_18215 = G__18228;
+i__18198_18216 = G__18229;
 continue;
 } else {
-var i_75128 = cljs.core.first.call(null,seq__75093_75122__$1);
-var f_75129 = cljs.core.mod.call(null,((timestamp / (50)) + (i_75128 * (radius_75108 / channel_count_75110))),radius_75108);
-cljstemplate.shape.fill_circle.call(null,context,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [xs_75105,ys_75106,f_75129], null),cljs.core.conj.call(null,cljs.core.nth.call(null,many_channels_75109,i_75128),((1) - (f_75129 / radius_75108))));
+var i_18230 = cljs.core.first.call(null,seq__18195_18224__$1);
+var f_18231 = cljs.core.mod.call(null,(((sf * timestamp) * 0.01) + (i_18230 * (radius_18210 / channel_count_18212))),radius_18210);
+cljstemplate.shape.fill_circle.call(null,context,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [xs_18207,ys_18208,f_18231], null),cljs.core.conj.call(null,cljs.core.nth.call(null,many_channels_18211,i_18230),((1) - (f_18231 / radius_18210))));
 
-var G__75130 = cljs.core.next.call(null,seq__75093_75122__$1);
-var G__75131 = null;
-var G__75132 = (0);
-var G__75133 = (0);
-seq__75093_75111 = G__75130;
-chunk__75094_75112 = G__75131;
-count__75095_75113 = G__75132;
-i__75096_75114 = G__75133;
+var G__18232 = cljs.core.next.call(null,seq__18195_18224__$1);
+var G__18233 = null;
+var G__18234 = (0);
+var G__18235 = (0);
+seq__18195_18213 = G__18232;
+chunk__18196_18214 = G__18233;
+count__18197_18215 = G__18234;
+i__18198_18216 = G__18235;
 continue;
 }
 } else {
@@ -1574,7 +1541,7 @@ break;
 
 context.restore();
 
-cljstemplate.shape.trace_path.call(null,context,vtxs_75107);
+cljstemplate.shape.trace_path.call(null,context,vtxs_18209);
 
 context.strokeStyle = cljstemplate.shape.rgb_str.call(null,bdr);
 
@@ -1584,72 +1551,72 @@ context.stroke();
 
 return level;
 });
-cljstemplate.shape.render_end = (function render_end(p__75134,context,timestamp,p__75135,sf,p__75136,done){
-var map__75155 = p__75134;
-var map__75155__$1 = ((cljs.core.seq_QMARK_.call(null,map__75155))?cljs.core.apply.call(null,cljs.core.hash_map,map__75155):map__75155);
-var level = map__75155__$1;
-var shapes = cljs.core.get.call(null,map__75155__$1,new cljs.core.Keyword(null,"shapes","shapes",1897594879));
-var vec__75156 = cljs.core.get.call(null,map__75155__$1,new cljs.core.Keyword(null,"end","end",-268185958));
-var end = cljs.core.nth.call(null,vec__75156,(0),null);
-var _ = cljs.core.nth.call(null,vec__75156,(1),null);
-var ___$1 = cljs.core.nth.call(null,vec__75156,(2),null);
-var channels = cljs.core.get.call(null,map__75155__$1,new cljs.core.Keyword(null,"channels","channels",1132759174));
-var vec__75157 = p__75135;
-var ___$2 = cljs.core.nth.call(null,vec__75157,(0),null);
-var bdr = cljs.core.nth.call(null,vec__75157,(1),null);
-var fg = cljs.core.nth.call(null,vec__75157,(2),null);
-var vec__75158 = p__75136;
-var x_offset = cljs.core.nth.call(null,vec__75158,(0),null);
-var y_offset = cljs.core.nth.call(null,vec__75158,(1),null);
-var shape_75173 = cljs.core.nth.call(null,shapes,end);
-var map__75159_75174 = shape_75173;
-var map__75159_75175__$1 = ((cljs.core.seq_QMARK_.call(null,map__75159_75174))?cljs.core.apply.call(null,cljs.core.hash_map,map__75159_75174):map__75159_75174);
-var vec__75160_75176 = cljs.core.get.call(null,map__75159_75175__$1,new cljs.core.Keyword(null,"location","location",1815599388));
-var x_75177 = cljs.core.nth.call(null,vec__75160_75176,(0),null);
-var y_75178 = cljs.core.nth.call(null,vec__75160_75176,(1),null);
-var __75179__$3 = cljs.core.nth.call(null,vec__75160_75176,(2),null);
-var n_75180 = cljs.core.get.call(null,map__75159_75175__$1,new cljs.core.Keyword(null,"n","n",562130025));
-var wiring_75181 = cljs.core.get.call(null,map__75159_75175__$1,new cljs.core.Keyword(null,"wiring","wiring",-1202756092));
-var xs_75182 = ((x_75177 * sf) + x_offset);
-var ys_75183 = ((y_75178 * sf) + y_offset);
-var vtxs_75184 = cljstemplate.shape.vertices.call(null,shape_75173,xs_75182,ys_75183,sf);
-var radius_75185 = (cljstemplate.shape.radii.call(null,n_75180) * sf);
-var radius_3rd_75186 = (radius_75185 / (3));
-var radius_5th_75187 = (radius_75185 / (5));
-var radius_15th_75188 = (radius_75185 / (15));
-var radius_20th_75189 = (radius_75185 / (30));
-var channel_count_75190 = cljs.core.count.call(null,channels);
+cljstemplate.shape.render_end = (function render_end(p__18236,context,timestamp,p__18237,sf,p__18238,done){
+var map__18257 = p__18236;
+var map__18257__$1 = ((cljs.core.seq_QMARK_.call(null,map__18257))?cljs.core.apply.call(null,cljs.core.hash_map,map__18257):map__18257);
+var level = map__18257__$1;
+var shapes = cljs.core.get.call(null,map__18257__$1,new cljs.core.Keyword(null,"shapes","shapes",1897594879));
+var vec__18258 = cljs.core.get.call(null,map__18257__$1,new cljs.core.Keyword(null,"end","end",-268185958));
+var end = cljs.core.nth.call(null,vec__18258,(0),null);
+var _ = cljs.core.nth.call(null,vec__18258,(1),null);
+var ___$1 = cljs.core.nth.call(null,vec__18258,(2),null);
+var channels = cljs.core.get.call(null,map__18257__$1,new cljs.core.Keyword(null,"channels","channels",1132759174));
+var vec__18259 = p__18237;
+var ___$2 = cljs.core.nth.call(null,vec__18259,(0),null);
+var bdr = cljs.core.nth.call(null,vec__18259,(1),null);
+var fg = cljs.core.nth.call(null,vec__18259,(2),null);
+var vec__18260 = p__18238;
+var x_offset = cljs.core.nth.call(null,vec__18260,(0),null);
+var y_offset = cljs.core.nth.call(null,vec__18260,(1),null);
+var shape_18275 = cljs.core.nth.call(null,shapes,end);
+var map__18261_18276 = shape_18275;
+var map__18261_18277__$1 = ((cljs.core.seq_QMARK_.call(null,map__18261_18276))?cljs.core.apply.call(null,cljs.core.hash_map,map__18261_18276):map__18261_18276);
+var vec__18262_18278 = cljs.core.get.call(null,map__18261_18277__$1,new cljs.core.Keyword(null,"location","location",1815599388));
+var x_18279 = cljs.core.nth.call(null,vec__18262_18278,(0),null);
+var y_18280 = cljs.core.nth.call(null,vec__18262_18278,(1),null);
+var __18281__$3 = cljs.core.nth.call(null,vec__18262_18278,(2),null);
+var n_18282 = cljs.core.get.call(null,map__18261_18277__$1,new cljs.core.Keyword(null,"n","n",562130025));
+var wiring_18283 = cljs.core.get.call(null,map__18261_18277__$1,new cljs.core.Keyword(null,"wiring","wiring",-1202756092));
+var xs_18284 = ((x_18279 * sf) + x_offset);
+var ys_18285 = ((y_18280 * sf) + y_offset);
+var vtxs_18286 = cljstemplate.shape.vertices.call(null,shape_18275,xs_18284,ys_18285,sf);
+var radius_18287 = (cljstemplate.shape.radii.call(null,n_18282) * sf);
+var radius_3rd_18288 = (radius_18287 / (3));
+var radius_5th_18289 = (radius_18287 / (5));
+var radius_15th_18290 = (radius_18287 / (15));
+var radius_20th_18291 = (radius_18287 / (30));
+var channel_count_18292 = cljs.core.count.call(null,channels);
 context.lineWidth = (5);
 
 context.save();
 
-cljstemplate.shape.trace_path.call(null,context,vtxs_75184);
+cljstemplate.shape.trace_path.call(null,context,vtxs_18286);
 
 context.clip();
 
-cljstemplate.shape.fill_circle.call(null,context,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [xs_75182,ys_75183,radius_75185], null),new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [(0),(0),(0),(1)], null));
+cljstemplate.shape.fill_circle.call(null,context,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [xs_18284,ys_18285,radius_18287], null),new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [(0),(0),(0),(1)], null));
 
-if(cljs.core.every_QMARK_.call(null,cljs.core.identity,(function (){var iter__4567__auto__ = ((function (shape_75173,map__75159_75174,map__75159_75175__$1,vec__75160_75176,x_75177,y_75178,__75179__$3,n_75180,wiring_75181,xs_75182,ys_75183,vtxs_75184,radius_75185,radius_3rd_75186,radius_5th_75187,radius_15th_75188,radius_20th_75189,channel_count_75190,map__75155,map__75155__$1,level,shapes,vec__75156,end,_,___$1,channels,vec__75157,___$2,bdr,fg,vec__75158,x_offset,y_offset){
-return (function iter__75161(s__75162){
-return (new cljs.core.LazySeq(null,((function (shape_75173,map__75159_75174,map__75159_75175__$1,vec__75160_75176,x_75177,y_75178,__75179__$3,n_75180,wiring_75181,xs_75182,ys_75183,vtxs_75184,radius_75185,radius_3rd_75186,radius_5th_75187,radius_15th_75188,radius_20th_75189,channel_count_75190,map__75155,map__75155__$1,level,shapes,vec__75156,end,_,___$1,channels,vec__75157,___$2,bdr,fg,vec__75158,x_offset,y_offset){
+if(cljs.core.every_QMARK_.call(null,cljs.core.identity,(function (){var iter__4567__auto__ = ((function (shape_18275,map__18261_18276,map__18261_18277__$1,vec__18262_18278,x_18279,y_18280,__18281__$3,n_18282,wiring_18283,xs_18284,ys_18285,vtxs_18286,radius_18287,radius_3rd_18288,radius_5th_18289,radius_15th_18290,radius_20th_18291,channel_count_18292,map__18257,map__18257__$1,level,shapes,vec__18258,end,_,___$1,channels,vec__18259,___$2,bdr,fg,vec__18260,x_offset,y_offset){
+return (function iter__18263(s__18264){
+return (new cljs.core.LazySeq(null,((function (shape_18275,map__18261_18276,map__18261_18277__$1,vec__18262_18278,x_18279,y_18280,__18281__$3,n_18282,wiring_18283,xs_18284,ys_18285,vtxs_18286,radius_18287,radius_3rd_18288,radius_5th_18289,radius_15th_18290,radius_20th_18291,channel_count_18292,map__18257,map__18257__$1,level,shapes,vec__18258,end,_,___$1,channels,vec__18259,___$2,bdr,fg,vec__18260,x_offset,y_offset){
 return (function (){
-var s__75162__$1 = s__75162;
+var s__18264__$1 = s__18264;
 while(true){
-var temp__4126__auto__ = cljs.core.seq.call(null,s__75162__$1);
+var temp__4126__auto__ = cljs.core.seq.call(null,s__18264__$1);
 if(temp__4126__auto__){
-var s__75162__$2 = temp__4126__auto__;
-if(cljs.core.chunked_seq_QMARK_.call(null,s__75162__$2)){
-var c__4565__auto__ = cljs.core.chunk_first.call(null,s__75162__$2);
+var s__18264__$2 = temp__4126__auto__;
+if(cljs.core.chunked_seq_QMARK_.call(null,s__18264__$2)){
+var c__4565__auto__ = cljs.core.chunk_first.call(null,s__18264__$2);
 var size__4566__auto__ = cljs.core.count.call(null,c__4565__auto__);
-var b__75164 = cljs.core.chunk_buffer.call(null,size__4566__auto__);
-if((function (){var i__75163 = (0);
+var b__18266 = cljs.core.chunk_buffer.call(null,size__4566__auto__);
+if((function (){var i__18265 = (0);
 while(true){
-if((i__75163 < size__4566__auto__)){
-var channel_wiring = cljs.core._nth.call(null,c__4565__auto__,i__75163);
-cljs.core.chunk_append.call(null,b__75164,cljs.core.some.call(null,new cljs.core.PersistentHashSet(null, new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"on","on",173873944),null], null), null),cljs.core.flatten.call(null,channel_wiring)));
+if((i__18265 < size__4566__auto__)){
+var channel_wiring = cljs.core._nth.call(null,c__4565__auto__,i__18265);
+cljs.core.chunk_append.call(null,b__18266,cljs.core.some.call(null,new cljs.core.PersistentHashSet(null, new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"on","on",173873944),null], null), null),cljs.core.flatten.call(null,channel_wiring)));
 
-var G__75191 = (i__75163 + (1));
-i__75163 = G__75191;
+var G__18293 = (i__18265 + (1));
+i__18265 = G__18293;
 continue;
 } else {
 return true;
@@ -1657,70 +1624,70 @@ return true;
 break;
 }
 })()){
-return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__75164),iter__75161.call(null,cljs.core.chunk_rest.call(null,s__75162__$2)));
+return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__18266),iter__18263.call(null,cljs.core.chunk_rest.call(null,s__18264__$2)));
 } else {
-return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__75164),null);
+return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__18266),null);
 }
 } else {
-var channel_wiring = cljs.core.first.call(null,s__75162__$2);
-return cljs.core.cons.call(null,cljs.core.some.call(null,new cljs.core.PersistentHashSet(null, new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"on","on",173873944),null], null), null),cljs.core.flatten.call(null,channel_wiring)),iter__75161.call(null,cljs.core.rest.call(null,s__75162__$2)));
+var channel_wiring = cljs.core.first.call(null,s__18264__$2);
+return cljs.core.cons.call(null,cljs.core.some.call(null,new cljs.core.PersistentHashSet(null, new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"on","on",173873944),null], null), null),cljs.core.flatten.call(null,channel_wiring)),iter__18263.call(null,cljs.core.rest.call(null,s__18264__$2)));
 }
 } else {
 return null;
 }
 break;
 }
-});})(shape_75173,map__75159_75174,map__75159_75175__$1,vec__75160_75176,x_75177,y_75178,__75179__$3,n_75180,wiring_75181,xs_75182,ys_75183,vtxs_75184,radius_75185,radius_3rd_75186,radius_5th_75187,radius_15th_75188,radius_20th_75189,channel_count_75190,map__75155,map__75155__$1,level,shapes,vec__75156,end,_,___$1,channels,vec__75157,___$2,bdr,fg,vec__75158,x_offset,y_offset))
+});})(shape_18275,map__18261_18276,map__18261_18277__$1,vec__18262_18278,x_18279,y_18280,__18281__$3,n_18282,wiring_18283,xs_18284,ys_18285,vtxs_18286,radius_18287,radius_3rd_18288,radius_5th_18289,radius_15th_18290,radius_20th_18291,channel_count_18292,map__18257,map__18257__$1,level,shapes,vec__18258,end,_,___$1,channels,vec__18259,___$2,bdr,fg,vec__18260,x_offset,y_offset))
 ,null,null));
-});})(shape_75173,map__75159_75174,map__75159_75175__$1,vec__75160_75176,x_75177,y_75178,__75179__$3,n_75180,wiring_75181,xs_75182,ys_75183,vtxs_75184,radius_75185,radius_3rd_75186,radius_5th_75187,radius_15th_75188,radius_20th_75189,channel_count_75190,map__75155,map__75155__$1,level,shapes,vec__75156,end,_,___$1,channels,vec__75157,___$2,bdr,fg,vec__75158,x_offset,y_offset))
+});})(shape_18275,map__18261_18276,map__18261_18277__$1,vec__18262_18278,x_18279,y_18280,__18281__$3,n_18282,wiring_18283,xs_18284,ys_18285,vtxs_18286,radius_18287,radius_3rd_18288,radius_5th_18289,radius_15th_18290,radius_20th_18291,channel_count_18292,map__18257,map__18257__$1,level,shapes,vec__18258,end,_,___$1,channels,vec__18259,___$2,bdr,fg,vec__18260,x_offset,y_offset))
 ;
-return iter__4567__auto__.call(null,wiring_75181);
+return iter__4567__auto__.call(null,wiring_18283);
 })())){
-var seq__75165_75192 = cljs.core.seq.call(null,cljs.core.range.call(null,(1),(5)));
-var chunk__75166_75193 = null;
-var count__75167_75194 = (0);
-var i__75168_75195 = (0);
+var seq__18267_18294 = cljs.core.seq.call(null,cljs.core.range.call(null,(1),(5)));
+var chunk__18268_18295 = null;
+var count__18269_18296 = (0);
+var i__18270_18297 = (0);
 while(true){
-if((i__75168_75195 < count__75167_75194)){
-var i_75196 = cljs.core._nth.call(null,chunk__75166_75193,i__75168_75195);
-cljstemplate.shape.fill_circle.call(null,context,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [xs_75182,ys_75183,(radius_75185 / ((5) - i_75196))], null),cljs.core.conj.call(null,fg,((1) / i_75196)));
+if((i__18270_18297 < count__18269_18296)){
+var i_18298 = cljs.core._nth.call(null,chunk__18268_18295,i__18270_18297);
+cljstemplate.shape.fill_circle.call(null,context,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [xs_18284,ys_18285,(radius_18287 / ((5) - i_18298))], null),cljs.core.conj.call(null,fg,((1) / i_18298)));
 
-var G__75197 = seq__75165_75192;
-var G__75198 = chunk__75166_75193;
-var G__75199 = count__75167_75194;
-var G__75200 = (i__75168_75195 + (1));
-seq__75165_75192 = G__75197;
-chunk__75166_75193 = G__75198;
-count__75167_75194 = G__75199;
-i__75168_75195 = G__75200;
+var G__18299 = seq__18267_18294;
+var G__18300 = chunk__18268_18295;
+var G__18301 = count__18269_18296;
+var G__18302 = (i__18270_18297 + (1));
+seq__18267_18294 = G__18299;
+chunk__18268_18295 = G__18300;
+count__18269_18296 = G__18301;
+i__18270_18297 = G__18302;
 continue;
 } else {
-var temp__4126__auto___75201 = cljs.core.seq.call(null,seq__75165_75192);
-if(temp__4126__auto___75201){
-var seq__75165_75202__$1 = temp__4126__auto___75201;
-if(cljs.core.chunked_seq_QMARK_.call(null,seq__75165_75202__$1)){
-var c__4598__auto___75203 = cljs.core.chunk_first.call(null,seq__75165_75202__$1);
-var G__75204 = cljs.core.chunk_rest.call(null,seq__75165_75202__$1);
-var G__75205 = c__4598__auto___75203;
-var G__75206 = cljs.core.count.call(null,c__4598__auto___75203);
-var G__75207 = (0);
-seq__75165_75192 = G__75204;
-chunk__75166_75193 = G__75205;
-count__75167_75194 = G__75206;
-i__75168_75195 = G__75207;
+var temp__4126__auto___18303 = cljs.core.seq.call(null,seq__18267_18294);
+if(temp__4126__auto___18303){
+var seq__18267_18304__$1 = temp__4126__auto___18303;
+if(cljs.core.chunked_seq_QMARK_.call(null,seq__18267_18304__$1)){
+var c__4598__auto___18305 = cljs.core.chunk_first.call(null,seq__18267_18304__$1);
+var G__18306 = cljs.core.chunk_rest.call(null,seq__18267_18304__$1);
+var G__18307 = c__4598__auto___18305;
+var G__18308 = cljs.core.count.call(null,c__4598__auto___18305);
+var G__18309 = (0);
+seq__18267_18294 = G__18306;
+chunk__18268_18295 = G__18307;
+count__18269_18296 = G__18308;
+i__18270_18297 = G__18309;
 continue;
 } else {
-var i_75208 = cljs.core.first.call(null,seq__75165_75202__$1);
-cljstemplate.shape.fill_circle.call(null,context,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [xs_75182,ys_75183,(radius_75185 / ((5) - i_75208))], null),cljs.core.conj.call(null,fg,((1) / i_75208)));
+var i_18310 = cljs.core.first.call(null,seq__18267_18304__$1);
+cljstemplate.shape.fill_circle.call(null,context,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [xs_18284,ys_18285,(radius_18287 / ((5) - i_18310))], null),cljs.core.conj.call(null,fg,((1) / i_18310)));
 
-var G__75209 = cljs.core.next.call(null,seq__75165_75202__$1);
-var G__75210 = null;
-var G__75211 = (0);
-var G__75212 = (0);
-seq__75165_75192 = G__75209;
-chunk__75166_75193 = G__75210;
-count__75167_75194 = G__75211;
-i__75168_75195 = G__75212;
+var G__18311 = cljs.core.next.call(null,seq__18267_18304__$1);
+var G__18312 = null;
+var G__18313 = (0);
+var G__18314 = (0);
+seq__18267_18294 = G__18311;
+chunk__18268_18295 = G__18312;
+count__18269_18296 = G__18313;
+i__18270_18297 = G__18314;
 continue;
 }
 } else {
@@ -1731,81 +1698,81 @@ break;
 
 cljs.core.reset_BANG_.call(null,done,true);
 
-cljstemplate.shape.render_attention.call(null,new cljs.core.Keyword(null,"end","end",-268185958),context,xs_75182,ys_75183,radius_75185,timestamp);
+cljstemplate.shape.render_attention.call(null,new cljs.core.Keyword(null,"end","end",-268185958),context,xs_18284,ys_18285,radius_18287,timestamp);
 } else {
 }
 
-var seq__75169_75213 = cljs.core.seq.call(null,cljs.core.range.call(null,channel_count_75190));
-var chunk__75170_75214 = null;
-var count__75171_75215 = (0);
-var i__75172_75216 = (0);
+var seq__18271_18315 = cljs.core.seq.call(null,cljs.core.range.call(null,channel_count_18292));
+var chunk__18272_18316 = null;
+var count__18273_18317 = (0);
+var i__18274_18318 = (0);
 while(true){
-if((i__75172_75216 < count__75171_75215)){
-var i_75217 = cljs.core._nth.call(null,chunk__75170_75214,i__75172_75216);
-var angle_75218 = ((i_75217 * (cljstemplate.constance.TAU / channel_count_75190)) - (timestamp / (3000)));
-var xi_75219 = (xs_75182 + (radius_3rd_75186 * Math.sin.call(null,angle_75218)));
-var yi_75220 = (ys_75183 + (radius_3rd_75186 * Math.cos.call(null,angle_75218)));
-var on_75221 = cljs.core.some.call(null,new cljs.core.PersistentHashSet(null, new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"on","on",173873944),null], null), null),cljs.core.flatten.call(null,cljs.core.nth.call(null,wiring_75181,i_75217)));
-cljstemplate.shape.fill_circle.call(null,context,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [xi_75219,yi_75220,radius_5th_75187], null),cljs.core.conj.call(null,cljs.core.nth.call(null,channels,i_75217),(cljs.core.truth_(on_75221)?(1):0.25)));
+if((i__18274_18318 < count__18273_18317)){
+var i_18319 = cljs.core._nth.call(null,chunk__18272_18316,i__18274_18318);
+var angle_18320 = ((i_18319 * (cljstemplate.constance.TAU / channel_count_18292)) - (timestamp / (3000)));
+var xi_18321 = (xs_18284 + (radius_3rd_18288 * Math.sin.call(null,angle_18320)));
+var yi_18322 = (ys_18285 + (radius_3rd_18288 * Math.cos.call(null,angle_18320)));
+var on_18323 = cljs.core.some.call(null,new cljs.core.PersistentHashSet(null, new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"on","on",173873944),null], null), null),cljs.core.flatten.call(null,cljs.core.nth.call(null,wiring_18283,i_18319)));
+cljstemplate.shape.fill_circle.call(null,context,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [xi_18321,yi_18322,radius_5th_18289], null),cljs.core.conj.call(null,cljs.core.nth.call(null,channels,i_18319),(cljs.core.truth_(on_18323)?(1):0.25)));
 
-cljstemplate.shape.stroke_circle.call(null,context,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [xi_75219,yi_75220,radius_5th_75187], null),cljs.core.conj.call(null,cljs.core.nth.call(null,channels,i_75217),(cljs.core.truth_(on_75221)?0.75:0.25)));
+cljstemplate.shape.stroke_circle.call(null,context,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [xi_18321,yi_18322,radius_5th_18289], null),cljs.core.conj.call(null,cljs.core.nth.call(null,channels,i_18319),(cljs.core.truth_(on_18323)?0.75:0.25)));
 
-if(cljs.core.truth_(on_75221)){
-cljstemplate.shape.fill_circle.call(null,context,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [(xi_75219 - radius_15th_75188),(yi_75220 - radius_15th_75188),radius_15th_75188], null),new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [(255),(255),(255),0.15], null));
+if(cljs.core.truth_(on_18323)){
+cljstemplate.shape.fill_circle.call(null,context,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [(xi_18321 - radius_15th_18290),(yi_18322 - radius_15th_18290),radius_15th_18290], null),new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [(255),(255),(255),0.15], null));
 
-cljstemplate.shape.fill_circle.call(null,context,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [(xi_75219 - radius_15th_75188),(yi_75220 - radius_15th_75188),radius_20th_75189], null),new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [(255),(255),(255),0.15], null));
+cljstemplate.shape.fill_circle.call(null,context,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [(xi_18321 - radius_15th_18290),(yi_18322 - radius_15th_18290),radius_20th_18291], null),new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [(255),(255),(255),0.15], null));
 } else {
 }
 
-var G__75222 = seq__75169_75213;
-var G__75223 = chunk__75170_75214;
-var G__75224 = count__75171_75215;
-var G__75225 = (i__75172_75216 + (1));
-seq__75169_75213 = G__75222;
-chunk__75170_75214 = G__75223;
-count__75171_75215 = G__75224;
-i__75172_75216 = G__75225;
+var G__18324 = seq__18271_18315;
+var G__18325 = chunk__18272_18316;
+var G__18326 = count__18273_18317;
+var G__18327 = (i__18274_18318 + (1));
+seq__18271_18315 = G__18324;
+chunk__18272_18316 = G__18325;
+count__18273_18317 = G__18326;
+i__18274_18318 = G__18327;
 continue;
 } else {
-var temp__4126__auto___75226 = cljs.core.seq.call(null,seq__75169_75213);
-if(temp__4126__auto___75226){
-var seq__75169_75227__$1 = temp__4126__auto___75226;
-if(cljs.core.chunked_seq_QMARK_.call(null,seq__75169_75227__$1)){
-var c__4598__auto___75228 = cljs.core.chunk_first.call(null,seq__75169_75227__$1);
-var G__75229 = cljs.core.chunk_rest.call(null,seq__75169_75227__$1);
-var G__75230 = c__4598__auto___75228;
-var G__75231 = cljs.core.count.call(null,c__4598__auto___75228);
-var G__75232 = (0);
-seq__75169_75213 = G__75229;
-chunk__75170_75214 = G__75230;
-count__75171_75215 = G__75231;
-i__75172_75216 = G__75232;
+var temp__4126__auto___18328 = cljs.core.seq.call(null,seq__18271_18315);
+if(temp__4126__auto___18328){
+var seq__18271_18329__$1 = temp__4126__auto___18328;
+if(cljs.core.chunked_seq_QMARK_.call(null,seq__18271_18329__$1)){
+var c__4598__auto___18330 = cljs.core.chunk_first.call(null,seq__18271_18329__$1);
+var G__18331 = cljs.core.chunk_rest.call(null,seq__18271_18329__$1);
+var G__18332 = c__4598__auto___18330;
+var G__18333 = cljs.core.count.call(null,c__4598__auto___18330);
+var G__18334 = (0);
+seq__18271_18315 = G__18331;
+chunk__18272_18316 = G__18332;
+count__18273_18317 = G__18333;
+i__18274_18318 = G__18334;
 continue;
 } else {
-var i_75233 = cljs.core.first.call(null,seq__75169_75227__$1);
-var angle_75234 = ((i_75233 * (cljstemplate.constance.TAU / channel_count_75190)) - (timestamp / (3000)));
-var xi_75235 = (xs_75182 + (radius_3rd_75186 * Math.sin.call(null,angle_75234)));
-var yi_75236 = (ys_75183 + (radius_3rd_75186 * Math.cos.call(null,angle_75234)));
-var on_75237 = cljs.core.some.call(null,new cljs.core.PersistentHashSet(null, new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"on","on",173873944),null], null), null),cljs.core.flatten.call(null,cljs.core.nth.call(null,wiring_75181,i_75233)));
-cljstemplate.shape.fill_circle.call(null,context,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [xi_75235,yi_75236,radius_5th_75187], null),cljs.core.conj.call(null,cljs.core.nth.call(null,channels,i_75233),(cljs.core.truth_(on_75237)?(1):0.25)));
+var i_18335 = cljs.core.first.call(null,seq__18271_18329__$1);
+var angle_18336 = ((i_18335 * (cljstemplate.constance.TAU / channel_count_18292)) - (timestamp / (3000)));
+var xi_18337 = (xs_18284 + (radius_3rd_18288 * Math.sin.call(null,angle_18336)));
+var yi_18338 = (ys_18285 + (radius_3rd_18288 * Math.cos.call(null,angle_18336)));
+var on_18339 = cljs.core.some.call(null,new cljs.core.PersistentHashSet(null, new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"on","on",173873944),null], null), null),cljs.core.flatten.call(null,cljs.core.nth.call(null,wiring_18283,i_18335)));
+cljstemplate.shape.fill_circle.call(null,context,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [xi_18337,yi_18338,radius_5th_18289], null),cljs.core.conj.call(null,cljs.core.nth.call(null,channels,i_18335),(cljs.core.truth_(on_18339)?(1):0.25)));
 
-cljstemplate.shape.stroke_circle.call(null,context,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [xi_75235,yi_75236,radius_5th_75187], null),cljs.core.conj.call(null,cljs.core.nth.call(null,channels,i_75233),(cljs.core.truth_(on_75237)?0.75:0.25)));
+cljstemplate.shape.stroke_circle.call(null,context,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [xi_18337,yi_18338,radius_5th_18289], null),cljs.core.conj.call(null,cljs.core.nth.call(null,channels,i_18335),(cljs.core.truth_(on_18339)?0.75:0.25)));
 
-if(cljs.core.truth_(on_75237)){
-cljstemplate.shape.fill_circle.call(null,context,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [(xi_75235 - radius_15th_75188),(yi_75236 - radius_15th_75188),radius_15th_75188], null),new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [(255),(255),(255),0.15], null));
+if(cljs.core.truth_(on_18339)){
+cljstemplate.shape.fill_circle.call(null,context,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [(xi_18337 - radius_15th_18290),(yi_18338 - radius_15th_18290),radius_15th_18290], null),new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [(255),(255),(255),0.15], null));
 
-cljstemplate.shape.fill_circle.call(null,context,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [(xi_75235 - radius_15th_75188),(yi_75236 - radius_15th_75188),radius_20th_75189], null),new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [(255),(255),(255),0.15], null));
+cljstemplate.shape.fill_circle.call(null,context,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [(xi_18337 - radius_15th_18290),(yi_18338 - radius_15th_18290),radius_20th_18291], null),new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [(255),(255),(255),0.15], null));
 } else {
 }
 
-var G__75238 = cljs.core.next.call(null,seq__75169_75227__$1);
-var G__75239 = null;
-var G__75240 = (0);
-var G__75241 = (0);
-seq__75169_75213 = G__75238;
-chunk__75170_75214 = G__75239;
-count__75171_75215 = G__75240;
-i__75172_75216 = G__75241;
+var G__18340 = cljs.core.next.call(null,seq__18271_18329__$1);
+var G__18341 = null;
+var G__18342 = (0);
+var G__18343 = (0);
+seq__18271_18315 = G__18340;
+chunk__18272_18316 = G__18341;
+count__18273_18317 = G__18342;
+i__18274_18318 = G__18343;
 continue;
 }
 } else {
@@ -1816,7 +1783,7 @@ break;
 
 context.restore();
 
-cljstemplate.shape.trace_path.call(null,context,vtxs_75184);
+cljstemplate.shape.trace_path.call(null,context,vtxs_18286);
 
 context.strokeStyle = cljstemplate.shape.rgb_str.call(null,bdr);
 
@@ -1840,19 +1807,15 @@ return grd;
 cljstemplate.shape.attention_gradient = (function attention_gradient(key,context,x,y,radius){
 var temp__4124__auto__ = cljs.core.deref.call(null,cljstemplate.shape.gradients).call(null,key);
 if(cljs.core.truth_(temp__4124__auto__)){
-var vec__75243 = temp__4124__auto__;
-var args = cljs.core.nth.call(null,vec__75243,(0),null);
-var cached_value = cljs.core.nth.call(null,vec__75243,(1),null);
+var vec__18345 = temp__4124__auto__;
+var args = cljs.core.nth.call(null,vec__18345,(0),null);
+var cached_value = cljs.core.nth.call(null,vec__18345,(1),null);
 if(cljs.core._EQ_.call(null,args,new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [context,x,y,radius], null))){
 return cached_value;
 } else {
-cljstemplate.shape.log.call(null,"CACHE: Args differ");
-
 return cljstemplate.shape.mk_gradient.call(null,key,context,x,y,radius);
 }
 } else {
-cljstemplate.shape.log.call(null,"CACHE: Cache empty");
-
 return cljstemplate.shape.mk_gradient.call(null,key,context,x,y,radius);
 }
 });
@@ -1860,71 +1823,71 @@ cljstemplate.shape.render_attention = (function render_attention(key,context,x,y
 var gradient = cljstemplate.shape.attention_gradient.call(null,key,context,x,y,radius);
 context.fillStyle = gradient;
 
-var seq__75248 = cljs.core.seq.call(null,cljs.core.range.call(null,(16)));
-var chunk__75249 = null;
-var count__75250 = (0);
-var i__75251 = (0);
+var seq__18350 = cljs.core.seq.call(null,cljs.core.range.call(null,(16)));
+var chunk__18351 = null;
+var count__18352 = (0);
+var i__18353 = (0);
 while(true){
-if((i__75251 < count__75250)){
-var i = cljs.core._nth.call(null,chunk__75249,i__75251);
-var start_75252 = ((i * (cljstemplate.constance.PI / (8))) - (timestamp / (3000)));
-var end_75253 = (start_75252 - 0.2);
+if((i__18353 < count__18352)){
+var i = cljs.core._nth.call(null,chunk__18351,i__18353);
+var start_18354 = ((i * (cljstemplate.constance.PI / (8))) - (timestamp / (3000)));
+var end_18355 = (start_18354 - 0.2);
 context.beginPath();
 
 context.moveTo(x,y);
 
-context.arc(x,y,radius,start_75252,end_75253,true);
+context.arc(x,y,radius,start_18354,end_18355,true);
 
 context.closePath();
 
 context.fill();
 
-var G__75254 = seq__75248;
-var G__75255 = chunk__75249;
-var G__75256 = count__75250;
-var G__75257 = (i__75251 + (1));
-seq__75248 = G__75254;
-chunk__75249 = G__75255;
-count__75250 = G__75256;
-i__75251 = G__75257;
+var G__18356 = seq__18350;
+var G__18357 = chunk__18351;
+var G__18358 = count__18352;
+var G__18359 = (i__18353 + (1));
+seq__18350 = G__18356;
+chunk__18351 = G__18357;
+count__18352 = G__18358;
+i__18353 = G__18359;
 continue;
 } else {
-var temp__4126__auto__ = cljs.core.seq.call(null,seq__75248);
+var temp__4126__auto__ = cljs.core.seq.call(null,seq__18350);
 if(temp__4126__auto__){
-var seq__75248__$1 = temp__4126__auto__;
-if(cljs.core.chunked_seq_QMARK_.call(null,seq__75248__$1)){
-var c__4598__auto__ = cljs.core.chunk_first.call(null,seq__75248__$1);
-var G__75258 = cljs.core.chunk_rest.call(null,seq__75248__$1);
-var G__75259 = c__4598__auto__;
-var G__75260 = cljs.core.count.call(null,c__4598__auto__);
-var G__75261 = (0);
-seq__75248 = G__75258;
-chunk__75249 = G__75259;
-count__75250 = G__75260;
-i__75251 = G__75261;
+var seq__18350__$1 = temp__4126__auto__;
+if(cljs.core.chunked_seq_QMARK_.call(null,seq__18350__$1)){
+var c__4598__auto__ = cljs.core.chunk_first.call(null,seq__18350__$1);
+var G__18360 = cljs.core.chunk_rest.call(null,seq__18350__$1);
+var G__18361 = c__4598__auto__;
+var G__18362 = cljs.core.count.call(null,c__4598__auto__);
+var G__18363 = (0);
+seq__18350 = G__18360;
+chunk__18351 = G__18361;
+count__18352 = G__18362;
+i__18353 = G__18363;
 continue;
 } else {
-var i = cljs.core.first.call(null,seq__75248__$1);
-var start_75262 = ((i * (cljstemplate.constance.PI / (8))) - (timestamp / (3000)));
-var end_75263 = (start_75262 - 0.2);
+var i = cljs.core.first.call(null,seq__18350__$1);
+var start_18364 = ((i * (cljstemplate.constance.PI / (8))) - (timestamp / (3000)));
+var end_18365 = (start_18364 - 0.2);
 context.beginPath();
 
 context.moveTo(x,y);
 
-context.arc(x,y,radius,start_75262,end_75263,true);
+context.arc(x,y,radius,start_18364,end_18365,true);
 
 context.closePath();
 
 context.fill();
 
-var G__75264 = cljs.core.next.call(null,seq__75248__$1);
-var G__75265 = null;
-var G__75266 = (0);
-var G__75267 = (0);
-seq__75248 = G__75264;
-chunk__75249 = G__75265;
-count__75250 = G__75266;
-i__75251 = G__75267;
+var G__18366 = cljs.core.next.call(null,seq__18350__$1);
+var G__18367 = null;
+var G__18368 = (0);
+var G__18369 = (0);
+seq__18350 = G__18366;
+chunk__18351 = G__18367;
+count__18352 = G__18368;
+i__18353 = G__18369;
 continue;
 }
 } else {
@@ -1934,23 +1897,23 @@ return null;
 break;
 }
 });
-cljstemplate.shape.render = (function render(p__75270,level,mouse,timestamp,done){
-var vec__75274 = p__75270;
-var context = cljs.core.nth.call(null,vec__75274,(0),null);
-var width = cljs.core.nth.call(null,vec__75274,(1),null);
-var height = cljs.core.nth.call(null,vec__75274,(2),null);
+cljstemplate.shape.render = (function render(p__18372,level,mouse,timestamp,done){
+var vec__18376 = p__18372;
+var context = cljs.core.nth.call(null,vec__18376,(0),null);
+var width = cljs.core.nth.call(null,vec__18376,(1),null);
+var height = cljs.core.nth.call(null,vec__18376,(2),null);
 var sf = cljstemplate.shape.scale_factor.call(null,new cljs.core.Keyword(null,"width","width",-384071477).cljs$core$IFn$_invoke$arity$1(level),new cljs.core.Keyword(null,"height","height",1025178622).cljs$core$IFn$_invoke$arity$1(level),width,height);
 var offset = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [((width - (sf * new cljs.core.Keyword(null,"width","width",-384071477).cljs$core$IFn$_invoke$arity$1(level))) / (2)),((height - (sf * new cljs.core.Keyword(null,"height","height",1025178622).cljs$core$IFn$_invoke$arity$1(level))) / (2))], null);
 var channels = new cljs.core.Keyword(null,"channels","channels",1132759174).cljs$core$IFn$_invoke$arity$1(level);
 var colours = new cljs.core.Keyword(null,"colours","colours",659341642).cljs$core$IFn$_invoke$arity$1(level);
-var vec__75275 = new cljs.core.Keyword(null,"start","start",-355208981).cljs$core$IFn$_invoke$arity$1(level);
-var start = cljs.core.nth.call(null,vec__75275,(0),null);
-var vec__75276 = new cljs.core.Keyword(null,"end","end",-268185958).cljs$core$IFn$_invoke$arity$1(level);
-var end = cljs.core.nth.call(null,vec__75276,(0),null);
+var vec__18377 = new cljs.core.Keyword(null,"start","start",-355208981).cljs$core$IFn$_invoke$arity$1(level);
+var start = cljs.core.nth.call(null,vec__18377,(0),null);
+var vec__18378 = new cljs.core.Keyword(null,"end","end",-268185958).cljs$core$IFn$_invoke$arity$1(level);
+var end = cljs.core.nth.call(null,vec__18378,(0),null);
 var ends = cljs.core.PersistentHashSet.fromArray([end,start], true);
 context.lineJoin = "round";
 
-context.lineCap = "round";
+context.lineCap = "butt";
 
 if(cljs.core.truth_(cljs.core.deref.call(null,done))){
 cljstemplate.shape.render_attention.call(null,new cljs.core.Keyword(null,"next","next",-117701485),context,width,height,((function (){var x__4135__auto__ = width;
@@ -1960,14 +1923,14 @@ return ((x__4135__auto__ < y__4136__auto__) ? x__4135__auto__ : y__4136__auto__)
 } else {
 }
 
-return cljstemplate.shape.render_end.call(null,cljstemplate.shape.render_start.call(null,cljs.core.update.call(null,cljs.core.update.call(null,level,new cljs.core.Keyword(null,"shapes","shapes",1897594879),((function (sf,offset,channels,colours,vec__75275,start,vec__75276,end,ends,vec__75274,context,width,height){
-return (function (p1__75268_SHARP_){
-return cljs.core.doall.call(null,cljs.core.map.call(null,cljs.core.partial.call(null,cljstemplate.shape.render_at_rest,context,sf,offset,mouse,channels,colours,ends,timestamp),p1__75268_SHARP_,cljs.core.range.call(null)));
-});})(sf,offset,channels,colours,vec__75275,start,vec__75276,end,ends,vec__75274,context,width,height))
-),new cljs.core.Keyword(null,"shapes","shapes",1897594879),((function (sf,offset,channels,colours,vec__75275,start,vec__75276,end,ends,vec__75274,context,width,height){
-return (function (p1__75269_SHARP_){
-return cljs.core.doall.call(null,cljs.core.map.call(null,cljs.core.partial.call(null,cljstemplate.shape.render_in_motion,context,sf,offset,mouse,channels,colours,ends,timestamp),p1__75269_SHARP_,cljs.core.range.call(null)));
-});})(sf,offset,channels,colours,vec__75275,start,vec__75276,end,ends,vec__75274,context,width,height))
+return cljstemplate.shape.render_end.call(null,cljstemplate.shape.render_start.call(null,cljs.core.update.call(null,cljs.core.update.call(null,level,new cljs.core.Keyword(null,"shapes","shapes",1897594879),((function (sf,offset,channels,colours,vec__18377,start,vec__18378,end,ends,vec__18376,context,width,height){
+return (function (p1__18370_SHARP_){
+return cljs.core.doall.call(null,cljs.core.map.call(null,cljs.core.partial.call(null,cljstemplate.shape.render_at_rest,context,sf,offset,mouse,channels,colours,ends,timestamp),p1__18370_SHARP_,cljs.core.range.call(null)));
+});})(sf,offset,channels,colours,vec__18377,start,vec__18378,end,ends,vec__18376,context,width,height))
+),new cljs.core.Keyword(null,"shapes","shapes",1897594879),((function (sf,offset,channels,colours,vec__18377,start,vec__18378,end,ends,vec__18376,context,width,height){
+return (function (p1__18371_SHARP_){
+return cljs.core.doall.call(null,cljs.core.map.call(null,cljs.core.partial.call(null,cljstemplate.shape.render_in_motion,context,sf,offset,mouse,channels,colours,ends,timestamp),p1__18371_SHARP_,cljs.core.range.call(null)));
+});})(sf,offset,channels,colours,vec__18377,start,vec__18378,end,ends,vec__18376,context,width,height))
 ),context,timestamp,colours,sf,offset),context,timestamp,colours,sf,offset,done);
 });
 
