@@ -1,46 +1,44 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-
+<!DOCTYPE html>
 <html>
-
 <head>
- <title> Peter Westmacott </title>
- <link rel="stylesheet" type="text/css" href="../site.css" />
- <script>
+    <meta charset="UTF-8"/>
+    <title> Wish list </title>
+    <link rel="stylesheet" type="text/css" href="../site.css" />
+    <script>
  
-  var t = 0.0;
+        var t = 0.0;
  
-  function attn() {   
-    t = t + 1.0;
-    var i = 64 + Math.round((64.0 * Math.sin((t / 3.0))));
-    document.getElementById('attention').style.background = 'RGB(' + i + ',' + i + ',' + i + ')'; 
-  }
+        function attn() {
+            t = t + 1.0;
+            var i = 64 + Math.round((64.0 * Math.sin((t / 3.0))));
+            document.getElementById('attention').style.background = 'RGB(' + i + ',' + i + ',' + i + ')';
+        }
    
-  var link_types = []
-  link_types['g'] = 'http://www.google.co.uk/search?q=';
-  link_types['w'] = 'http://en.wikipedia.org/w/index.php?search=';
-  link_types['a'] = 'http://www.amazon.co.uk/s?field-keywords=';
-  link_types['b'] = 'http://books.google.co.uk/books?q=';
+        var link_types = []
+        link_types['g'] = 'http://www.google.co.uk/search?q=';
+        link_types['w'] = 'http://en.wikipedia.org/w/index.php?search=';
+        link_types['a'] = 'http://www.amazon.co.uk/s?field-keywords=';
+        link_types['b'] = 'http://books.google.co.uk/books?q=';
    
-  function add_links() {
-    var els = document.getElementsByTagName('a');
-    for (var j = 0; j < els.length; ++j) {
-      if (els[j].hasAttribute('x')) {
-        var link_type = els[j].getAttribute('x');
-	    els[j].setAttribute('href', link_types[link_type] + els[j].innerHTML);
-		els[j].setAttribute('target', 'blank');
-	  }
-    }
-  }
+        function add_links() {
+            var els = document.getElementsByTagName('a');
+            for (var j = 0; j < els.length; ++j) {
+                if (els[j].hasAttribute('x')) {
+                    var link_type = els[j].getAttribute('x');
+                    els[j].setAttribute('href', link_types[link_type] + els[j].innerHTML);
+                    els[j].setAttribute('target', 'blank');
+                }
+            }
+        }
   
-  function start() {
-    setInterval('attn();', 50);
-	add_links();
-  }
+        function start() {
+            setInterval('attn();', 50);
+            add_links();
+        }
  
- </script>
+    </script>
  
 </head>
-
 <body onload="start();">
 
 <h1>Wish List</h1>
