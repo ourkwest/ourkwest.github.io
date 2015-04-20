@@ -37,6 +37,10 @@ a	{
 	color:	#96a2be;
 }
 
+img {
+    border:	1px solid white;
+}
+
 img.floater	{
     height:	100px;
     width:	100px;
