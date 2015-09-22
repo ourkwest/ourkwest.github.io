@@ -10,8 +10,8 @@
  
         function attn() {
             t = t + 1.0;
-            var i = 64 + Math.round((64.0 * Math.sin((t / 3.0))));
-            document.getElementById('attention').style.background = 'RGB(' + i + ',' + i + ',' + i + ')';
+            var i = 0.3 + (0.3 * Math.sin((t / 10.0)));
+            document.getElementById('attention').style.background = 'rgba(0, 0, 128, ' + i + ')';
         }
    
         var link_types = [];
@@ -46,7 +46,7 @@
 <hr />
 
 <p>
-Last updated: May 21<sup>st</sup>, 2015.
+Last updated: 2015-09-22
 <br />
 To co-ordinate purchasing decisions,<span id="attention" style="border-radius: 2px;" > please talk to my wife.&nbsp;</span>
 </p>
@@ -62,7 +62,7 @@ Peter would like:
         <!--<li>Some <a x="g">Soylent</a>. <i>[Not yet available in the UK]</i></li>-->
         <li>Some more <a x="g">elixir vegetal de la grande chartreuse</a>.</li>
 	
-        <li>A T-Shirt with a large <a x="w">Clojure</a> logo on the front.</li>
+        <!--<li>A T-Shirt with a large <a x="w">Clojure</a> logo on the front.</li>-->
         <li>Anything from the <a href="http://store.xkcd.com/" target="blank">XKCD store</a>.</li>
 
         <li><a href="http://xkcd.com/thing-explainer/" target="blank">This book</a>.</li>

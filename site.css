@@ -9,33 +9,42 @@ html	{
 
 body	{
 	margin:	5%;
-	color:	white;
-    background: black url('images/me3.jpg') no-repeat right bottom;
+	/*color:	white;*/
+	color: rgba(0, 0, 127, 0.75);
+    /*background: black url('images/me3.jpg') no-repeat right bottom;*/
+    background: url('images/eggshell.jpg');
+}
+
+
+hr {
+    color: white;
+    margin-left: -5%;
+    margin-right: -5%;
+    display: none;
 }
 
 h1	{
-	padding-left:	0%;
 }
 
-h2	{
-	padding-left:	5%;
-}
+/*h2	{*/
+	/*padding-left:	5%;*/
+/*}*/
 
-h3	{
-	padding-left:	7.5%;
-}
+/*h3	{*/
+	/*padding-left:	7.5%;*/
+/*}*/
 
 p	{
-	padding-left:	10%;
+	padding-left:	2.5%;
 }
 
-div	{
-	padding-left:	10%;	
-}
+/*div	{*/
+	/*padding-left:	10%;	*/
+/*}*/
 
-ul	{
-	padding-left:	4%;
-}
+/*ul	{*/
+	/*padding-left:	4%;*/
+/*}*/
 
 li {
     padding-top: 5px;
@@ -49,44 +58,50 @@ li {
 }
 .aside:before {
     /*font-size: smaller;*/
-    color:	#888;
+    /*color:	#888;*/
     content: '[';
 }
 .aside:after {
     /*font-size: smaller;*/
-    color:	#888;
+    /*color:	#888;*/
     content: '] ';
 }
 
 a	{
-    font-size: smaller;
-    background-color: #444;
-	color:	#fff;
-    padding: 1px 5px 1px 5px;
+    /*font-size: smaller;*/
+    /*background-color: #444;*/
+
+    background-color: rgba(0, 0, 127, 0.0);
+    color: #008;
+
+    /*border-radius: 4px;*/
+    padding: 1px 1px 1px 1px;
     text-decoration: none;
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid #008;
     transition: background-color 4s, border-bottom 4s, color 4s;
     transition-timing-function: cubic-bezier(0,.5,.5,1);
 }
 
 a:hover	{
-    color:	#8f8;
+    /*color:	#8f8;*/
     /*transition: color 0.2s;*/
-    background-color: #080;
-	/*color:	#96a2be;*/
-    border-bottom: 1px solid #8f8;
+
+    background-color: rgba(0, 0, 127, 0.25);
+    color: #008;
+
+    /*color:	#96a2be;*/
+    border-bottom: 10px solid #008;
     transition: background-color 0.2s, border-bottom 0.2s, color 0.2s;
 }
 
 img {
-    border:	1px solid white;
+    border:	1px solid #008;
 }
 
 img.floater	{
     height:	100px;
     width:	100px;
     float: right;
-    border:	1px solid white;
 }
 
 .breadcrumb {
