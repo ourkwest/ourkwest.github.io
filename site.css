@@ -42,6 +42,22 @@ li {
     padding-bottom: 5px;
 }
 
+.aside {
+    font-size: smaller;
+    color:	#888;
+    padding-left: 0%;
+}
+.aside:before {
+    /*font-size: smaller;*/
+    color:	#888;
+    content: '[';
+}
+.aside:after {
+    /*font-size: smaller;*/
+    color:	#888;
+    content: '] ';
+}
+
 a	{
     font-size: smaller;
     background-color: #444;
