@@ -11,13 +11,14 @@ body	{
 	margin:	5%;
 	/*color:	white;*/
 	color: rgba(0, 0, 127, 0.75);
+	color: black;
     /*background: black url('images/me3.jpg') no-repeat right bottom;*/
     background: url('images/eggshell.jpg');
 }
 
 
 hr {
-    color: white;
+    color: black;
     margin-left: -5%;
     margin-right: -5%;
     display: none;
@@ -64,7 +65,13 @@ li {
 .aside:after {
     /*font-size: smaller;*/
     /*color:	#888;*/
-    content: '] ';
+    content: ']';
+}
+
+div.chunk {
+    border-left: 2px solid #aaa;
+    border-radius: 5px;
+    padding: 0px 0px 0px 5px;
 }
 
 a	{
@@ -90,7 +97,7 @@ a:hover	{
     color: #008;
 
     /*color:	#96a2be;*/
-    border-bottom: 10px solid #008;
+    /*border-bottom: 10px solid #008;*/
     transition: background-color 0.2s, border-bottom 0.2s, color 0.2s;
 }
 
