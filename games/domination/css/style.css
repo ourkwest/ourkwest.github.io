@@ -1,0 +1,36 @@
+/* some style */
+
+html {
+    font-family: Verdana;
+}
+
+
+span {
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+div {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.outlined {
+    padding: 2px;
+    margin: 4px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.h-spaced {
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+input {
+    border-radius: 5px;
+}
+
+.available {
+    font-weight: bold;
+}
