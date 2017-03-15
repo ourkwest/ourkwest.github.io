@@ -10,7 +10,7 @@
     }
 
     function setQuote() {
-        var el = document.getElementsById("quotebox");
+        var el = document.getElementById("quotebox");
         el.innerText = pickQuote();
     }
 
