@@ -9,7 +9,8 @@
           "If you're not cynical then you're not paying attention.",
           "If a tree falls in a forest and no amateur philosophers contemplate it, does it cause a fruitless discussion of semantics?",
           "Running all servers in UGT since this morning.",
-          "...up above the world so high, fusing hydrogen nuclei..."
+          "🎶...up above the world so high, fusing hydrogen nuclei...🎶",
+          "It's bad luck to be superstitious."
         ];
         return quotes[Math.floor(Math.random() * quotes.length)];
     }
