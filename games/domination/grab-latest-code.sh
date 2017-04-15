@@ -1,6 +1,13 @@
 #!/usr/bin/env bash
 
-rm -rf games/domination/css
-rm -rf games/domination/js
-rm -rf games/domination/index.html
-cp -r ../domination/resources/public/* games/domination
+rm -rf ./css
+rm -rf ./js
+rm -rf ./*.html
+
+cd ../../../domination
+pwd
+lein clean
+lein cljsbuild once min
+cd -
+
+cp -r ../../../domination/resources/public/* .
