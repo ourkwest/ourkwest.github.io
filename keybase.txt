@@ -1,0 +1,55 @@
+==================================================================
+https://keybase.io/peterwestmacott
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://peterwestmacott.github.io
+  * I am peterwestmacott (https://keybase.io/peterwestmacott) on keybase.
+  * I have a public key ASDFdgzartg6_uwW5lYdmDnZv6t-Rq3SReIod87yZMZyBwo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120c5760cdaaed83afeec16e6561d9839d9bfab7e46add245e22877cef264c672070a",
+      "host": "keybase.io",
+      "kid": "0120c5760cdaaed83afeec16e6561d9839d9bfab7e46add245e22877cef264c672070a",
+      "uid": "d0d56e74f50cbabe7cd1ff98e23ac919",
+      "username": "peterwestmacott"
+    },
+    "merkle_root": {
+      "ctime": 1508162710,
+      "hash": "1a27c06c8f04cc4feb2142c535dee389ae8c9b09a209f823147cc48de7993cfdd6947e32504a3929788d59dbdc5625d0aef886792d40a10fc2c83452bb5cd300",
+      "hash_meta": "b70bb7daa270338190eae60077767c1718e7ffc3698cb78b40abacf4ff638af5",
+      "seqno": 1584958
+    },
+    "service": {
+      "hostname": "peterwestmacott.github.io",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "1.0.33"
+  },
+  "ctime": 1508163695,
+  "expire_in": 504576000,
+  "prev": "e5090c7e393f616296037f17e0c15fd3ae32e8cb7ce4a26f124934a0d3e3f04e",
+  "seqno": 20,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgxXYM2q7YOv7sFuZWHZg52b+rfkat0kXiKHfO8mTGcgcKp3BheWxvYWTFA1l7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTIwYzU3NjBjZGFhZWQ4M2FmZWVjMTZlNjU2MWQ5ODM5ZDliZmFiN2U0NmFkZDI0NWUyMjg3N2NlZjI2NGM2NzIwNzBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwYzU3NjBjZGFhZWQ4M2FmZWVjMTZlNjU2MWQ5ODM5ZDliZmFiN2U0NmFkZDI0NWUyMjg3N2NlZjI2NGM2NzIwNzBhIiwidWlkIjoiZDBkNTZlNzRmNTBjYmFiZTdjZDFmZjk4ZTIzYWM5MTkiLCJ1c2VybmFtZSI6InBldGVyd2VzdG1hY290dCJ9LCJtZXJrbGVfcm9vdCI6eyJjdGltZSI6MTUwODE2MjcxMCwiaGFzaCI6IjFhMjdjMDZjOGYwNGNjNGZlYjIxNDJjNTM1ZGVlMzg5YWU4YzliMDlhMjA5ZjgyMzE0N2NjNDhkZTc5OTNjZmRkNjk0N2UzMjUwNGEzOTI5Nzg4ZDU5ZGJkYzU2MjVkMGFlZjg4Njc5MmQ0MGExMGZjMmM4MzQ1MmJiNWNkMzAwIiwiaGFzaF9tZXRhIjoiYjcwYmI3ZGFhMjcwMzM4MTkwZWFlNjAwNzc3NjdjMTcxOGU3ZmZjMzY5OGNiNzhiNDBhYmFjZjRmZjYzOGFmNSIsInNlcW5vIjoxNTg0OTU4fSwic2VydmljZSI6eyJob3N0bmFtZSI6InBldGVyd2VzdG1hY290dC5naXRodWIuaW8iLCJwcm90b2NvbCI6Imh0dHBzOiJ9LCJ0eXBlIjoid2ViX3NlcnZpY2VfYmluZGluZyIsInZlcnNpb24iOjF9LCJjbGllbnQiOnsibmFtZSI6ImtleWJhc2UuaW8gZ28gY2xpZW50IiwidmVyc2lvbiI6IjEuMC4zMyJ9LCJjdGltZSI6MTUwODE2MzY5NSwiZXhwaXJlX2luIjo1MDQ1NzYwMDAsInByZXYiOiJlNTA5MGM3ZTM5M2Y2MTYyOTYwMzdmMTdlMGMxNWZkM2FlMzJlOGNiN2NlNGEyNmYxMjQ5MzRhMGQzZTNmMDRlIiwic2Vxbm8iOjIwLCJ0YWciOiJzaWduYXR1cmUifaNzaWfEQPalanjODpYvcxks3RoYeBbDu2bYlk4zN37Dl+e+s6DBB+qeikdch8hEeQrhqg/H4CU/X5bCD3kWbd4BW22bTg6oc2lnX3R5cGUgpGhhc2iCpHR5cGUIpXZhbHVlxCB199UIopuCL/8m2SWxwWk1z01b/SsUPI0+wnpxLW/ZW6N0YWfNAgKndmVyc2lvbgE=
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/peterwestmacott
+
+==================================================================
