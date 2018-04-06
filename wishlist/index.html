@@ -6,19 +6,21 @@
     <link rel="stylesheet" type="text/css" href="../site.css" />
     <script>
  
-        var link_types = [];
-        link_types['g'] = 'http://www.google.co.uk/search?q=';
-        link_types['w'] = 'http://en.wikipedia.org/w/index.php?search=';
-        link_types['a'] = 'http://www.amazon.co.uk/s?field-keywords=';
-        link_types['b'] = 'http://books.google.co.uk/books?q=';
+        var search_engines = [];
+        search_engines['d'] = 'https://duckduckgo.com/?q=';
+        search_engines['g'] = 'http://www.google.co.uk/search?q=';
+        search_engines['w'] = 'http://en.wikipedia.org/w/index.php?search=';
+        search_engines['a'] = 'http://www.amazon.co.uk/s?field-keywords=';
+        search_engines['b'] = 'http://books.google.co.uk/books?q=';
    
         function add_links() {
             var els = document.getElementsByTagName('a');
             for (var j = 0; j < els.length; ++j) {
-                if (els[j].hasAttribute('x')) {
-                    var link_type = els[j].getAttribute('x');
-                    els[j].setAttribute('href', link_types[link_type] + els[j].innerHTML);
-                    els[j].setAttribute('target', 'blank');
+                var el = els[j];
+                if (!el.hasAttribute('href')) {
+                    var search_engine = search_engines[el.getAttribute('e') || 'd'];
+                    el.setAttribute('href', search_engine + (el.getAttribute('t') || el.innerHTML));
+                    el.setAttribute('target', 'blank');
                 }
             }
         }
@@ -53,7 +55,7 @@
 <hr />
 
 <p>
-Last updated: 2016-12-10 (pre-Christmas 2016)
+Last updated: 2018-04-06
 <br />
 To co-ordinate purchasing decisions,<span id="attention" style="border-radius: 2px;" > please talk to my wife.&nbsp;</span>
 </p>
@@ -63,46 +65,62 @@ Peter would like:
 </p>
 
 <div>
+
     <ul>
 
-        <li>A nice peaty whiskey, preferably with a few years on it.</li>
 
-        <li><a x="a">Edinburgh Gin Rhubarb and Ginger Liqueur</a></li>
+        <li>
+            Drinkables:
+            <ul>
+                <li>A <a t="buy Laphroaig whisky">nice peaty whisky</a>, preferably with a few years on it.</li>
+                <li><a>Edinburgh Gin Rhubarb and Ginger Liqueur</a></li>
+                <li>Some more <a x="g">elixir vegetal de la grande chartreuse</a>.</li>
+            </ul>
+        </li>
 
-        <li>Another <a href="http://www.epicureancs.com/kitchenseries.php" target="blank">specific</a> chopping board, because the last one is so good.</li>
-        <!--<li>Some <a x="g">Soylent</a>. <i>[Not yet available in the UK]</i></li>-->
-        <li>Some more <a x="g">elixir vegetal de la grande chartreuse</a>.</li>
-	
-        <li>Anything from the <a href="http://store.xkcd.com/" target="blank">XKCD store</a>.</li>
+        <li>
+            Readables:
+            <ul>
+                <li>A <a href="https://leanpub.com/elementsofclojure">great new book </a>on computer programming in my current favourite language.</li>
+                <li>Any books by <a>Neal Stephenson</a> (but <b>not 'Snow Crash'</b> which I've already read).</li>
+                <li>A <a x="g">book by Daniel Dennett</a></li>
+            </ul>
+        </li>
 
-        <li>An album called <a x="a">Everybody Down by Kate Tempest</a></li>
+        <li>
+            Listenables (CD format still useful to me):
+            <ul>
+                <li>An album called <a>Everybody Down by Kate Tempest</a></li>
+                <li>An album called <a href="http://domakesaythink.com/">Stubborn Persistent Illusions by Do Make Say Think</a></li>
+                <li>Any album by <a>King Gizzard and the Lizard Wizard</a></li>
+                <li>A CD of your choosing, especially if its from the Jazz or Folk genres, or defies classification.</li>
+            </ul>
+        </li>
 
-        <li>A CD of your choosing, especially if its from the Jazz or Folk genres, or defies classification.</li>
+        <li>
+            Useables:
+            <ul>
+                <li>Another <a href="http://www.epicureancs.com/kitchenseries.php" target="blank">specific</a> chopping board, because the last one is so good.</li>
+            </ul>
+        </li>
 
-        <!-- <li>A T-shirt bearing the slogan: "Ert, Ept & Gruntled"</li> -->
+        <li>
+            Miscellany:
+            <ul>
+                <li>Anything from the <a href="http://store.xkcd.com/" target="blank">XKCD store</a>.</li>
+                <!--<li>Any caffeine-free tea from <a href="https://www.piacha.co.uk/search?q=caffeine+free">www.piacha.co.uk/</a></li>-->
+                <li>A T-Shirt with a large <a>Clojure logo</a> on the front.</li>
+                <li>A T-shirt bearing the slogan: "Ert, Ept & Gruntled"</li>
+            </ul>
+        </li>
 
-        <li>A film called <a x="g">Citizen Four on DVD</a>.</li>
 
-        <li>Any books by <a x="b">Neal Stephenson</a> (but <b>not 'Snow Crash'</b> which I've already read).</li>
-
-        <!-- google vr -->
-        <li>An affordable <a href="https://vr.google.com/intl/en_uk/daydream/">VR headset</a></li>
 
         <!-- book by daniel dennet -->
-        <li>A <a x="g">book by Daniel Dennett</a></li>
 
-        <li>Any caffeine-free tea from <a href="https://www.piacha.co.uk/search?q=caffeine+free">www.piacha.co.uk/</a></li>
-
-        <li>A shredder.</li>
-
-        <li>Some <a href="https://eu.ambronite.com/">Ambronite</a></li>
-        <li>Some <a href="https://www.joylent.eu/products/joylent-vegan">Vegan Joylent</a> (but <em>not</em> Mango flavour)</li>
-
-        <!--<li>A T-Shirt with a large <a x="w">Clojure</a> logo on the front.</li>-->
-        <!--<li>A book called <a x="a">Cooking for Geeks</a></li>-->
         <!-- <li>A novel by Tibor Fischer (but not "The Collector Collector" or "The Thought Gang" or "Under the Frog")</li> -->
         <!--<li>Some rechargeable <a x='w'>Eneloop</a> AA batteries.</li>-->
-        <!--<li>The <a x="a">Lego Movie</a> on DVD</li>-->
+
     </ul>
 </div>
 
