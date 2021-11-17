@@ -3,25 +3,78 @@
 <head>
     <meta charset="UTF-8"/>
     <title> Alert! </title>
-    <link rel="stylesheet" type="text/css" href="../site.css" />
+    <link rel="stylesheet" type="text/css" href="../../site.css" />
+    <style>
+        h1 {
+            font-size: xxx-large;
+            text-align: center;
+        }
+        div#message {
+            font-size: xxx-large;
+            font-weight: bold;
+            text-align: center;
+            padding: 250px 50px;
+            border-radius: 50px;
+            border: 10px dotted black;
+            display: none;
+        }
+        div#content {
+            text-align: center;
+        }
+    </style>
+    <script>
+
+    function go() {
+
+        console.log("RAN!");
+        setTimeout(function() {
+            console.log("RAN!");
+            document.getElementById("klaxon").play();
+        }, 200);
+
+        var flip = true;
+
+        setInterval(function() {
+            document.getElementById("message").style.display = 'inherit';
+            document.getElementById("button").style.display = 'none';
+            if (flip) {
+              document.getElementById("message").style.color = 'red';
+              document.getElementById("message").style.backgroundColor = 'yellow';
+            }
+            else {
+              document.getElementById("message").style.color = 'yellow';
+              document.getElementById("message").style.backgroundColor = 'red';
+            }
+            flip = !flip;
+        }, 300);
+    }
+
+    </script>
 </head>
 <body>
 
 <h1>Alert!</h1>
 
-<hr />
+<div id="message"> Take a Break! </div>
 
-<div>
 
-</div>
+<div id="content">
 
-<audio controls="controls" autoplay="autoplay">
+<input id="button" type="button" onclick="go()" value="See Message"/>
+
+<audio id="klaxon">
     <source src="05-dive-n.wav" type="audio/mpeg">
     Your browser does not support the audio element.
 </audio>
 
-<div class="breadcrumb">./non-games</div>
+</div>
+
+
+<div class="breadcrumb">./non-games/alert</div>
 <script src="/breadcrumb.js"></script>
+
+<script>
+</script>
 
 </body>
 </html>
