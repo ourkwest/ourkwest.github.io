@@ -10,13 +10,15 @@
             text-align: center;
         }
         div#message {
-            font-size: xxx-large;
+            font-size: 72pt;
             font-weight: bold;
             text-align: center;
             padding: 250px 50px;
             border-radius: 50px;
-            border: 10px dotted black;
+            border: 10px dotted white;
+            outline: 10px dashed black;
             display: none;
+            -webkit-text-stroke: 3px black;
         }
         div#content {
             text-align: center;
@@ -26,8 +28,8 @@
 
     function go() {
 
-        window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ&t=43s";
-        return;
+        // window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ&t=43s";
+        // return;
 
         console.log("RAN!");
         setTimeout(function() {
@@ -36,20 +38,32 @@
         }, 200);
 
         var flip = true;
+        var angle = 0;
 
         setInterval(function() {
             document.getElementById("message").style.display = 'inherit';
             document.getElementById("button").style.display = 'none';
-            if (flip) {
-              document.getElementById("message").style.color = 'red';
-              document.getElementById("message").style.backgroundColor = 'yellow';
-            }
-            else {
-              document.getElementById("message").style.color = 'yellow';
-              document.getElementById("message").style.backgroundColor = 'red';
-            }
-            flip = !flip;
-        }, 300);
+            // document.getElementById("message").style.backgroundSize = '100px 100px';
+            // document.getElementById("message").style.backgroundSize = 'cover';
+            document.getElementById("message").style.color = 'orange';
+            angle += 3;
+            angle %= 360;
+            document.getElementById("message").style.backgroundImage = 'linear-gradient(' + angle + 'deg, #6200ff 20.41%, #fff 20.41%, #fff 24.49%, #a2ff00 24.49%, #a2ff00 44.90%, #000000 44.90%, #000000 50%, #6200ff 50%, #6200ff 70.41%, #fff 70.41%, #fff 74.49%, #a2ff00 74.49%, #a2ff00 94.90%, #000000 94.90%, #000000 100%)';
+            // if (flip) {
+              // document.getElementById("message").style.color = 'red';
+              // document.getElementById("message").style.backgroundColor = 'yellow';
+              //   document.getElementById("message").style = 'background-image: linear-gradient(111deg, #6200ff 20.41%, #fff 20.41%, #fff 24.49%, #a2ff00 24.49%, #a2ff00 44.90%, #000000 44.90%, #000000 50%, #6200ff 50%, #6200ff 70.41%, #fff 70.41%, #fff 74.49%, #a2ff00 74.49%, #a2ff00 94.90%, #000000 94.90%, #000000 100%);';
+              //   document.getElementById("message").style.backgroundImage = 'linear-gradient(111deg, #6200ff 20.41%, #fff 20.41%, #fff 24.49%, #a2ff00 24.49%, #a2ff00 44.90%, #000000 44.90%, #000000 50%, #6200ff 50%, #6200ff 70.41%, #fff 70.41%, #fff 74.49%, #a2ff00 74.49%, #a2ff00 94.90%, #000000 94.90%, #000000 100%)';
+            // }
+            // else {
+                // document.getElementById("message").style.color = 'yellow';
+                // document.getElementById("message").style.backgroundColor = 'red';
+                //    document.getElementById("message").style = 'background-image: linear-gradient(111deg, #6200ff 20.41%, #fff 20.41%, #fff 24.49%, #a2ff00 24.49%, #a2ff00 44.90%, #000000 44.90%, #000000 50%, #6200ff 50%, #6200ff 70.41%, #fff 70.41%, #fff 74.49%, #a2ff00 74.49%, #a2ff00 94.90%, #000000 94.90%, #000000 100%);';
+                //document.getElementById("message").style = 'background-image: linear-gradient(101deg, #6200ff 20.41%, #fff 20.41%, #fff 24.49%, #a2ff00 24.49%, #a2ff00 44.90%, #000000 44.90%, #000000 50%, #6200ff 50%, #6200ff 70.41%, #fff 70.41%, #fff 74.49%, #a2ff00 74.49%, #a2ff00 94.90%, #000000 94.90%, #000000 100%);';
+                // document.getElementById("message").style.backgroundImage = 'linear-gradient(291deg, #6200ff 20.41%, #fff 20.41%, #fff 24.49%, #a2ff00 24.49%, #a2ff00 44.90%, #000000 44.90%, #000000 50%, #6200ff 50%, #6200ff 70.41%, #fff 70.41%, #fff 74.49%, #a2ff00 74.49%, #a2ff00 94.90%, #000000 94.90%, #000000 100%)';
+            // }
+            // flip = !flip;
+        }, 100);
     }
 
     </script>
