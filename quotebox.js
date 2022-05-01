@@ -13,7 +13,8 @@
           "It's bad luck to be superstitious.",
           "The soundest surround-sound sounds around abound, in my abode.",
           "I stole the scapegoat!",
-          "Remember that you are unique. Just like everyone else."
+          "Remember that you are unique. Just like everyone else.",
+          "Humans always draw conclusions from insufficient data. I know this because I saw someone do it once."
         ];
         return quotes[Math.floor(Math.random() * quotes.length)];
     }
